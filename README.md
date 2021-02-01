@@ -1,7 +1,7 @@
 # TeamProject2021
 
 ## Team members:
-* John Wales @JohnWales
-* Nathan Crowley @NathanCrowley
-* Eoin Treacy @treacy998
+* [John Wales] (https://github.com/JohnWales)
+* [Nathan Crowley] (https://github.com/NathanCrowley)
+* [Eoin Treacy] (https://github.com/treacy998)
 * Mark Cullinane @
