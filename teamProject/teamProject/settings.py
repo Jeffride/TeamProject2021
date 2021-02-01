@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'adf@(kbs)6k%lo%ui(ofmzk8kq)5xrm$2szh56io2gt@$o7%(x'
+SECRET_KEY = 'u%cs@^(cuxy&p=rhy0nsv#aerjp04kbw#0bem42q2secv6l3=9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'userSetup.apps.UsersetupConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'teamProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['teamProject/templates/teamProject'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
