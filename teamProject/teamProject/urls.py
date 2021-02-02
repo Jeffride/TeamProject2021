@@ -23,4 +23,6 @@ urlpatterns = [
     path('', include('userSetup.urls')),
     path('register/', userViews.register, name='register'),
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
+    path('home/',userViews.home, name='home'),
+    path('signin/',userViews.signin,name='signin'),
 ]
