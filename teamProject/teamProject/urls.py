@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from userSetup import views as userViews
+from leaderboard import views as leaderboardViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('userSetup.urls')),
     path('register/', userViews.register, name='register'),
+    path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
 ]
