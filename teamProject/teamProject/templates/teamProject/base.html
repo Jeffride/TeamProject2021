@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}You think you know Cork{% endblock %}</title>
+</head>
+<body>
+    
+    <div class="container">
+    {% include './messages.html' %}
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+</html>
