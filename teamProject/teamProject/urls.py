@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf.urls import url, include
 
 from userSetup import views as userViews
+from leaderboard import views as leaderboardViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +27,6 @@ urlpatterns = [
     path('home/',userViews.home, name='home'),
     path('signin/',userViews.signin,name='signin'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
 
 ]
