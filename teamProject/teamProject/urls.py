@@ -20,9 +20,9 @@ from leaderboard import views as leaderboardViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('userSetup.urls')),
+    path('', userViews.defaultpage),
     path('register/', userViews.register, name='register'),
-    path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
     path('home/',userViews.home, name='home'),
     path('signin/',userViews.signin,name='signin'),
+    path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
 ]
