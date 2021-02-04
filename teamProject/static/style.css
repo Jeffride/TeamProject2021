@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -10,21 +9,20 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-color: cornflowerblue;
+    background-image: url("/static/images/corkAerial.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-a {
-    text-decoration: none;
-    padding: 1em;
-    display: block;
-    text-align: center;
-    background-color: aquamarine;
-}
+
 header {
     display: flex;
     justify-content: center;
     padding: 30px;
     font-size: 2em;
-    font-family: 'Coda Caption', sans-serif;
+    font-family: 'Londrina Solid', cursive;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
 main{
@@ -49,6 +47,7 @@ footer {
     text-align: center;
     padding: 10px;
     font-family: 'Londrina Solid', cursive;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 body.correct {
@@ -90,8 +89,6 @@ body.wrong {
   
 .btn {
     border: 2px solid black;
-    background-color: violet;
-    border-radius: 5px;
     padding: 15px 10px;
     color: black;
     outline: none;
@@ -111,24 +108,36 @@ body.wrong {
     background-color: red;
 }
 
-.solo-btn, .next-btn, .leaderboard-btn, .versus-btn{
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin: 1px;
-    height: 70px;
-}
+
+
 
 #myImg {
     max-width: 100%;
     max-height: 100%;
     padding: 10px;
+    margin-top: 20px;
+    border: 5px solid black;
 }
 
 .controls{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1.2fr;
+  gap: 0px 0px;
+
+}
+
+.solo-btn{
+    grid-area: 1 / 1 / 2 / 2; 
+    margin: 2px;
+}
+.versus-btn{
+    grid-area: 1 / 2 / 2 / 3;
+    margin: 2px;
+}
+.leaderboard-btn{
+    grid-area: 2 / 1 / 3 / 3;
+    margin: 2px;
 }
 
 .hide{

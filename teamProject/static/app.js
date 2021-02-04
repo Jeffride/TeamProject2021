@@ -125,7 +125,7 @@ const questions = [
         image: 'https://lh4.googleusercontent.com/-JDeboQvxeEc/T3INOjbbaNI/AAAAAAAABUA/P0CmMj9sJQ8/s640/DSC04794.JPG',
         answers: [
             { text: 'Shandon Street', correct: false },
-            { text: 'Franciscan well Well', correct: false },
+            { text: 'Franciscan Well', correct: false },
             { text: 'University College Cork', correct: true },
             { text: 'Cork City Hall', correct: false }
         ]

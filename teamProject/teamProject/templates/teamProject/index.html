@@ -6,20 +6,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>So you think you know Cork?</title>
+    <title>So you think you know Cork like?</title>
     {% load static %}
     <link href="{% static 'style.css' %}" rel="stylesheet">
     {% load static %}
     <script defer src="{% static 'app.js' %}"></script>
+    <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     
     <header>
-        <h1 id="title">So you think you know Cork?</h1>
+        <h1 id="title">So you think you know Cork like?</h1>
     </header>
     <main>
-        <div id="container" class="hide">
+        <div id="container" class="">
             <div id="question-container" class="hide">
                 <div id="question"></div>
                 <img src="https://www.iedepot.ie/blog/wp-content/themes/fearless/images/missing-image-640x360.png" id="question-image">
@@ -33,7 +34,7 @@
             <div class="controls">
                 <button id="solo-btn" class="solo-btn btn">Single Player</button>
                 <button id="versus-btn" class="versus-btn btn">Random Apponent</button>
-                <button id="leaderboard-btn" class="leaderboard-btn btn">Leaderboard</button>
+                <button id="leaderboard-btn" class="leaderboard-btn btn"><i class="fas fa-crown"></i>&nbsp; Leaderboard</button>
                 <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
             <img id="myImg" src="https://images-na.ssl-images-amazon.com/images/I/61212Gwv4nL._AC_SL1500_.jpg">
