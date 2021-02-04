@@ -1,7 +1,7 @@
 /*Setting variables to be able to manipulate the html structure when running JavaScript functions*/ 
 const soloGamemode = document.getElementById('solo-btn')
-const loginButton = document.getElementById('login-btn')
-const loginContainer = document.getElementById('login')
+/*const loginButton = document.getElementById('login-btn')
+const loginContainer = document.getElementById('login')*/
 const versusGamemode = document.getElementById('versus-btn')
 const showLeaderboard = document.getElementById('leaderboard-btn')
 const nextButton = document.getElementById('next-btn')
@@ -12,11 +12,14 @@ const questionElement = document.getElementById('question')
 const questionImage = document.getElementById('question-image')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
-loginButton.addEventListener('click', loginSystem)
+/*loginButton.addEventListener('click', loginSystem)*/
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+soloGamemode.addEventListener('click', startGame)
+versusGamemode.addEventListener('click', versusGameStart)
+showLeaderboard.addEventListener('click', displayLeaderboard)
 
 /*When the user registers and logs into the system, this menu should disapper 
 and another menu for selecting the gamemode should appear*/
@@ -26,9 +29,6 @@ and another menu for selecting the gamemode should appear*/
     soloGamemode.classList.remove('hide')
     versusGamemode.classList.remove('hide')
     showLeaderboard.classList.remove('hide')
-    soloGamemode.addEventListener('click', startGame)
-    versusGamemode.addEventListener('click', versusGameStart)
-    showLeaderboard.addEventListener('click', displayLeaderboard)
 }
 
 /*When the solo gamemode is selected it will randomly select a question for the user to answer,

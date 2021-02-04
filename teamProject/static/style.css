@@ -111,7 +111,7 @@ body.wrong {
     background-color: red;
 }
 
-.solo-btn, .next-btn, .leaderboard-btn, .versus-btn,#login-btn {
+.solo-btn, .next-btn, .leaderboard-btn, .versus-btn{
     font-size: 1rem;
     font-weight: bold;
     padding: 10px 20px;
@@ -125,7 +125,7 @@ body.wrong {
     padding: 10px;
 }
 
-.controls , #login{
+.controls{
     display: flex;
     justify-content: center;
     align-items: center;
