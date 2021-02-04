@@ -2,10 +2,17 @@
 <html>
 <head>
 <title>{% block title %}You think you know Cork{% endblock %}</title>
+{% load static %}
+<link href="{% static 'main.css' %}" rel="stylesheet">
 </head>
 <body>
     
     <div class="container">
+        <div id="top">
+            <header>
+                <h1 id="title">So you think you know Cork?</h1>
+            </header>
+        </div>  
     {% include './messages.html' %}
     {% block content %}
     {% endblock %}

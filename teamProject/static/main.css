@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+.container {  
+    width: 100vw;
+    display: grid;  
+    grid-template-columns: auto 80% auto; 
+    grid-template-rows: auto;  
+    grid-template-areas: 
+    "header header header"
+    "aside1 main aside2"
+    "footer footer footer";
+}
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-image: url("/static/images/corkCity.png");
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+}
+#top {
+    width: 100vw;
+    font-family: 'Slabo 27px', serif;
+    font-weight: 400;
+    grid-area: header;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.637);
+}
+
+#login {
+    margin-top: 5em;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    grid-area: main;
+    width: 20em;
+    justify-content: center;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+a {
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    padding: .5em;
+    background-color: rgba(255, 255, 255, 0.664);
+    display: block;
+    border: 1px solid black;
+    margin-top: .25em;
+    margin-left: 6em;
+    margin-right: 6em;
+    max-width: 100%;
+}
+a:hover {
+    color: white;
+    background-color: black;
+}

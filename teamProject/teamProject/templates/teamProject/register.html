@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
     {% block content %}
+    <head>
+        {% load static %}
+        <link href="{% static 'login.css' %}" rel="stylesheet">
+    </head>
     <div class="container">
         <form method="POST">
             {% csrf_token %}

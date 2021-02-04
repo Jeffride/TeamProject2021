@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
+form {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-top:4em;
+    margin-bottom:auto;
+    padding: 1em;
+    padding-top:3em;
+    grid-area: main;
+    display: block;
+    box-shadow: 
+    0 0 1px rgba(0, 0, 0, 0.3), 
+    0 3px 7px rgba(0, 0, 0, 0.3), 
+    inset 0 1px rgba(255,255,255,1),
+    inset 0 -3px 2px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    background: linear-gradient(#eeefef, #ffffffe0 10%);
+    max-width: 100%;
+    text-align:center;
+}
+
+input {
+    margin:.5em;
+    padding:.25em
+}
+span{
+    display: block;
+    font-style: italic;
+    font-size: .8em;
+    font-weight: lighter;
+}
+button {
+    font-family: 'Open Sans', sans-serif;
+    padding: .5em;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:1em;
+    margin-bottom: 3em;
+}
+#login {
+    width: 20em;
+
+
+}

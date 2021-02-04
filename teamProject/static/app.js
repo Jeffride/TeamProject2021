@@ -20,7 +20,7 @@ nextButton.addEventListener('click', () => {
 
 /*When the user registers and logs into the system, this menu should disapper 
 and another menu for selecting the gamemode should appear*/
-function loginSystem() {
+/*function loginSystem() {
     loginButton.classList.add('hide')
     containerElement.classList.remove('hide')
     soloGamemode.classList.remove('hide')
