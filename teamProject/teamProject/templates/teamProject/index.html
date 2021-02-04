@@ -1,3 +1,5 @@
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,11 +7,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>So you think you know Cork?</title>
-    <link href="style.css" rel="stylesheet">
-    <script defer src="app.js"></script>
+    {% load static %}
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    {% load static %}
+    <script defer src="{% static 'app.js' %}"></script>
 </head>
 
 <body>
+    
     <header>
         <h1 id="title">So you think you know Cork?</h1>
     </header>
@@ -38,6 +43,7 @@
         </div>
     </main>
     <footer>&copy; Team Software Project [ Group 6 ]</footer>
+    {% endblock content %}
 </body>
 
 </html>

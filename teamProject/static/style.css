@@ -12,7 +12,13 @@ body {
     height: 100vh;
     background-color: cornflowerblue;
 }
-
+a {
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+    text-align: center;
+    background-color: aquamarine;
+}
 header {
     display: flex;
     justify-content: center;
@@ -26,6 +32,14 @@ main{
     justify-content: center;
     align-items: center;
     font-family: 'Londrina Solid', cursive;
+}
+ul {
+    text-align: center;
+    width: 15%;
+}
+ul li{
+    list-style: none;
+    text-align: center;
 }
 
 footer {

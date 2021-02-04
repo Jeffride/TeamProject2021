@@ -10,10 +10,10 @@ from django.contrib import messages
 
 @login_required
 def home(request):
-    return HttpResponse("<h1>Succesful log in</h1>")
+    return render(request,'index.html')
 
 def defaultpage(request):
-    return HttpResponse("<h1>Landing Page</h1>")
+    return render(request,'landingPage.html')
     
 def register(request):
     #using the default django usercreationform
@@ -40,7 +40,7 @@ def signin(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
+                #messages.info(request, f"You are now logged in as {username}")
                 return redirect('home')
             else:
                 messages.error(request, "Invalid username or password.")
