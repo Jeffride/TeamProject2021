@@ -1,0 +1,47 @@
+html{
+    background-image: url("images/corkAerial.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    min-width: 100%;
+    min-height: 100%;
+    /*overflow: hidden;*/
+
+}
+h1{
+    text-align: center;
+    font-family: 'Sriracha', cursive;
+    font-size: 300%;
+    border-bottom: 5px solid black;
+    background-color: white;
+    margin-top: 0%;
+}
+#date{
+    color:red;
+    font-size: 50%;
+}
+ul{
+    list-style-type: none;
+    position: relative;
+    left: 30%;
+}
+li,p{
+    margin: 5px;
+    border: 2px solid black;
+    padding:10px;
+    width: 30%;
+    background-color: white;
+}
+span{
+    margin: 5px;
+    padding:5px;
+}
+/* to be shown when now users in database */
+p{
+    color: red;
+    text-align: center;
+    position: relative;
+}
