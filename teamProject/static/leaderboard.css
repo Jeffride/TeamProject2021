@@ -17,10 +17,10 @@ h1{
     font-size: 300%;
     border-bottom: 5px solid black;
     background-color: white;
-    margin-top: 0%;
+    margin: 0%;
 }
 #date{
-    color:red;
+    color:blue;
     font-size: 50%;
 }
 ul{
@@ -45,3 +45,4 @@ p{
     text-align: center;
     position: relative;
 }
+

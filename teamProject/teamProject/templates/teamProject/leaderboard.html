@@ -8,8 +8,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     </head>
     <body>
-        <button>return to home</button>
-        <div id="all_time_switch">
+        <button id="redirect_home">return to home</button>
+        <div id="database_swtiches">
             <button class="all_time">All time</button>
             <button class="weekly">Weekly</button>
         </div>
@@ -19,16 +19,9 @@
         </h1>
         {% if number_of_users > 0 %}
         <ul>
-            {% for user in top_three %}
+            {% for user in User_list %}
                 <li>
                     <span>{{ user }} {{ high_score }}</span>
-                </li>
-            {% endfor %}
-            <p>------------------------------</p>
-            {% for user in rest_of_users %}
-                <li>
-                    <span>{{ user }}</span>
-                    <span>{{ high_score }}</span>
                 </li>
             {% endfor %}
         </ul>
