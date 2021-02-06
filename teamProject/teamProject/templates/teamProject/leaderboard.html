@@ -19,12 +19,29 @@
         </h1>
         {% if number_of_users > 0 %}
         <ul>
-            {% for user in User_list %}
+            <!--{% for user in top_three_users %}
                 <li>
-                    <span>{{ user }} {{ high_score }}</span>
+                    <span> {{ user }} {{ high_score }} </span>
+                </li>
+            {% endfor %}-->
+            <li id="first">
+                <span> {{ 1rst }}</span>
+            </li>
+            <li id="second">
+                <span> {{ 2nd }}</span>
+            </li>
+            <li id="third">
+                <span> {{ 3rd }}</span>
+            </li>
+        </ul>
+        <ol>
+            <p>*****************</p>
+            {% for user in rest_of_users %}
+                <li>
+                    <span> {{ user }} {{ high_score }} </span>
                 </li>
             {% endfor %}
-        </ul>
+        </ol>
         {% else %}
             <p>No users available.</p>
         {% endif %}

@@ -22,7 +22,7 @@ h1{
     color:red;
     font-size: 50%;
 }
-ul{
+ol{
     list-style-type: none;
     position: relative;
     left: 30%;
@@ -44,6 +44,7 @@ p{
     text-align: center;
     position: relative;
 }
+/*postion swtiches */
 #redirect_home{
     position: absolute;
     top:1%;
@@ -53,4 +54,22 @@ p{
     position: absolute;
     top:1%;
     left:85%;
+}
+/*top three user css*/
+ul{
+   list-style-type: none; 
+}
+ul li{
+    width: 300px;
+    height: 200px;
+}
+#second{
+    position: absolute;
+    left: 37%;
+    top:12.2%;
+}
+#third{
+    position: absolute;
+    left:70%;
+    top:12.2%;
 }
