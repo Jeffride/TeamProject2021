@@ -9,7 +9,6 @@ html{
     min-width: 100%;
     min-height: 100%;
     /*overflow: hidden;*/
-
 }
 h1{
     text-align: center;
@@ -20,7 +19,8 @@ h1{
     margin: 0%;
 }
 #date{
-    color:blue
+    color:red;
+    font-size: 50%;
 }
 ul{
     list-style-type: none;
@@ -44,4 +44,13 @@ p{
     text-align: center;
     position: relative;
 }
-
+#redirect_home{
+    position: absolute;
+    top:1%;
+    left: 1%;;
+}
+#database_swtiches{
+    position: absolute;
+    top:1%;
+    left:85%;
+}
