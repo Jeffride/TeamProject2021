@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
 #container {  
     width: 100vw;
     display: grid;  
@@ -25,6 +29,7 @@ body {
     background-color: #000000;
 }
 #top {
+    padding: 1em;
     width: 100vw;
     font-family: 'Slabo 27px', serif;
     font-weight: 400;
