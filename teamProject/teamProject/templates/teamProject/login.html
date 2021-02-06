@@ -4,7 +4,8 @@
         {% load static %}
         <link href="{% static 'login.css' %}" rel="stylesheet">
     </head>
-    <div class="container">
+    <div id ="container">
+        <div></div>
         <div id="login">
         <form method="POST">
             {% csrf_token %}

@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% block content %}
+
     <head>
         {% load static %}
         <link rel="stylesheet"  href="{% static 'leaderboard.css' %}">
@@ -7,18 +8,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <div class="container">
         <button id="redirect_home">return to home</button>
         <div id="database_swtiches">
             <button class="all_time">All time</button>
             <button class="weekly">Weekly</button>
         </div>
-        <h1>
-            Leaderboard <br>
-            <div id="date">{{ today }}</div>
-        </h1>
+
         {% if number_of_users > 0 %}
-        <ul>
+        <ul class="container">
+            
             <!--{% for user in top_three_users %}
                 <li>
                     <span> {{ user }} {{ high_score }} </span>
@@ -33,8 +32,10 @@
             <li id="third">
                 <span> {{ 3rd }}</span>
             </li>
+        
         </ul>
-        <ol>
+    
+        <ol id="leaderboard1">
             <p>*****************</p>
             {% for user in rest_of_users %}
                 <li>
@@ -45,5 +46,6 @@
         {% else %}
             <p>No users available.</p>
         {% endif %}
-    </body>
-</html>
+
+    </div>
+{% endblock content %}
