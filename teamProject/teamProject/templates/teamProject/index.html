@@ -1,4 +1,4 @@
-
+{% extends 'base.html' %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>So you think you know Cork like?</title>
     {% load static %}
     <link href="{% static 'style.css' %}" rel="stylesheet">
     {% load static %}
@@ -16,11 +15,8 @@
 
 <body>
     
-    <header>
-        <h1 id="title">So you think you know Cork like?</h1>
-    </header>
     <main>
-        <div id="container" class="">
+        <div id="container1" class="">
             <div id="question-container" class="hide">
                 <div id="question"></div>
                 <img src="https://www.iedepot.ie/blog/wp-content/themes/fearless/images/missing-image-640x360.png" id="question-image">

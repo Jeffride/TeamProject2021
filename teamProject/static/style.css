@@ -14,16 +14,6 @@ body {
     background-size: cover;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-    font-size: 2em;
-    font-family: 'Londrina Solid', cursive;
-    color: white;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-}
 
 main{
     display: flex;
@@ -58,7 +48,8 @@ body.wrong {
     background-color: red;
 }
   
-#container {
+#container1 {
+    margin-top: 2em;
     width: 500px;
     max-width: 80%;
     background-color: white;
