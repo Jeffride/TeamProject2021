@@ -1,9 +1,8 @@
 /*Setting variables to be able to manipulate the html structure when running JavaScript functions*/ 
 const soloGamemode = document.getElementById('solo-btn')
-/*const loginButton = document.getElementById('login-btn')
-const loginContainer = document.getElementById('login')*/
+const loginButton = document.getElementById('login-btn')
+const loginContainer = document.getElementById('login')
 const versusGamemode = document.getElementById('versus-btn')
-const showLeaderboard = document.getElementById('leaderboard-btn')
 const nextButton = document.getElementById('next-btn')
 const corkImage = document.getElementById('myImg')
 const containerElement = document.getElementById('container')
@@ -12,23 +11,22 @@ const questionElement = document.getElementById('question')
 const questionImage = document.getElementById('question-image')
 const answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex
-/*loginButton.addEventListener('click', loginSystem)*/
+loginButton.addEventListener('click', loginSystem)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
-soloGamemode.addEventListener('click', startGame)
-versusGamemode.addEventListener('click', versusGameStart)
-showLeaderboard.addEventListener('click', displayLeaderboard)
 
 /*When the user registers and logs into the system, this menu should disapper 
 and another menu for selecting the gamemode should appear*/
-/*function loginSystem() {
+function loginSystem() {
     loginButton.classList.add('hide')
     containerElement.classList.remove('hide')
     soloGamemode.classList.remove('hide')
     versusGamemode.classList.remove('hide')
     showLeaderboard.classList.remove('hide')
+    soloGamemode.addEventListener('click', startGame)
+    versusGamemode.addEventListener('click', versusGameStart)
 }
 
 /*When the solo gamemode is selected it will randomly select a question for the user to answer,
@@ -49,11 +47,6 @@ function startGame() {
 /*This gamemode is still in development*/ 
 function versusGameStart() {
     alert("Versus Gamemode Still in progress!")
-}
-
-/*This gamemode is still in development*/ 
-function displayLeaderboard() {
-    alert("Leaderboard Still in progress!")
 }
 
 function setNextQuestion() {
@@ -125,7 +118,7 @@ const questions = [
         image: 'https://lh4.googleusercontent.com/-JDeboQvxeEc/T3INOjbbaNI/AAAAAAAABUA/P0CmMj9sJQ8/s640/DSC04794.JPG',
         answers: [
             { text: 'Shandon Street', correct: false },
-            { text: 'Franciscan Well', correct: false },
+            { text: 'Franciscan well Well', correct: false },
             { text: 'University College Cork', correct: true },
             { text: 'Cork City Hall', correct: false }
         ]
