@@ -46,8 +46,10 @@ ul{
    list-style-type: none; 
 }
 ul li{
-    width: 300px;
+    margin: auto;
+    width: 200px;
     height: 200px;
+    text-align: center;
 }
 #first{
     grid-area: aside1;
@@ -59,9 +61,15 @@ ul li{
 #third{
     grid-area: aside2;
 }
+/*
 .container{
     grid-template-columns: auto;
-}
+}*/
 #leaderboard1{
+    width: 30%;
     grid-area: footer;
+    margin: auto;
+}
+.container{
+    grid-template-columns: 30% 40% 30%;
 }
