@@ -1,6 +1,8 @@
 # TeamProject2021
 
 ## Name: So you think know Cork?
+## Group: 6 
+## Module: CS3305
 
 ## Team members:
 * [John Wales](https://github.com/JohnWales)
