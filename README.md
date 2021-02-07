@@ -11,8 +11,22 @@
 * [Mark Cullinane](https://github.com/mcullinane28)
 * [Jeff Attride](https://github.com/Jeffride)
 
+## Scrum Standup Timetable
+1. [Jeff Attride](https://github.com/Jeffride)
+2. [John Wales](https://github.com/JohnWales)
+3. [Nathan Crowley](https://github.com/NathanCrowley)
+4. [Mark Cullinane](https://github.com/mcullinane28)
+5. [Eoin Treacy](https://github.com/treacy998)
+
 ### Guide:
 
 * Starting the Django developement server: 
 1. CD into the git directory containing the project and navigate to the folder containing manage.py
 2. Next type the commmand "python manage.py runserver", this will start a developement server at http://127.0.0.1:8000/ in your browser, all changes made locally will be visible here.
+
+## Latest Updates
+* login/registration page styled and tested with many test cases such as invalid passwords/usernames etc.
+* leaderboard implemented.
+* common css styling across pages using a grid layout.
+* images fetched and stored in effiecient manor.
+* each page linked up to each other.
