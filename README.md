@@ -12,11 +12,11 @@
 * [Jeff Attride](https://github.com/Jeffride)
 
 ## Scrum Standup Timetable
-1. [Jeff Attride](https://github.com/Jeffride)
-2. [John Wales](https://github.com/JohnWales)
-3. [Nathan Crowley](https://github.com/NathanCrowley)
-4. [Mark Cullinane](https://github.com/mcullinane28)
-5. [Eoin Treacy](https://github.com/treacy998)
+1. [Jeff Attride](https://github.com/Jeffride) (3rd February)
+2. [John Wales](https://github.com/JohnWales) (8th February)
+3. [Nathan Crowley](https://github.com/NathanCrowley) (15th February)
+4. [Mark Cullinane](https://github.com/mcullinane28) (22nd February)
+5. [Eoin Treacy](https://github.com/treacy998) (1st March)
 
 ### Guide:
 
