@@ -50,10 +50,10 @@ function versusGameStart() {
     alert("Versus Gamemode Still in progress!")
 }
 
-/*This gamemode is still in development*/ 
+/*This gamemode is still in development
 function displayLeaderboard() {
     alert("Leaderboard Still in progress!")
-}
+}*/
 
 function setNextQuestion() {
     resetState()
