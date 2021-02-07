@@ -24,7 +24,11 @@
 1. CD into the git directory containing the project and navigate to the folder containing manage.py
 2. Next type the commmand "python manage.py runserver", this will start a developement server at http://127.0.0.1:8000/ in your browser, all changes made locally will be visible here.
 
-## Latest Updates
+### Compatibility
+
+* This project has been tested on Mac, Linux and Windows
+
+## Latest Updates 07/02/2021
 * login/registration page styled and tested with many test cases such as invalid passwords/usernames etc.
 * leaderboard implemented.
 * common css styling across pages using a grid layout.
