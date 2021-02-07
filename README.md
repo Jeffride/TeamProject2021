@@ -39,7 +39,8 @@
 ![image](https://user-images.githubusercontent.com/43136483/107160001-61603e00-698b-11eb-9426-a31581b5e46c.png)
 #### Game menu
 
-![image](https://user-images.githubusercontent.com/43136483/107159992-59a09980-698b-11eb-9d22-e184c4e91fc4.png)
+![image](https://user-images.githubusercontent.com/43136483/107160140-51952980-698c-11eb-822c-5fc0cdb2ac7e.png)
 #### Game
+![image](https://user-images.githubusercontent.com/43136483/107160148-62459f80-698c-11eb-8859-7a78001b0176.png)
 
-![image](https://user-images.githubusercontent.com/43136483/107160008-750ba480-698b-11eb-955d-4ddb5eedbedd.png)
+
