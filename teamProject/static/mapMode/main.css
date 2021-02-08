@@ -1,0 +1,13 @@
+#map {
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+    height: 40em;
+    grid-area: main;
+    margin-top: 4em;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }

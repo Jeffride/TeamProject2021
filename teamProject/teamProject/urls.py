@@ -19,6 +19,7 @@ from django.conf.urls import url, include
 
 from userSetup import views as userViews
 from leaderboard import views as leaderboardViews
+from mapsMode import views as mapsViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,6 @@ urlpatterns = [
     path('signin/',userViews.signin,name='signin'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
+    path('game1/',mapsViews.main, name='main-game')
 
 ]
