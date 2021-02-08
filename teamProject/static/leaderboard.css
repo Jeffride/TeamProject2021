@@ -51,6 +51,7 @@ ul li{
 }
 #first{
     grid-area: aside1;
+    background-color: red;
 }
 #second{
     position: main;
