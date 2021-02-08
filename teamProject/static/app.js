@@ -12,6 +12,8 @@ const corkImage = document.getElementById('cork-flag')
 const userName = document.getElementById('user-name')
 const userScore = document.getElementById('user-score')
 const highScore = document.getElementById('user-high-score')
+const easyMode = document.getElementById('easy-mode')
+const hardMode = document.getElementById('hard-mode')
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -29,6 +31,15 @@ function startGame() {
     showLeaderboard.classList.add('hide')
     gamemodeText.classList.add('hide')
     corkImage.classList.add('hide')
+    easyMode.classList.remove('hide')
+    hardMode.classList.remove('hide')
+    easyMode.addEventListener('click',pickEasyMode)
+    hardMode.addEventListener('click',pickHardMode)
+}
+
+function pickEasyMode(){
+    easyMode.classList.add('hide')
+    hardMode.classList.add('hide')
     userScore.classList.remove('hide')
     highScore.classList.remove('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -36,6 +47,11 @@ function startGame() {
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
+
+function pickHardMode(){
+    alert("Gamemode not completed yet")
+}
+
 function shuffleArray(questions){
     for (var i = questions.length - 1; i>0; i--){
         var j = Math.floor(Math.random() * i);
@@ -119,11 +135,10 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
 const questions = [
     {
         question: 'Where is this?',
-        image: 'https://lh4.googleusercontent.com/-JDeboQvxeEc/T3INOjbbaNI/AAAAAAAABUA/P0CmMj9sJQ8/s640/DSC04794.JPG',
+        image: 'teamProject\static\images\easy\UCC.jpg',
         answers: [
             { text: 'Shandon Street', correct: false },
             { text: 'Franciscan Well', correct: false },
@@ -133,7 +148,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://b.dmlimg.com/MjM0MWViZTYxNzc4OTgwMmE4ZTdlYzE2NDNkYzIxNTYQjHVLOSwCDG6-Px35laK6aHR0cDovL3MzLWV1LXdlc3QtMS5hbWF6b25hd3MuY29tL21lZGlhbWFzdGVyLXMzZXUvOC8yLzgyNDFjYjRiMTRjZjkyNmQyMWRlMTRhNjE2MjBiOWNjLmpwZ3x8fDcwMGx8fHx8fHx8.jpg',
+        image: 'teamProject\static\images\easy\douglas.jpg',
         answers: [
             { text: 'Douglas', correct: true },
             { text: 'Blackpool', correct: false },
@@ -143,7 +158,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://mm.aiircdn.com/157/179518.jpg',
+        image: 'teamProject\static\images\easy\patricksStreet.jpg',
         answers: [
             { text: 'South Mall', correct: false },
             { text: 'College Road', correct: false },
@@ -153,7 +168,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://media-cdn.tripadvisor.com/media/photo-s/08/fc/38/0b/st-anne-s-shandon-church.jpg',
+        image: 'teamProject\static\images\easy\shandonBells.jpg',
         answers: [
             { text: "Saint Fin Barre's", correct: false },
             { text: 'Shandon Bells', correct: true },
@@ -163,7 +178,7 @@ const questions = [
     }, 
     {
         question: 'Where is this?',
-        image: 'https://images.squarespace-cdn.com/content/v1/54a6fd18e4b0970e0f118b92/1505834199067-3KUUGUG7WVQXEJFLU6RU/ke17ZwdGBToddI8pDm48kJuI8p5FQJ1Eq-llLbNfaL4UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcCca5qetNy8fW9VKAsZIuGiDiVgUjVhyhe0jAOzrfh8Y6LNbQCTpT_nm5zc2XNrT_/small+NICHE+Knocknaheeny.png?format=1500w',
+        image: 'teamProject\static\images\easy\knocka.png',
         answers: [
             { text: 'Farrenree', correct: false },
             { text: 'Mahon Point', correct: false },
@@ -173,7 +188,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://www.cork-guide.ie/assets/photos/fitzgeralds_park7.jpg',
+        image: 'teamProject\static\images\easy\fitzgeraldsPark.jpg',
         answers: [
             { text: 'Bishopstown Playground', correct: false },
             { text: 'Ballincollig Park', correct: false },
@@ -183,7 +198,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://media-cdn.tripadvisor.com/media/photo-s/01/08/93/df/st-patrick-s-hill-climbing.jpg',
+        image: 'teamProject\static\images\easy\patrickshill.jpg',
         answers: [
             { text: 'Strawberry Hill', correct: false },
             { text: 'Shandon Street', correct: false },
@@ -193,7 +208,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://i.pinimg.com/originals/f7/b9/1c/f7b91cbc9b95df42eb5e8eed0505e9ae.jpg',
+        image: 'teamProject\static\images\easy\cobh.jpg',
         answers: [
             { text: 'Kinsale', correct: false },
             { text: 'Cork Docklands', correct: false },
@@ -203,7 +218,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://photos-a.propertyimages.ie/media/9/6/1/3805169/88ae7ed6-975a-4e48-9a7d-258c3787d8d6_l.jpg',
+        image: 'teamProject\static\images\easy\blackpool.jpg',
         answers: [
             { text: 'Blackpool', correct: true },
             { text: 'Douglas', correct: false },
@@ -213,7 +228,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'https://www.gpsmycity.com/img/gd_attr/56514.jpg',
+        image: 'teamProject\static\images\easy\oval.jpg',
         answers: [
             { text: 'Old Oak', correct: false },
             { text: 'The Oval', correct: true },
