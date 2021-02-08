@@ -17,6 +17,7 @@ let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
 versusGamemode.addEventListener('click', versusGameStart)
+showLeaderboard.addEventListener('click',showLeaderboard)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
-
 body {
     padding: 0;
     margin: 0;
@@ -10,11 +9,11 @@ body {
     background-size: cover;
 }
 
-main {
+main{
+    grid-area: main;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    margin-top: 100px;
 }
 
 /*-----------------------------Landing Page------------------------------------*/
@@ -53,7 +52,7 @@ main {
     margin-top: 50px;
 }
 
-#start-btn{
+#start-btn {
     grid-area: 1 / 1 / 2 / 2;
     margin: 2px;
 }
@@ -69,9 +68,10 @@ main {
 }
 
 /*-----------------------------Landing Page------------------------------------*/
+
 /*-----------------------------Question Page------------------------------------*/
 
-#score{
+#score {
     display: flex;
     justify-content: space-around;
 }
@@ -87,27 +87,27 @@ main {
     border-radius: 5px;
 }
 
-#question{
+#question {
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
 
-#question-timer{
-    background-image: linear-gradient(to left, teal , white);
+#question-timer {
+    background-image: linear-gradient(to left, teal, white);
     padding: 2px;
     border: 2px solid black;
     text-align: center;
 }
 
-.btn-grid{
+.btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
 }
 
-.btn{
+.btn {
     border: 2px solid black;
     padding: 5px;
     color: black;
@@ -116,15 +116,15 @@ main {
     font-weight: bold;
 }
 
-.btn:hover{
+.btn:hover {
     border: 2px dotted black;
 }
 
-.btn.correct{
+.btn.correct {
     background-color: green;
 }
 
-.btn.wrong{
+.btn.wrong {
     background-color: red;
 }
 
