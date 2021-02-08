@@ -14,29 +14,38 @@
 </head>
 
 <body>
-    
     <main>
-        <div id="container1" class="">
-            <div id="question-container" class="hide">
-                <div id="question"></div>
-                <img src="https://www.iedepot.ie/blog/wp-content/themes/fearless/images/missing-image-640x360.png" id="question-image">
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="btn">Answer 1</button>
-                    <button class="btn">Answer 2</button>
-                    <button class="btn">Answer 3</button>
-                    <button class="btn">Answer 4</button>
+        <section id="container">
+            <section id="user-info">
+                <div id="user-name">USERNAME GOES HERE</div>
+                <div id="score">
+                    <div id="user-score" class="hide">Score : </div>
+                    <div id="user-high-score" class="hide">High Score : </div>
                 </div>
-            </div>
-            <div class="controls">
-                <button id="solo-btn" class="solo-btn btn">Single Player</button>
-                <button id="versus-btn" class="versus-btn btn">Random Apponent</button>
-                <button id="leaderboard-btn" class="leaderboard-btn btn" onclick="document.location.href='/leaderboard';"><i class="fas fa-crown"></i>&nbsp; Leaderboard</button>
-                <button id="next-btn" class="next-btn btn hide">Next</button>
-            </div>
-            <img id="myImg" src="https://images-na.ssl-images-amazon.com/images/I/61212Gwv4nL._AC_SL1500_.jpg">
-        </div>
+            </section>
+            <img id="cork-flag" src="https://images-na.ssl-images-amazon.com/images/I/61212Gwv4nL._AC_SL1500_.jpg">
+            <h1 id="mode-text">Select Gamemode</h1>
+            <section id="question-container" class="hide">
+                <div id="question">Question</div>
+                <img src="https://www.iedepot.ie/blog/wp-content/themes/fearless/images/missing-image-640x360.png"
+                    id="question-image">
+                <div id="answer-buttons" class="btn-grid">
+                    <button class="btn">Option 1</button>
+                    <button class="btn">Option 2</button>
+                    <button class="btn">Option 3</button>
+                    <button class="btn">Option 4</button>
+                </div>
+                <section id="question-timer">Time Remaining : </section>
+            </section>
+            <section id="controls">
+                <button id="start-btn" class="">Single Player</button>
+                <button id="versus" class="">Random Apponent</button>
+                <button id="leaderboard" class="">Leaderboard</button>
+                <button id="next-btn" class="next-btn hide">Next Location</button>
+                <button id="restart-btn" class="hide">Restart Game</button>
+            </section>
+        </section>
     </main>
-    <footer>&copy; Team Software Project [ Group 6 ]</footer>
     {% endblock content %}
 </body>
 
