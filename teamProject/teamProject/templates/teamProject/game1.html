@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <link href="{% static 'mapMode/main.css' %}" rel="stylesheet">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    {% load static %}
+    <script src="{% static 'mapMode/main.js' %}"></script>
+
+</head>
+  <body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0p03pOFRi5rqeGAGEKbK2oi_zJqIZxJ0&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+{% endblock content %}
