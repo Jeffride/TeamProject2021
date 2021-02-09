@@ -1,4 +1,3 @@
-
 /*html{
     background-image: url("images/corkAerial.jpg");
     background-repeat: no-repeat;
@@ -11,7 +10,6 @@
     min-height: 100%;
     overflow: hidden;
 }*/
-
 
 li,p{
     margin: 5px;
@@ -42,7 +40,7 @@ p{
     left:85%;
 }
 /*top three user css*/
-ul{
+ul,ol{
    list-style-type: none; 
 }
 ul li{
@@ -65,10 +63,15 @@ ul li{
 .container{
     grid-template-columns: auto;
 }*/
+
+/* centre the ol in the page */
 #leaderboard1{
-    width: 30%;
+    display: grid;
+    width: 80%;
     grid-area: footer;
     margin: auto;
+    align-items: center;
+    justify-items: center;
 }
 .container{
     grid-template-columns: 30% 40% 30%;

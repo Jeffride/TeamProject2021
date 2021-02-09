@@ -154,6 +154,11 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+function calculateScore(){
+    // calculate score if correct button pressed
+}
+
 const questions = [
     {
         question: 'Where is this?',

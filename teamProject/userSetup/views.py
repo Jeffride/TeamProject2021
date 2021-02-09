@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from leaderboard.models import User
 
 # Create your views here.
 
@@ -22,6 +23,10 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            # create user object with score set to 0
+            user = User(user_name=username,high_score=0)
+            # save the user in the django database using API
+            user.save()
             messages.success(request, f"New account created: {username}")
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username,password=raw_password)
