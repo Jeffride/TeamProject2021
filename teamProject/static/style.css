@@ -94,10 +94,10 @@ main{
 }
 
 #question-timer {
-    background-image: linear-gradient(to left, teal, white);
-    padding: 2px;
-    border: 2px solid black;
     text-align: center;
+    background-color: yellow;
+    border: 2px solid black;
+    padding: 5px;
 }
 
 .btn-grid {

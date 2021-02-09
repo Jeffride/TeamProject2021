@@ -19,7 +19,7 @@ let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
 versusGamemode.addEventListener('click', versusGameStart)
-showLeaderboard.addEventListener('click',showLeaderboard)
+showLeaderboard.addEventListener('click', showLeaderboard)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
@@ -33,11 +33,11 @@ function startGame() {
     corkImage.classList.add('hide')
     easyMode.classList.remove('hide')
     hardMode.classList.remove('hide')
-    easyMode.addEventListener('click',pickEasyMode)
-    hardMode.addEventListener('click',pickHardMode)
+    easyMode.addEventListener('click', pickEasyMode)
+    hardMode.addEventListener('click', pickHardMode)
 }
 
-function pickEasyMode(){
+function pickEasyMode() {
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
     userScore.classList.remove('hide')
@@ -48,12 +48,12 @@ function pickEasyMode(){
     setNextQuestion()
 }
 
-function pickHardMode(){
+function pickHardMode() {
     alert("Gamemode not completed yet")
 }
 
-function shuffleArray(questions){
-    for (var i = questions.length - 1; i>0; i--){
+function shuffleArray(questions) {
+    for (var i = questions.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * i);
         var temp = questions[i];
         questions[i] = questions[j];
@@ -66,16 +66,15 @@ function versusGameStart() {
 }
 
 function setNextQuestion() {
-    if(currentQuestionIndex >=5){
-        nextButton.classList.add('hide')
-        restartButton.classList.remove('hide')
-        restartButton.addEventListener('click', backToMenu)
+    if (currentQuestionIndex >= 4) {
+        backToMenu()
     }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question) {
+    timerCountdown()
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -91,6 +90,21 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button)
     })
 }
+
+function timerCountdown() {
+    var timeLeft = 20;
+    var downloadTimer = setInterval(function () {
+        if (timeLeft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById('question-timer').innerHTML = "Ran out of time!";
+        }
+        else {
+            document.getElementById('question-timer').innerHTML = timeLeft + " seconds remaining";
+        }
+        timeLeft -= 1;
+    }, 1000);
+}
+
 
 function resetState() {
     clearStatusClass(document.body)
@@ -115,7 +129,7 @@ function selectAnswer(e) {
     }
 }
 
-function backToMenu(){
+function backToMenu() {
     restartButton.classList.add('hide')
     questionContainerElement.classList.add('hide')
     startButton.classList.remove('hide')
@@ -180,7 +194,7 @@ const questions = [
             { text: 'Holy Trinity', correct: false },
             { text: 'North Cathedral', correct: false }
         ]
-    }, 
+    },
     {
         question: 'Where is this?',
         image: '/static/images/easy/knocka.png',
