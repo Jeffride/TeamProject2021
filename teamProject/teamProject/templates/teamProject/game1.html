@@ -11,11 +11,21 @@
 
 </head>
   <body>
+    <div id= "map-container">
+      <h1>Map of Cork</h1>
     <div id="map"></div>
-
+  </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0p03pOFRi5rqeGAGEKbK2oi_zJqIZxJ0&callback=initMap&libraries=&v=weekly"
       async
     ></script>
+    <div class="slideshow-container">
+      <h1>Where is this?</h1>
+      <div class="img-container">
+        {% load static %}
+        <img src="{% static 'images/hard/bstreet.jpg' %}"></img>
+      </div>
+      <button>Submit</button>
+    </div>
 {% endblock content %}

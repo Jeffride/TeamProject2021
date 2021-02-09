@@ -1,69 +1,84 @@
-/*Setting variables to be able to manipulate the html structure when running JavaScript functions*/ 
-const soloGamemode = document.getElementById('solo-btn')
-/*const loginButton = document.getElementById('login-btn')
-const loginContainer = document.getElementById('login')*/
-const versusGamemode = document.getElementById('versus-btn')
-const showLeaderboard = document.getElementById('leaderboard-btn')
+const startButton = document.getElementById('start-btn')
+const questionImage = document.getElementById('question-image')
 const nextButton = document.getElementById('next-btn')
-const corkImage = document.getElementById('myImg')
-const containerElement = document.getElementById('container')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
-const questionImage = document.getElementById('question-image')
 const answerButtonsElement = document.getElementById('answer-buttons')
+const restartButton = document.getElementById('restart-btn')
+const versusGamemode = document.getElementById('versus')
+const showLeaderboard = document.getElementById('leaderboard')
+const gamemodeText = document.getElementById('mode-text')
+const corkImage = document.getElementById('cork-flag')
+const userName = document.getElementById('user-name')
+const userScore = document.getElementById('user-score')
+const highScore = document.getElementById('user-high-score')
+const easyMode = document.getElementById('easy-mode')
+const hardMode = document.getElementById('hard-mode')
+
 let shuffledQuestions, currentQuestionIndex
-/*loginButton.addEventListener('click', loginSystem)*/
+
+startButton.addEventListener('click', startGame)
+versusGamemode.addEventListener('click', versusGameStart)
+showLeaderboard.addEventListener('click', showLeaderboard)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
-soloGamemode.addEventListener('click', startGame)
-versusGamemode.addEventListener('click', versusGameStart)
-showLeaderboard.addEventListener('click', displayLeaderboard)
 
-/*When the user registers and logs into the system, this menu should disapper 
-and another menu for selecting the gamemode should appear*/
-/*function loginSystem() {
-    loginButton.classList.add('hide')
-    containerElement.classList.remove('hide')
-    soloGamemode.classList.remove('hide')
-    versusGamemode.classList.remove('hide')
-    showLeaderboard.classList.remove('hide')
-}
-/*When the solo gamemode is selected it will randomly select a question for the user to answer,
-this will include an image from Google Streetview of a Cork landmark and 4 answers in which 1 is
-correct, once an answer is selected the user moves onto another question and so on.*/
 function startGame() {
-    soloGamemode.classList.add('hide')
-    corkImage.classList.add('hide')
+    startButton.classList.add('hide')
     versusGamemode.classList.add('hide')
     showLeaderboard.classList.add('hide')
-    questionContainerElement.classList.remove('hide')
-    shuffledQuestions = questions.sort(() => Math.random - .5)
+    gamemodeText.classList.add('hide')
+    corkImage.classList.add('hide')
+    easyMode.classList.remove('hide')
+    hardMode.classList.remove('hide')
+    easyMode.addEventListener('click', pickEasyMode)
+    hardMode.addEventListener('click', pickHardMode)
+}
+
+function pickEasyMode() {
+    easyMode.classList.add('hide')
+    hardMode.classList.add('hide')
+    userScore.classList.remove('hide')
+    highScore.classList.remove('hide')
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
 }
 
-/*This gamemode is still in development*/ 
-function versusGameStart() {
-    alert("Versus Gamemode Still in progress!")
+function pickHardMode() {
+    alert("Gamemode not completed yet")
 }
 
-/*This gamemode is still in development
-function displayLeaderboard() {
-    alert("Leaderboard Still in progress!")
-}*/
+function shuffleArray(questions) {
+    for (var i = questions.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * i);
+        var temp = questions[i];
+        questions[i] = questions[j];
+        questions[j] = temp;
+    }
+    return questions;
+}
+function versusGameStart() {
+    alert("Gamemode not completed yet")
+}
 
 function setNextQuestion() {
+    if (currentQuestionIndex >= 4) {
+        backToMenu()
+    }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
-/*Set the question from each round to match up to what has been chosen from the array*/
 function showQuestion(question) {
-    questionElement.innerText = question.questionCaption
+    timerCountdown()
+    questionElement.innerText = question.question
     questionImage.src = question.image
+    questionImage.style.height = '250px';
+    questionImage.style.width = '100%';
     question.answers.forEach(answer => {
         const button = document.createElement('button')
         button.innerText = answer.text
@@ -76,8 +91,21 @@ function showQuestion(question) {
     })
 }
 
-/*This function resets if the answer was marked as "Correct" or "Wrong" when moving onto the
-next question*/
+function timerCountdown() {
+    var timeLeft = 20;
+    var downloadTimer = setInterval(function () {
+        if (timeLeft <= 0) {
+            clearInterval(downloadTimer);
+            document.getElementById('question-timer').innerHTML = "Ran out of time!";
+        }
+        else {
+            document.getElementById('question-timer').innerHTML = timeLeft + " seconds remaining";
+        }
+        timeLeft -= 1;
+    }, 1000);
+}
+
+
 function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
@@ -86,9 +114,6 @@ function resetState() {
     }
 }
 
-/*When the user is selecting an answer for the questions, it checks the array to see if
-it has been marked as "Correct", once it reaches the end of the questions a reset button will appear 
-to bring the user back to the first question*/
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -99,9 +124,21 @@ function selectAnswer(e) {
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
     } else {
-        soloGamemode.innerText = 'Restart'
-        soloGamemode.classList.remove('hide')
+        restartButton.classList.remove('hide')
+        restartButton.addEventListener('click', backToMenu)
     }
+}
+
+function backToMenu() {
+    restartButton.classList.add('hide')
+    questionContainerElement.classList.add('hide')
+    startButton.classList.remove('hide')
+    versusGamemode.classList.remove('hide')
+    showLeaderboard.classList.remove('hide')
+    gamemodeText.classList.remove('hide')
+    corkImage.classList.remove('hide')
+    userScore.classList.add('hide')
+    highScore.classList.add('hide')
 }
 
 function setStatusClass(element, correct) {
@@ -117,11 +154,10 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
 const questions = [
     {
-        questionCaption: 'Where is this?',
-        image: 'https://lh4.googleusercontent.com/-JDeboQvxeEc/T3INOjbbaNI/AAAAAAAABUA/P0CmMj9sJQ8/s640/DSC04794.JPG',
+        question: 'Where is this?',
+        image: '/static/images/easy/UCC.jpg',
         answers: [
             { text: 'Shandon Street', correct: false },
             { text: 'Franciscan Well', correct: false },
@@ -130,18 +166,88 @@ const questions = [
         ]
     },
     {
-        questionCaption: 'Where is this?',
-        image: 'https://mm.aiircdn.com/157/179518.jpg',
+        question: 'Where is this?',
+        image: '/static/images/easy/douglas.jpg',
+        answers: [
+            { text: 'Douglas', correct: true },
+            { text: 'Blackpool', correct: false },
+            { text: 'Mayfield', correct: false },
+            { text: 'Mallow', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/easy/patricksStreet.jpg',
         answers: [
             { text: 'South Mall', correct: false },
             { text: 'College Road', correct: false },
-            { text: 'Grand Parade', correct: true },
+            { text: 'Patrick Street', correct: true },
             { text: 'North Cathedral', correct: false }
         ]
     },
     {
-        questionCaption: 'Where is this?',
-        image: 'https://www.gpsmycity.com/img/gd_attr/56514.jpg',
+        question: 'Where is this?',
+        image: '/static/images/easy/shandonBells.jpg',
+        answers: [
+            { text: "Saint Fin Barre's", correct: false },
+            { text: 'Shandon Bells', correct: true },
+            { text: 'Holy Trinity', correct: false },
+            { text: 'North Cathedral', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/easy/knocka.png',
+        answers: [
+            { text: 'Farrenree', correct: false },
+            { text: 'Mahon Point', correct: false },
+            { text: 'Wilton', correct: false },
+            { text: 'Knockanaheeny', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/easy/fitzgeraldsPark.jpg',
+        answers: [
+            { text: 'Bishopstown Playground', correct: false },
+            { text: 'Ballincollig Park', correct: false },
+            { text: 'Tramore Valley Park', correct: false },
+            { text: 'Fizgeralds Park', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/easy/patrickshill.jpg',
+        answers: [
+            { text: 'Strawberry Hill', correct: false },
+            { text: 'Shandon Street', correct: false },
+            { text: 'Patricks Hill', correct: true },
+            { text: 'Dublin Hill', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/easy/cobh.jpg',
+        answers: [
+            { text: 'Kinsale', correct: false },
+            { text: 'Cork Docklands', correct: false },
+            { text: 'Cobh', correct: true },
+            { text: 'Youghal', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/easy/blackpool.jpg',
+        answers: [
+            { text: 'Blackpool', correct: true },
+            { text: 'Douglas', correct: false },
+            { text: 'Wilton', correct: false },
+            { text: 'Little Island', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/easy/oval.jpg',
         answers: [
             { text: 'Old Oak', correct: false },
             { text: 'The Oval', correct: true },
