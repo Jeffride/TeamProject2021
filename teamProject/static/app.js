@@ -138,7 +138,7 @@ function clearStatusClass(element) {
 const questions = [
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\UCC.jpg',
+        image: '/static/images/easy/UCC.png',
         answers: [
             { text: 'Shandon Street', correct: false },
             { text: 'Franciscan Well', correct: false },
@@ -148,7 +148,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\douglas.jpg',
+        image: '/static/images/easy/douglas.jpg',
         answers: [
             { text: 'Douglas', correct: true },
             { text: 'Blackpool', correct: false },
@@ -158,7 +158,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\patricksStreet.jpg',
+        image: '/static/images/easy/patricksStreet.jpg',
         answers: [
             { text: 'South Mall', correct: false },
             { text: 'College Road', correct: false },
@@ -168,7 +168,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\shandonBells.jpg',
+        image: '/static/images/easy/shandonBells.jpg',
         answers: [
             { text: "Saint Fin Barre's", correct: false },
             { text: 'Shandon Bells', correct: true },
@@ -178,7 +178,7 @@ const questions = [
     }, 
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\knocka.png',
+        image: '/static/images/easy/knocka.png',
         answers: [
             { text: 'Farrenree', correct: false },
             { text: 'Mahon Point', correct: false },
@@ -188,7 +188,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\fitzgeraldsPark.jpg',
+        image: '/static/images/easy/fitzgeraldsPark.jpg',
         answers: [
             { text: 'Bishopstown Playground', correct: false },
             { text: 'Ballincollig Park', correct: false },
@@ -198,7 +198,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\patrickshill.jpg',
+        image: '/static/images/easy/patrickshill.jpg',
         answers: [
             { text: 'Strawberry Hill', correct: false },
             { text: 'Shandon Street', correct: false },
@@ -208,7 +208,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\cobh.jpg',
+        image: '/static/images/easy/cobh.jpg',
         answers: [
             { text: 'Kinsale', correct: false },
             { text: 'Cork Docklands', correct: false },
@@ -218,7 +218,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\blackpool.jpg',
+        image: '/static/images/easy/blackpool.jpg',
         answers: [
             { text: 'Blackpool', correct: true },
             { text: 'Douglas', correct: false },
@@ -228,7 +228,7 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: 'teamProject\static\images\easy\oval.jpg',
+        image: '/static/images/easy/oval.jpg',
         answers: [
             { text: 'Old Oak', correct: false },
             { text: 'The Oval', correct: true },
