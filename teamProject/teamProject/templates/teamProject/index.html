@@ -17,9 +17,9 @@
     <main>
         <section id="container">
             <section id="user-info">
-                <div id="user-name">{{ request.user }}</div>
+                <div id="user-name">Welcome {{ request.user }}!</div>
                 <div id="score">
-                    <div id="user-score" class="hide">Score : </div>
+                    <div id="user-score" class="hide">Score: </div>
                     <div id="user-high-score" class="hide">High Score : </div>
                 </div>
             </section>
@@ -30,10 +30,10 @@
                 <img src="https://www.iedepot.ie/blog/wp-content/themes/fearless/images/missing-image-640x360.png"
                     id="question-image">
                 <div id="answer-buttons" class="btn-grid">
-                    <button class="btn">Option 1</button>
-                    <button class="btn">Option 2</button>
-                    <button class="btn">Option 3</button>
-                    <button class="btn">Option 4</button>
+                    <button class="btn" onclick="calculateScore()">Option 1</button>
+                    <button class="btn" onclick="calculateScore()">Option 2</button>
+                    <button class="btn" onclick="calculateScore()">Option 3</button>
+                    <button class="btn" onclick="calculateScore()">Option 4</button>
                 </div>
                 <section id="question-timer"></section>
             </section>
