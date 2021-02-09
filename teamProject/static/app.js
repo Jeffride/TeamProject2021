@@ -138,7 +138,7 @@ function clearStatusClass(element) {
 const questions = [
     {
         question: 'Where is this?',
-        image: '/static/images/easy/UCC.png',
+        image: '/static/images/easy/UCC.jpg',
         answers: [
             { text: 'Shandon Street', correct: false },
             { text: 'Franciscan Well', correct: false },
