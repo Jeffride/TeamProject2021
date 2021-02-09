@@ -8,6 +8,7 @@ body{
        * element that contains the map. */
 
     height: 100%;
+    border: 1px solid black;
 
 }
 #map-container{
@@ -60,10 +61,11 @@ html, body {
     margin-right: auto;
     background-size: cover;
     text-align: center;
-    height: 80%;
+    height: 81%;
 
 }
 .img-container img{
-    max-width: 100%;
     height: 100%;
+    max-width: 100%;
+    border: 1px solid black;
 }
