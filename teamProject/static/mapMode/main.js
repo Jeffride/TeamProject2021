@@ -23,8 +23,29 @@ function initMap() {
     });
     infoWindow.setContent(
       JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2),
+      distance()
     
     );
     infoWindow.open(map);
   });
+}
+
+window.onload = function(){ 
+  var info = document.getElementById("popup");
+  var btn = document.getElementById("contin");
+
+  window.onclick = function(event) {
+    if(event.target == popup){
+      info.style.display = "none";
+
+    }
+  }
+  btn.onclick = function(event) {
+    info.style.display = "none";
+  }
+
+};
+
+function distance() {
+  confirm("Confirm answer?");
 }
