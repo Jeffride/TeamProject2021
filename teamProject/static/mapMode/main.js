@@ -23,6 +23,7 @@ function initMap() {
     });
     infoWindow.setContent(
       JSON.stringify(mapsMouseEvent.latLng.toJSON(), null, 2),
+      distance()
     
     );
     infoWindow.open(map);
@@ -45,3 +46,6 @@ window.onload = function(){
 
 };
 
+function distance() {
+  confirm("Confirm answer?");
+}
