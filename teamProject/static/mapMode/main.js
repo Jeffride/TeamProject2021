@@ -28,3 +28,20 @@ function initMap() {
     infoWindow.open(map);
   });
 }
+
+window.onload = function(){ 
+  var info = document.getElementById("popup");
+  var btn = document.getElementById("contin");
+
+  window.onclick = function(event) {
+    if(event.target == popup){
+      info.style.display = "none";
+
+    }
+  }
+  btn.onclick = function(event) {
+    info.style.display = "none";
+  }
+
+};
+

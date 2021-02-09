@@ -10,7 +10,19 @@
     <script src="{% static 'mapMode/main.js' %}"></script>
 
 </head>
+{% load static %}
   <body>
+    <div id="popup">
+      <div id="popUpContent">
+        <h2>Instructions</h2>
+        <ul>
+          <li>Observe the image on the left and think of whereabouts in Cork it is</li>
+          <li>Then click on the map where you think this image is</li>
+          <li>Points are awarded for how close you are</li>
+        </ul>
+        <button id="contin">Continue</button>
+      </div>
+    </div>
     <div id= "map-container">
       <h1>Map of Cork</h1>
     <div id="map"></div>
