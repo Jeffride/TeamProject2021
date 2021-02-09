@@ -1,13 +1,43 @@
+body{
+    font-family: 'Slabo 27px', serif;
+    background-image: none;
+    background-color: rgb(196, 196, 196);
+}
 #map {
     /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 
-    height: 40em;
+    height: 100%;
+
+}
+#map-container{
     grid-area: main;
-    margin-top: 4em;
+    margin-top: 1em;
+    margin-right: 1em;
+    text-align: center;
 }
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
   }
+.container {
+    grid-template-columns: 50% 50%;
+}
+.slideshow-container{
+    grid-area: aside1;
+    margin-top: 1em;
+    text-align: center;
+}
+.img-container{
+    
+    
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    text-align: center;
+
+}
+.img-container img{
+    max-width: 100%;
+    height: 100%;}
