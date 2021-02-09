@@ -66,6 +66,11 @@ function versusGameStart() {
 }
 
 function setNextQuestion() {
+    if(currentQuestionIndex >=5){
+        nextButton.classList.add('hide')
+        restartButton.classList.remove('hide')
+        restartButton.addEventListener('click', backToMenu)
+    }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
