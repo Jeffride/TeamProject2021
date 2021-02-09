@@ -17,7 +17,7 @@
     <main>
         <section id="container">
             <section id="user-info">
-                <div id="user-name">USERNAME GOES HERE</div>
+                <div id="user-name">{{ request.user }}</div>
                 <div id="score">
                     <div id="user-score" class="hide">Score : </div>
                     <div id="user-high-score" class="hide">High Score : </div>
@@ -40,7 +40,7 @@
             <section id="controls">
                 <button id="start-btn" class="">Single Player</button>
                 <button id="versus" class="">Random Apponent</button>
-                <button id="leaderboard" class="">Leaderboard</button>
+                <button id="leaderboard" class="" onclick="document.location.href='/leaderboard'">Leaderboard</button>
                 <button id="next-btn" class="next-btn hide">Next Location</button>
                 <button id="restart-btn" class="hide">Restart Game</button>
                 <button id="easy-mode" class="hide">Easy Mode</button>
