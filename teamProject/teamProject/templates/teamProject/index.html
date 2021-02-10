@@ -19,8 +19,8 @@
             <section id="user-info">
                 <div id="user-name">Welcome {{ request.user }}!</div>
                 <div id="score">
-                    <div id="user-score" class="hide">Score: </div>
-                    <div id="user-high-score" class="hide">High Score : </div>
+                    <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
+                    <div id="user-high-score" class="hide">High Score : <span id="best-score">'User's High Score'</span></div>
                 </div>
             </section>
             <img id="cork-flag" src="https://images-na.ssl-images-amazon.com/images/I/61212Gwv4nL._AC_SL1500_.jpg">
@@ -39,7 +39,7 @@
             </section>
             <section id="controls">
                 <button id="start-btn" class="">Single Player</button>
-                <button id="versus" class="">Random Apponent</button>
+                <button id="versus" class="">Coming Soon</button>
                 <button id="leaderboard" class="" onclick="document.location.href='/leaderboard'">Leaderboard</button>
                 <button id="next-btn" class="next-btn hide">Next Location</button>
                 <button id="restart-btn" class="hide">Restart Game</button>
