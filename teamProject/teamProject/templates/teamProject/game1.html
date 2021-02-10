@@ -23,9 +23,18 @@
         <button id="contin">Continue</button>
       </div>
     </div>
+    <div id="confirm">
+      <h3>Confirm your answer?</h3>
+      <button id="Yes">Yes</button>
+      <button id="No">No</button>
+    </div>
     <div id= "map-container">
       <h1>Map of Cork</h1>
     <div id="map"></div>
+  </div>
+  <div id="result">
+    <h2 id="distancefrom"></h2>
+    <button>Next location</button>
   </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
@@ -38,5 +47,6 @@
         {% load static %}
         <img src="{% static 'images/hard/bstreet.jpg' %}"></img>
       </div>
+
     </div>
 {% endblock content %}
