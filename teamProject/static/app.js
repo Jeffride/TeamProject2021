@@ -48,9 +48,6 @@ function pickEasyMode() {
     setNextQuestion()
 }
 
-function pickHardMode() {
-    alert("Gamemode not completed yet")
-}
 
 function shuffleArray(questions) {
     for (var i = questions.length - 1; i > 0; i--) {
