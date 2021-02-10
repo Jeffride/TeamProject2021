@@ -23,6 +23,9 @@ html, body {
     margin: 0;
     padding: 0;
   }
+header .container{
+    grid-template-columns: inherit;
+}
 .container {
     grid-template-columns: 50% 50%;
 }
