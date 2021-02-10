@@ -32,7 +32,7 @@ span{
     font-size: .8em;
     font-weight: lighter;
 }
-button {
+form button {
     font-family: 'Open Sans', sans-serif;
     padding: .5em;
     display:block;
