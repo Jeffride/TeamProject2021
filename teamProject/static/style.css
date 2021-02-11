@@ -143,3 +143,16 @@ main{
 .hide {
     display: none;
 }
+#userDetails{
+    position: absolute;
+    top: .8%;
+    left: 85%;
+    border:2px solid black;
+    padding:10px;
+    width: 150px;
+    border-radius: 5px;
+    font: 400 13.3333px Arial;
+}
+#score{
+    visibility: hidden;
+}

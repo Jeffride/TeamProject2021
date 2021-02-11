@@ -93,3 +93,14 @@ header .container{
     border: 1.5px solid;
     border-radius: 5px;
 }
+#userDetails{
+    position: absolute;
+    top: 1%;
+    left: 85%;
+    border:2px solid black;
+    padding:5px;
+    width: 150px;
+}
+#score{
+    visibility: hidden;
+}

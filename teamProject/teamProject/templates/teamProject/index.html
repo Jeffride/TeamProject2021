@@ -4,6 +4,10 @@
 <html lang="en">
 
 <head>
+    <div id="userDetails">
+        <p>Welcome: {{ request.user }} </p>
+        <p id="score">Score: <span id="userScore"></span> pts</p>
+    </div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}

@@ -99,7 +99,7 @@ function calculateDistance(){
   console.log("Distance between markers: " + distance.toFixed(2) + " mi.");
   document.getElementById('distancefrom').innerHTML = "Distance between markers: " + distance.toFixed(2) + " km.";
   document.getElementById('result').style.display = "block";
-
+  calculateScore(distance.toFixed(2));
 }
 var dict = {
   "barrackStreet":{"lat":51.893897,"lng":-8.477632},
@@ -119,4 +119,12 @@ window.onload = function(){
     info.style.display = "none";
   }
 
+}
+
+function calculateScore(distance){
+  //document.getElementById("userScore").innerHTML = distance;
+  var score = 1/distance;
+  score = score.toFixed(2);
+  document.getElementById("userScore").innerHTML = score;
+  document.getElementById("score").style.visibility = "visible";
 }
