@@ -21,6 +21,10 @@ from userSetup import views as userViews
 from leaderboard import views as leaderboardViews
 from mapsMode import views as mapsViews
 
+from django.conf import settings
+from django.conf.urls.static import static
+from upload_image import views as uploadViews
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', userViews.defaultpage),
@@ -29,6 +33,12 @@ urlpatterns = [
     path('signin/',userViews.signin,name='signin'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
-    path('game1/',mapsViews.main, name='main-game')
+    path('game1/',mapsViews.main, name='main-game'),
+    path('image_upload/', uploadViews.hotel_image_view, name = 'image_upload'), 
+    path('success/', uploadViews.success, name = 'success'), 
 
 ]
+
+if settings.DEBUG:
+        urlpatterns += static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)
