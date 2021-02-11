@@ -45,7 +45,7 @@ function pickEasyMode() {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
-    //roundScore=0;
+    roundScore=0;
     document.getElementById("score").style.visibility = "visible";
     setNextQuestion()
 }
@@ -68,10 +68,9 @@ function setNextQuestion() {
     elem.innerHTML = 20 + ' seconds remaining';
     if (currentQuestionIndex >= 5) {
         backToMenu()
-        // reset the score after every easy game and hide the score when it returns to home page for cleaner UI.
-        roundScore = 0;
+        // hide the score when it returns to home page for cleaner UI.
         document.getElementById("score").style.visibility = "hidden";
-        //scoreElem.innerHTML = 0;
+        scoreElem.innerHTML = 0;
     }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
