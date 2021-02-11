@@ -45,6 +45,8 @@ function pickEasyMode() {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
+    //roundScore=0;
+    document.getElementById("score").style.visibility = "visible";
     setNextQuestion()
 }
 
@@ -66,7 +68,10 @@ function setNextQuestion() {
     elem.innerHTML = 20 + ' seconds remaining';
     if (currentQuestionIndex >= 5) {
         backToMenu()
-        scoreElem.innerHTML = 0;
+        // reset the score after every easy game and hide the score when it returns to home page for cleaner UI.
+        roundScore = 0;
+        document.getElementById("score").style.visibility = "hidden";
+        //scoreElem.innerHTML = 0;
     }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
@@ -167,8 +172,9 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
+/* Nathan moved score to nav bar */
 var roundScore = 0;
-var scoreElem = document.getElementById('new-score');
+var scoreElem = document.getElementById('userScore');
 function calculateScore() {
     roundScore += timeLeft;
     scoreElem.innerHTML = roundScore;

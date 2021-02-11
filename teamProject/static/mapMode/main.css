@@ -95,11 +95,14 @@ header .container{
 }
 #userDetails{
     position: absolute;
-    top: 1%;
-    left: 85%;
+    top: .8%;
+    left: 90%;
     border:2px solid black;
-    padding:5px;
+    padding:10px;
     width: 150px;
+    border-radius: 5px;
+    font: 400 13.3333px Arial;
+    text-align: center;
 }
 #score{
     visibility: hidden;
