@@ -59,19 +59,22 @@ function shuffleArray(questions) {
     return questions;
 }
 function versusGameStart() {
-    alert("Gamemode not completed yet")
+    alert("Other Gamemodes Coming Soon")
 }
 
 function setNextQuestion() {
-    if (currentQuestionIndex >= 4) {
+    elem.innerHTML = 20 + ' seconds remaining';
+    if (currentQuestionIndex >= 5) {
         backToMenu()
+        scoreElem.innerHTML = 0;
     }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
+    nextButton.addEventListener('click', resetTimer())
 }
 
 function showQuestion(question) {
-    timerCountdown()
+    resetTimer()
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -88,18 +91,26 @@ function showQuestion(question) {
     })
 }
 
-function timerCountdown() {
-    var timeLeft = 20;
-    var downloadTimer = setInterval(function () {
-        if (timeLeft <= 0) {
-            clearInterval(downloadTimer);
-            document.getElementById('question-timer').innerHTML = "Ran out of time!";
-        }
-        else {
-            document.getElementById('question-timer').innerHTML = timeLeft + " seconds remaining";
-        }
-        timeLeft -= 1;
-    }, 1000);
+var timerReset = 20;
+function resetTimer() {
+    timeLeft = timerReset;
+    countdown()
+}
+var timeLeft = 20;
+var elem = document.getElementById('question-timer');
+var timerId = setInterval(countdown, 1000);
+function countdown() {
+    elem.innerHTML = timeLeft + ' seconds remaining';
+    if (timeLeft == 0) {
+        clearTimeout(timerId)
+        elem.innerHTML = 'Ran out of time!'
+        currentQuestionIndex++
+        setNextQuestion()
+    }
+    else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
 }
 
 
@@ -114,6 +125,9 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
+    if (correct) {
+        calculateScore()
+    }
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
@@ -125,6 +139,7 @@ function selectAnswer(e) {
         restartButton.addEventListener('click', backToMenu)
     }
 }
+
 
 function backToMenu() {
     restartButton.classList.add('hide')
@@ -152,8 +167,11 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
-function calculateScore(){
-    // calculate score if correct button pressed
+var roundScore = 0;
+var scoreElem = document.getElementById('new-score');
+function calculateScore() {
+    roundScore += timeLeft;
+    scoreElem.innerHTML = roundScore;
 }
 
 const questions = [

@@ -23,6 +23,9 @@ html, body {
     margin: 0;
     padding: 0;
   }
+header .container{
+    grid-template-columns: inherit;
+}
 .container {
     grid-template-columns: 50% 50%;
 }
@@ -68,4 +71,25 @@ html, body {
     height: 100%;
     max-width: 100%;
     border: 1px solid black;
+}
+#confirm{
+    width: 20%;
+    background-color: white;
+    grid-area: main;
+    z-index: +2;
+    margin: auto;
+    padding: 2em;
+    border: solid black 1.5px;
+    display: none;
+}
+#result{
+    display: none;
+    background-color: rgba(255, 255, 255, 0.753);
+    width: 50%;
+    grid-area: main;
+    z-index: +1;
+    padding: 1em;
+    margin: auto;
+    border: 1.5px solid;
+    border-radius: 5px;
 }

@@ -1,52 +1,110 @@
 
 let map;
-let poly;
+let markers = [];
+let coords = [];
 
-var coords = [];
-var markers = [];
+function haversine_distance(mk1, mk2) {
+  var R = 6371.0710; // Radius of the Earth in miles
+  var rlat1 = mk1.position.lat() * (Math.PI/180); // Convert degrees to radians
+  var rlat2 = mk2.position.lat() * (Math.PI/180); // Convert degrees to radians
+  var difflat = rlat2-rlat1; // Radian difference (latitudes)
+  var difflon = (mk2.position.lng()-mk1.position.lng()) * (Math.PI/180); // Radian difference (longitudes)
 
+  var d = 2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
+  return d;
+}
 
 function initMap() {
   const myLatlng = { lat: 51.8985, lng: -8.4756 };
-  const map = new google.maps.Map(document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById("map"), {
     zoom: 15,
     draggableCursor: 'crosshair',
     center: myLatlng,
   });
-  let infoWindow = new google.maps.InfoWindow({
-    content: "Click where you think it is",
-    position: myLatlng,
-  });
-  infoWindow.open(map);
-  // Configure the click listener.
-  map.addListener("click", (mapsMouseEvent) => {
-    
-    const mark1 = new google.maps.Marker({
-      position: mapsMouseEvent.latLng,
-      map: map,
-    });
-    const myLatLang = dict["barrackStreet"];
-    const mark2 = new google.maps.Marker({
-      position: myLatLang,
-      map: map,
-    });  
-    coords.push(myLatLang);
-    coords.push(mapsMouseEvent.latLng);
-    const linepath = new google.maps.Polyline(
-      {
-        path: coords,
-        geodesic: true,
-        strokeColor: "#FF0000",
-        strokeOpacity: 1.0,
-        strokeWeight: 2,
-      }
-    );
-    linepath.setMap(map);
-    //Next tell the user how far away they were
-    //initMap()
+  
+  // This event listener will call addMarker() when the map is clicked.
+  map.addListener("click", (event) => {
+    if(markers.length>0){
+      deleteMarkers();
+    }
+    addMarker(event.latLng);
+    confirmAnswer();
   });
   
 }
+
+// Adds a marker to the map and push to the array.
+function addMarker(location) {
+  const marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+  markers.push(marker);
+  coords.push(location);
+}
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+  for (let i = 0; i < markers.length; i++) {
+    markers[i].setMap(map);
+  }
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+  setMapOnAll(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+  setMapOnAll(map);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+  clearMarkers();
+  markers = [];
+}
+
+function confirmAnswer(){
+  var accept = document.getElementById("confirm");
+  var bttn = document.getElementById("No");
+  var bttn1 = document.getElementById("Yes");
+  accept.style.display = "block";
+
+  bttn.onclick = function(event) {
+    accept.style.display = "none";
+  }
+  bttn1.onclick = function(event) {
+    accept.style.display = "none";
+    calculateDistance();
+  }
+}
+
+function calculateDistance(){
+  const answer = dict["barrackStreet"];
+  addMarker(answer);
+  coords.push(answer);
+  const linepath = new google.maps.Polyline(
+    {
+      path: coords,
+      geodesic: true,
+      strokeColor: "#FF0000",
+      strokeOpacity: 1.0,
+      strokeWeight: 2,
+    }
+  );
+  linepath.setMap(map);
+  var distance = haversine_distance(markers[0],markers[1]);
+  console.log("Distance between markers: " + distance.toFixed(2) + " mi.");
+  document.getElementById('distancefrom').innerHTML = "Distance between markers: " + distance.toFixed(2) + " km.";
+  document.getElementById('result').style.display = "block";
+
+}
+var dict = {
+  "barrackStreet":{"lat":51.893897,"lng":-8.477632},
+};
+
 //PAGE LOADING INSTRUCTIONS
 window.onload = function(){ 
   var info = document.getElementById("popup");
@@ -62,35 +120,3 @@ window.onload = function(){
   }
 
 }
-/*
-function distance(content) {
-  if(confirm("Confirm answer?")){
-    const correct = {"lat":51.893897,"lng":-8.477632};
-    const user_answer = content;
-  }
-}*/
-
-
-//LOCATIONS
-
-var dict = {
-  "barrackStreet":{"lat":51.893897,"lng":-8.477632},
-};
-/*
-function addLatLng(event) {
-  new google.maps.Marker({
-    position: event,
-    map: map,
-  });
-  //markers.push(marker);
-  const path = poly.getPath();
-  // Because path is an MVCArray, we can simply append a new coordinate
-  // and it will automatically appear.
-  path.push(event.latLng);
-  // Add a new marker at the new plotted point on the polyline.
-  new google.maps.Marker({
-    position: event.latLng,
-    title: "#" + path.getLength(),
-    map: map,
-  });
-}*/
