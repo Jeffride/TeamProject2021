@@ -2,9 +2,12 @@
 {% block content %}
 <!DOCTYPE html>
 <head>
+    <div id="userDetails">
+      <p>Welcome: {{ request.user }} </p>
+      <p id="score">Score: <span id="userScore"></span> pts</p>
+    </div>
     {% load static %}
     <link href="{% static 'mapMode/main.css' %}" rel="stylesheet">
-
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     {% load static %}
     <script src="{% static 'mapMode/main.js' %}"></script>

@@ -143,3 +143,14 @@ main{
 .hide {
     display: none;
 }
+#userDetails{
+    position: absolute;
+    top: 1%;
+    left: 85%;
+    border:2px solid black;
+    padding:5px;
+    width: 150px;
+}
+#score{
+    visibility: hidden;
+}
