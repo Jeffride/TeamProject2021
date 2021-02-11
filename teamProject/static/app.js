@@ -16,6 +16,10 @@ const easyMode = document.getElementById('easy-mode')
 const hardMode = document.getElementById('hard-mode')
 
 let shuffledQuestions, currentQuestionIndex
+var elem = document.getElementById('question-timer');
+var timerReset = 20;
+var timeLeft = 20;
+var timer1 = setInterval(countdown,1500)
 
 startButton.addEventListener('click', startGame)
 versusGamemode.addEventListener('click', versusGameStart)
@@ -42,9 +46,11 @@ function pickEasyMode() {
     hardMode.classList.add('hide')
     userScore.classList.remove('hide')
     highScore.classList.remove('hide')
+    elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
+    scoreElem.innerHTML = 0;
     setNextQuestion()
 }
 
@@ -58,15 +64,15 @@ function shuffleArray(questions) {
     }
     return questions;
 }
+
 function versusGameStart() {
     alert("Other Gamemodes Coming Soon")
 }
 
 function setNextQuestion() {
-    elem.innerHTML = 20 + ' seconds remaining';
+    timeLeft = timerReset;
     if (currentQuestionIndex >= 5) {
-        backToMenu()
-        scoreElem.innerHTML = 0;
+        easygameEnd()
     }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
@@ -91,21 +97,17 @@ function showQuestion(question) {
     })
 }
 
-var timerReset = 20;
 function resetTimer() {
     timeLeft = timerReset;
     countdown()
 }
-var timeLeft = 20;
-var elem = document.getElementById('question-timer');
-var timerId = setInterval(countdown, 1000);
+
 function countdown() {
     elem.innerHTML = timeLeft + ' seconds remaining';
     if (timeLeft == 0) {
-        clearTimeout(timerId)
         elem.innerHTML = 'Ran out of time!'
         currentQuestionIndex++
-        setNextQuestion()
+        setTimeout(setNextQuestion,1000)
     }
     else {
         elem.innerHTML = timeLeft + ' seconds remaining';
@@ -113,6 +115,10 @@ function countdown() {
     }
 }
 
+function easygameEnd(){
+    questionContainerElement.classList.add('hide')
+    
+}
 
 function resetState() {
     clearStatusClass(document.body)
