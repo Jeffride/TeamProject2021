@@ -1,6 +1,6 @@
 from django.http import HttpResponse 
 from django.shortcuts import render, redirect 
-from .forms import *
+from upload_image.forms import HotelForm, Hotel
   
 # Create your views here. 
 def hotel_image_view(request): 
