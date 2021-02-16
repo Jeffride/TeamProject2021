@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&display=swap');
-
-*{
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:wght@500&display=swap');
+* {
     margin: 0;
+    font-family: 'Expletus Sans', cursive;
 }
+
 body {
     padding: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("https://i.ytimg.com/vi/liWd9giy48U/maxresdefault.jpg");
+    background-image: url("https://i.vimeocdn.com/video/643783819.webp?mw=1900&mh=1069&q=70");
     background-repeat: no-repeat;
     background-size: cover;
+    backdrop-filter: blur(5px);
 }
 
-main{
+main {
     grid-area: main;
     display: flex;
     justify-content: center;
@@ -27,10 +29,13 @@ main{
     height: 600px;
     width: 400px;
     padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
 }
 
 #user-info {
-    background-color: yellow;
+    background-color: lightblue;
     padding: 10px;
     text-align: center;
     border: 2px solid black;
@@ -53,22 +58,50 @@ main{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1.2fr;
     gap: 0px 0px;
-    margin-top: 50px;
+    margin-top: 20px;
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 10px;
+    align-items: center;
+    grid-auto-flow: column;
+    max-height: 80px;
 }
 
 #start-btn {
     grid-area: 1 / 1 / 2 / 2;
     margin: 2px;
+    padding: 5px;
+    background-color: white;
 }
 
 #versus {
     grid-area: 1 / 2 / 2 / 3;
     margin: 2px;
+    padding: 5px;
+    background-color: white;
 }
 
 #leaderboard {
     grid-area: 2 / 1 / 3 / 3;
     margin: 2px;
+    padding: 5px;
+    background-color: white;
+}
+
+#easy-mode {
+    padding: 5px;
+    background-color: white;
+    width: 370px;
+}
+
+#hard-mode {
+    padding: 5px;
+    background-color: white;
+    width: 370px;
+}
+
+#mode-text {
+    margin-top: 70px;
 }
 
 /*-----------------------------Landing Page------------------------------------*/
@@ -99,7 +132,7 @@ main{
 
 #question-timer {
     text-align: center;
-    background-color: yellow;
+    background-color: lightblue;
     border: 2px solid black;
     padding: 5px;
 }
@@ -121,7 +154,12 @@ main{
 }
 
 .btn:hover {
-    border: 2px dotted black;
+    background: lightblue;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
 }
 
 .btn.correct {
@@ -132,12 +170,21 @@ main{
     background-color: red;
 }
 
-#next-btn {
-    position: fixed;
+#next-btn{
     background-color: white;
-    padding: 5px;
+    position: fixed;
 }
 
+.fa-crown::before{
+    -webkit-text-stroke: 1px #000;
+    -webkit-text-fill-color: yellow;
+}
+
+#redirect_home{
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 10px;
+}
 /*-----------------------------Question Page------------------------------------*/
 
 .hide {

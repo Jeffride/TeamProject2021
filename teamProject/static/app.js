@@ -14,6 +14,7 @@ const userScore = document.getElementById('user-score')
 const highScore = document.getElementById('user-high-score')
 const easyMode = document.getElementById('easy-mode')
 const hardMode = document.getElementById('hard-mode')
+const controls = document.getElementById('controls')
 
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
@@ -33,7 +34,7 @@ function startGame() {
     startButton.classList.add('hide')
     versusGamemode.classList.add('hide')
     showLeaderboard.classList.add('hide')
-    gamemodeText.classList.add('hide')
+    gamemodeText.innerHTML = "Select Difficulty";
     corkImage.classList.add('hide')
     easyMode.classList.remove('hide')
     hardMode.classList.remove('hide')
@@ -42,6 +43,7 @@ function startGame() {
 }
 
 function pickEasyMode() {
+    gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
     userScore.classList.remove('hide')

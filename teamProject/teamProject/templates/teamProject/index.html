@@ -20,7 +20,8 @@
                 <div id="user-name">Welcome {{ request.user }}!</div>
                 <div id="score">
                     <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
-                    <div id="user-high-score" class="hide">High Score : <span id="best-score">'User's High Score'</span></div>
+                    <div id="user-high-score" class="hide">High Score : <span id="best-score">'User's High Score'</span>
+                    </div>
                 </div>
             </section>
             <img id="cork-flag" src="https://images-na.ssl-images-amazon.com/images/I/61212Gwv4nL._AC_SL1500_.jpg">
@@ -37,15 +38,16 @@
                 </div>
                 <section id="question-timer"></section>
             </section>
-            <section id="controls">
-                <button id="start-btn" class="">Single Player</button>
-                <button id="versus" class="">Coming Soon</button>
-                <button id="leaderboard" class="" onclick="document.location.href='/leaderboard'">Leaderboard</button>
-                <button id="next-btn" class="next-btn hide">Next Location</button>
-                <button id="restart-btn" class="hide">End Game</button>
-                <button id="easy-mode" class="hide">Easy Mode</button>
-                <button id="hard-mode" class="hide" onclick="document.location.href='/game1'">Hard Mode</button>
+            <section id="controls" class="hide">
+                <button id="start-btn" class="btn">Single Player</button>
+                <button id="versus" class="btn">Coming Soon</button>
+                <button id="leaderboard" class="btn" onclick="document.location.href='/leaderboard'"><i class="fas fa-crown"> </i> Leaderboard</button>
+                <button id="next-btn" class="next-btn btn hide">Next Location</button>
+                <button id="restart-btn" class="hide btn">End Game</button>
+                <button id="easy-mode" class="hide btn">Easy Mode</button>
+                <button id="hard-mode" class="hide btn" onclick="document.location.href='/game1'">Hard Mode</button>
             </section>
+        
         </section>
     </main>
     {% endblock content %}
