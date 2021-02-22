@@ -28,6 +28,10 @@
 
 * This project has been tested on Mac, Linux and Windows
 
+### Booch Diagram
+![Untitled Diagram](https://user-images.githubusercontent.com/43136483/108704752-5ae1d280-7504-11eb-853a-7e442a0b13a6.png)
+
+
 ## Latest Updates 07/02/2021
 * login/registration page styled and tested with many test cases such as invalid passwords/usernames etc.
 * leaderboard implemented.
