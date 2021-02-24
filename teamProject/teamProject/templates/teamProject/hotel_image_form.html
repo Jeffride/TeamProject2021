@@ -12,12 +12,5 @@
         <button type="submit">Upload</button> 
         <h1>---------------------------------------------</h1>
     </form> 
-    <form method = "post" enctype="multipart/form-data"> 
-        <h1>Medium</h1>
-        {% csrf_token %} 
-        {{ form.as_p }} 
-        <button type="submit">Upload</button> 
-        <h1>---------------------------------------------</h1>
-    </form>
 </body> 
 </html> 
