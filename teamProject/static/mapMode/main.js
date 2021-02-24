@@ -3,6 +3,9 @@ let map;
 let markers = [];
 let coords = [];
 
+let currentIndex = 0;
+
+
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in miles
   var rlat1 = mk1.position.lat() * (Math.PI/180); // Convert degrees to radians
@@ -82,7 +85,7 @@ function confirmAnswer(){
 }
 
 function calculateDistance(){
-  const answer = dict["barrackStreet"];
+  const answer = dict[places[currentIndex]][1];
   addMarker(answer);
   coords.push(answer);
   const linepath = new google.maps.Polyline(
@@ -100,15 +103,54 @@ function calculateDistance(){
   document.getElementById('distancefrom').innerHTML = "Distance between markers: " + distance.toFixed(2) + " km.";
   document.getElementById('result').style.display = "block";
 
+
+}
+function removeLine(){
+  linepath.setMap(null);
+}
+function shufflePlaces(places){
+  for (var i = places.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * i);
+    var temp = places[i];
+    places[i] = places[j];
+    places[j] = temp;
+}
+return places;
+}
+function nextImage(){
+  console.log("btu");
+  if(currentIndex<places.length-1){
+    currentIndex+=1;
+    const img = document.getElementById("place");
+    const result = document.getElementById("result");
+    img.src = dict[places[currentIndex]][0];
+    result.style.display = "none";
+    deleteMarkers();
+    removeLine();
+  }
+  else{
+    console.log("game over");
+  }
+    
+  
+
 }
 var dict = {
-  "barrackStreet":{"lat":51.893897,"lng":-8.477632},
+  "barrackStreet":['/static/images/hard/bstreet.jpg',{"lat":51.893897,"lng":-8.477632}],
+  "GrandParade":['/static/images/hard/gparade.jpg',{"lat":51.897118,"lng":-8.475033}],
+  "PatricksHill":['/static/images/hard/phill.jpg',{"lat":51.903363,"lng":-8.469804}],
 };
+const places = Object.keys(dict);
 
 //PAGE LOADING INSTRUCTIONS
 window.onload = function(){ 
   var info = document.getElementById("popup");
   var btn = document.getElementById("contin");
+  const img = document.getElementById("place");
+
+  const placeList = shufflePlaces(places);
+
+  img.src = dict[placeList[currentIndex]][0];
 
   window.onclick = function(event) {
     if(event.target == popup){

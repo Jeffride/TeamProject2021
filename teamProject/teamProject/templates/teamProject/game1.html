@@ -37,7 +37,7 @@
   </div>
   <div id="result">
     <h2 id="distancefrom"></h2>
-    <button>Next location</button>
+    <button id="nextLoc" onclick="nextImage()">Next location</button>
   </div>
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script
@@ -45,11 +45,10 @@
       async
     ></script>
     <div class="slideshow-container">
-      <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
       <h1>Where is this?</h1>
       <div class="img-container">
-        {% load static %}
-        <img src='{% static image %}'></img>
+  
+        <img id = "place" src=""></img>
       </div>
 
     </div>
