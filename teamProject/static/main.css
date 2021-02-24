@@ -87,3 +87,8 @@ a:hover {
     color: white;
     background-color: black;
 }
+#redirect_home{
+    border: 2px solid black;
+    border-radius: 50px;
+    padding: 10px;
+}

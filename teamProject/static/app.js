@@ -1,11 +1,10 @@
-const startButton = document.getElementById('start-btn')
+const redirectHome = document.getElementById('redirect_home')
 const questionImage = document.getElementById('question-image')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 const restartButton = document.getElementById('restart-btn')
-const versusGamemode = document.getElementById('versus')
 const showLeaderboard = document.getElementById('leaderboard')
 const gamemodeText = document.getElementById('mode-text')
 const corkImage = document.getElementById('cork-flag')
@@ -15,6 +14,7 @@ const highScore = document.getElementById('user-high-score')
 const easyMode = document.getElementById('easy-mode')
 const hardMode = document.getElementById('hard-mode')
 const controls = document.getElementById('controls')
+const containerElem = document.getElementById('container')
 
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
@@ -22,27 +22,20 @@ var timerReset = 20;
 var timeLeft = 20;
 var timer1 = setInterval(countdown,1500)
 
-startButton.addEventListener('click', startGame)
-versusGamemode.addEventListener('click', versusGameStart)
+
 showLeaderboard.addEventListener('click', showLeaderboard)
+easyMode.classList.remove('hide')
+easyMode.addEventListener('click', pickEasyMode)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
 
-function startGame() {
-    startButton.classList.add('hide')
-    versusGamemode.classList.add('hide')
-    showLeaderboard.classList.add('hide')
-    gamemodeText.innerHTML = "Select Difficulty";
-    corkImage.classList.add('hide')
-    easyMode.classList.remove('hide')
-    hardMode.classList.remove('hide')
-    easyMode.addEventListener('click', pickEasyMode)
-    hardMode.addEventListener('click', pickHardMode)
-}
+
 
 function pickEasyMode() {
+    showLeaderboard.classList.add('hide')
+    corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
@@ -65,10 +58,6 @@ function shuffleArray(questions) {
         questions[j] = temp;
     }
     return questions;
-}
-
-function versusGameStart() {
-    alert("Other Gamemodes Coming Soon")
 }
 
 function setNextQuestion() {
@@ -142,24 +131,12 @@ function selectAnswer(e) {
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
-    } else {
-        restartButton.classList.remove('hide')
-        restartButton.addEventListener('click', backToMenu)
-    }
+    } 
+    redirectHome.classList.remove('hide')
+    
 }
 
 
-function backToMenu() {
-    restartButton.classList.add('hide')
-    questionContainerElement.classList.add('hide')
-    startButton.classList.remove('hide')
-    versusGamemode.classList.remove('hide')
-    showLeaderboard.classList.remove('hide')
-    gamemodeText.classList.remove('hide')
-    corkImage.classList.remove('hide')
-    userScore.classList.add('hide')
-    highScore.classList.add('hide')
-}
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)

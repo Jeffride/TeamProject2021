@@ -59,22 +59,20 @@ main {
     grid-template-rows: 1fr 1.2fr;
     gap: 0px 0px;
     margin-top: 20px;
-    background-color: lightblue;
-    border: 2px solid black;
     padding: 10px;
     align-items: center;
     grid-auto-flow: column;
     max-height: 80px;
 }
 
-#start-btn {
+#easy-mode {
     grid-area: 1 / 1 / 2 / 2;
     margin: 2px;
     padding: 5px;
     background-color: white;
 }
 
-#versus {
+#hard-mode{
     grid-area: 1 / 2 / 2 / 3;
     margin: 2px;
     padding: 5px;
@@ -88,22 +86,9 @@ main {
     background-color: white;
 }
 
-#easy-mode {
-    padding: 5px;
-    background-color: white;
-    width: 370px;
+#mode-text{
+    padding: 30px;
 }
-
-#hard-mode {
-    padding: 5px;
-    background-color: white;
-    width: 370px;
-}
-
-#mode-text {
-    margin-top: 70px;
-}
-
 /*-----------------------------Landing Page------------------------------------*/
 
 /*-----------------------------Question Page------------------------------------*/

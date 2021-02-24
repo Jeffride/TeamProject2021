@@ -8,10 +8,12 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     {% load static %}
     <script src="{% static 'mapMode/main.js' %}"></script>
+    <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
 
 </head>
 {% load static %}
   <body>
+
     <div id="popup">
       <div id="popUpContent">
         <h2>Instructions</h2>
@@ -30,6 +32,7 @@
     </div>
     <div id= "map-container">
       <h1>Map of Cork</h1>
+    
     <div id="map"></div>
   </div>
   <div id="result">
@@ -42,6 +45,7 @@
       async
     ></script>
     <div class="slideshow-container">
+      <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
       <h1>Where is this?</h1>
       <div class="img-container">
         {% load static %}

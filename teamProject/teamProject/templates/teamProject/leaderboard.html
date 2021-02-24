@@ -8,19 +8,22 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
+        
     </head>
     <div class="container">
         <div id="database_swtiches">
             <button class="all_time">All time</button>
             <button class="weekly">Weekly</button>
         </div>
+        <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
         {% if number_of_users > 0 %}
         <ul class="container">
             <li id="first">
                 <span> {{ 1rst }}</span>
             </li>
             <li id="second">
-                <span> {{ 2nd }}</span>
+                <span> {{ 2nd }}</span>s
             </li>
             <li id="third">
                 <span> {{ 3rd }}</span>
