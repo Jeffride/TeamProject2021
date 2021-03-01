@@ -7,7 +7,7 @@ body{
     /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 
-    height: 100%;
+    height: 75vh;
     border: 1px solid black;
 
 }
@@ -16,7 +16,6 @@ body{
     margin-top: 1em;
     margin-right: 1em;
     text-align: center;
-    height: 80%;
 }
 html, body {
     height: 100%;
@@ -68,7 +67,8 @@ header .container{
 
 }
 .img-container img{
-    height: 100%;
+    height: 75vh;
+    width: 47vw;
     max-width: 100%;
     border: 1px solid black;
 }
