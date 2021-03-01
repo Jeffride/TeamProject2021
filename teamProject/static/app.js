@@ -13,6 +13,7 @@ const userScore = document.getElementById('user-score')
 const highScore = document.getElementById('user-high-score')
 const easyMode = document.getElementById('easy-mode')
 const hardMode = document.getElementById('hard-mode')
+const retroMode = document.getElementById('retro-mode')
 const controls = document.getElementById('controls')
 const containerElem = document.getElementById('container')
 
@@ -26,6 +27,8 @@ var timer1 = setInterval(countdown,1500)
 showLeaderboard.addEventListener('click', showLeaderboard)
 easyMode.classList.remove('hide')
 easyMode.addEventListener('click', pickEasyMode)
+retroMode.classList.remove('hide')
+retroMode.addEventListener('click', pickRetroMode)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
@@ -49,6 +52,23 @@ function pickEasyMode() {
     setNextQuestion()
 }
 
+function pickRetroMode() {
+    showLeaderboard.classList.add('hide')
+    corkImage.classList.add('hide')
+    gamemodeText.classList.add('hide')
+    easyMode.classList.add('hide')
+    hardMode.classList.add('hide')
+    retroMode.classList.add('hide')
+    userScore.classList.remove('hide')
+    highScore.classList.remove('hide')
+    elem.innerHTML = timerReset + " seconds remaining"
+    shuffledQuestions = retroquestions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove('hide')
+    scoreElem.innerHTML = 0;
+    setNextRetroQuestion()
+}
+
 
 function shuffleArray(questions) {
     for (var i = questions.length - 1; i > 0; i--) {
@@ -70,7 +90,35 @@ function setNextQuestion() {
     nextButton.addEventListener('click', resetTimer())
 }
 
+function setNextRetroQuestion() {
+    timeLeft = timerReset;
+    if (currentQuestionIndex >= 5) {
+        retrogameEnd()
+    }
+    resetState()
+    showRetroQuestion(shuffledQuestions[currentQuestionIndex])
+    nextButton.addEventListener('click', resetTimer())
+}
+
 function showQuestion(question) {
+    resetTimer()
+    questionElement.innerText = question.question
+    questionImage.src = question.image
+    questionImage.style.height = '250px';
+    questionImage.style.width = '100%';
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
+}
+
+function showRetroQuestion(question) {
     resetTimer()
     questionElement.innerText = question.question
     questionImage.src = question.image
@@ -161,6 +209,11 @@ function easygameEnd(){
         highScoreElem.innerHTML = tempscore;
     }
     
+}
+
+function retrogameEnd(){
+    questionContainerElement.classList.add('hide')
+
 }
 
 const questions = [
@@ -262,6 +315,159 @@ const questions = [
             { text: 'The Oval', correct: true },
             { text: 'Cissie Youngs', correct: false },
             { text: 'The Rock', correct: false }
+        ]
+    }
+]
+
+const retroquestions = [
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/UCC Entrance Retro.jpg',
+        answers: [
+            { text: 'Blackpool', correct: false },
+            { text: 'Franciscan Well', correct: false },
+            { text: 'North Monastery School', correct: false },
+            { text: 'UCC Entrance', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Youghal Retro.jpg',
+        answers: [
+            { text: 'Mallow', correct: false },
+            { text: 'Bandon', correct: false },
+            { text: 'Youghal', correct: true },
+            { text: 'Douglas', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/The Lough Retro.jpg',
+        answers: [
+            { text: 'The Lough', correct: true },
+            { text: 'Blackrock', correct: false },
+            { text: 'The Lee Fields', correct: false },
+            { text: 'Little Island', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/South Mall Retro.jpg',
+        answers: [
+            { text: 'South Mall', correct: true },
+            { text: 'Dillons Cross', correct: false },
+            { text: 'Oliver Plunkett St', correct: false},
+            { text: 'Washington St', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Patricks Hill Retro.jpg',
+        answers: [
+            { text: 'Shandon St', correct: false },
+            { text: 'Patricks Hill', correct: true },
+            { text: 'Barrack St', correct: false },
+            { text: 'Donovan Road', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Parnell Place Retro.jpg',
+        answers: [
+            { text: 'Mercy Hospital', correct: false },
+            { text: 'Cork University Hospital', correct: false },
+            { text: 'Mahon', correct: false},
+            { text: 'Parnell Place', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Mercy Hospital Retro.jpg',
+        answers: [
+            { text: 'Mercy Hospital', correct: true },
+            { text: 'Penrose Dock', correct: false },
+            { text: 'Firkin Crane', correct: false},
+            { text: 'Paul Street', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Lee Fields Retro.jpg',
+        answers: [
+            { text: 'Douglas River', correct: false },
+            { text: 'The Lough', correct: false },
+            { text: 'Lee Fields', correct: true},
+            { text: 'Port of Cork', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Grande Parade Retro.jpg',
+        answers: [
+            { text: 'Merchants Quay', correct: false },
+            { text: 'Lapps Quay', correct: false },
+            { text: 'Patrick Street', correct: false},
+            { text: 'Grande Parade', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Fr Matthew Quay.jpg',
+        answers: [
+            { text: 'Fr Matthew Quay', correct: true },
+            { text: 'Popes Quay', correct: false },
+            { text: 'Lower Glamire Road', correct: false},
+            { text: 'Grande Parade', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Fitzgeralds Park Retro.jpg',
+        answers: [
+            { text: 'UCC Green', correct: false },
+            { text: 'Fitzgeralds Park', correct: true},
+            { text: 'St Finbars Cemetery', correct: false},
+            { text: 'St Annes Pitch & Putt', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Grande Parade Retro.jpg',
+        answers: [
+            { text: 'Shandon Bells', correct: false },
+            { text: 'North Cathedral', correct: false },
+            { text: 'Dominican Church', correct: true},
+            { text: 'City Hall', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Brian Boru Bridge Retro.jpg',
+        answers: [
+            { text: 'Michael Collins Bridge', correct: false },
+            { text: 'Brian Boru Bridge', correct: true },
+            { text: 'North Gate Bridge', correct: false},
+            { text: 'Nano Nagle Bridge', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Blackpool Retro.jpg',
+        answers: [
+            { text: 'Farrenree', correct: false },
+            { text: 'Blackpool', correct: true },
+            { text: 'Knocknaheeny', correct: false},
+            { text: 'Mayfield', correct: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/static/images/retro/Ballincollig Retro.jpg',
+        answers: [
+            { text: 'Jacobs Island', correct: false },
+            { text: 'Shanakiel', correct: false },
+            { text: 'Ballincollig', correct: true},
+            { text: 'Wilton', correct: false }
         ]
     }
 ]
