@@ -4,7 +4,7 @@ let markers = [];
 let coords = [];
 
 let currentIndex = 0;
-
+let disableClicks = false;
 
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in miles
@@ -27,11 +27,13 @@ function initMap() {
   
   // This event listener will call addMarker() when the map is clicked.
   map.addListener("click", (event) => {
-    if(markers.length>0){
-      deleteMarkers();
+    if(!disableClicks){
+      if(markers.length>0){
+        deleteMarkers();
+      }
+      addMarker(event.latLng);
+      confirmAnswer();
     }
-    addMarker(event.latLng);
-    confirmAnswer();
   });
   
 }
@@ -80,6 +82,7 @@ function confirmAnswer(){
     accept.style.display = "none";
   }
   bttn1.onclick = function(event) {
+    disableClicks = true;
     accept.style.display = "none";
     calculateDistance();
   }
@@ -124,6 +127,7 @@ function shufflePlaces(places){
 return places;
 }
 function nextImage(){
+  disableClicks = false;
   console.log("btu");
   if(currentIndex<places.length-1){
     currentIndex+=1;
