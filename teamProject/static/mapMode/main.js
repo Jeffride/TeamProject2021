@@ -67,6 +67,7 @@ function showMarkers() {
 function deleteMarkers() {
   clearMarkers();
   markers = [];
+  coords = [];
 }
 
 function confirmAnswer(){
@@ -88,7 +89,8 @@ function calculateDistance(){
   const answer = dict[places[currentIndex]][1];
   addMarker(answer);
   coords.push(answer);
-  const linepath = new google.maps.Polyline(
+  
+  linepath = new google.maps.Polyline(
     {
       path: coords,
       geodesic: true,
@@ -98,12 +100,16 @@ function calculateDistance(){
     }
   );
   linepath.setMap(map);
+  //addLine(linepath);
   var distance = haversine_distance(markers[0],markers[1]);
   console.log("Distance between markers: " + distance.toFixed(2) + " mi.");
   document.getElementById('distancefrom').innerHTML = "Distance between markers: " + distance.toFixed(2) + " km.";
   document.getElementById('result').style.display = "block";
 
 
+}
+function addLine(line){
+  line.setMap(map);
 }
 function removeLine(){
   linepath.setMap(null);
@@ -127,6 +133,7 @@ function nextImage(){
     result.style.display = "none";
     deleteMarkers();
     removeLine();
+    initMap();
   }
   else{
     console.log("game over");
