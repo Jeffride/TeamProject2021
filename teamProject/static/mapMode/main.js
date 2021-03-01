@@ -140,7 +140,7 @@ function nextImage(){
     initMap();
   }
   else{
-    console.log("game over");
+    alert("Game Over");
   }
     
   
@@ -150,6 +150,11 @@ var dict = {
   "barrackStreet":['/static/images/hard/bstreet.jpg',{"lat":51.893897,"lng":-8.477632}],
   "GrandParade":['/static/images/hard/gparade.jpg',{"lat":51.897118,"lng":-8.475033}],
   "PatricksHill":['/static/images/hard/phill.jpg',{"lat":51.903363,"lng":-8.469804}],
+  "Kcs":['/static/images/hard/Kcs.jpg',{"lat":51.877689,"lng":-8.436458}],
+  "BusStation":['/static/images/hard/bstation.jpg',{"lat":51.899856,"lng":-8.467122}],
+  "flyingEnterprise":['/static/images/hard/flyingEnterprise.jpg',{"lat":51.895295,"lng":-8.476253}],
+  "tomBarrys":['/static/images/hard/tomBarrys.jpg',{"lat":51.893586,"lng":-8.478064}],
+  "CollinsBarracks":['/static/images/hard/CollinsBarracks.jpg',{"lat":51.906835,"lng":-8.462115}],
 };
 const places = Object.keys(dict);
 
