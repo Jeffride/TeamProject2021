@@ -42,6 +42,7 @@ function pickEasyMode() {
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
+    retroMode.classList.add('hide')
     userScore.classList.remove('hide')
     highScore.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
