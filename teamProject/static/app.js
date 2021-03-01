@@ -106,11 +106,6 @@ function countdown() {
     }
 }
 
-function easygameEnd(){
-    questionContainerElement.classList.add('hide')
-    
-}
-
 function resetState() {
     clearStatusClass(document.body)
     nextButton.classList.add('hide')
@@ -136,8 +131,6 @@ function selectAnswer(e) {
     
 }
 
-
-
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -157,6 +150,17 @@ var scoreElem = document.getElementById('new-score');
 function calculateScore() {
     roundScore += timeLeft;
     scoreElem.innerHTML = roundScore;
+}
+
+var highScoreElem = document.getElementById('best-score');
+function easygameEnd(){
+    questionContainerElement.classList.add('hide')
+    if (scoreElem > highScoreElem){
+        var tempscore = 0;
+        tempscore += scoreElem;
+        highScoreElem.innerHTML = tempscore;
+    }
+    
 }
 
 const questions = [
