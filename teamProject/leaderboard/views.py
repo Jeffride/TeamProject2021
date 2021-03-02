@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import User
+#from .models import User
+from django.contrib.auth.models import User
 from datetime import date
 
 # Create your views here.
 
-def leaderboard(request):
+'''def leaderboard(request):
     if(User.objects.count()>3):
         leaderboard=User.objects.order_by("high_score").reverse()
         top_three_users=leaderboard[:3]
@@ -19,4 +20,11 @@ def leaderboard(request):
                 }
     else:
         context={'number_of_users':User.objects.count()}
+    return render(request, 'leaderboard.html', context)'''
+
+def leaderboard(request):
+    context={
+        "users": User.objects.all(),
+        "number_of_users": User.objects.count(),
+    }
     return render(request, 'leaderboard.html', context)
