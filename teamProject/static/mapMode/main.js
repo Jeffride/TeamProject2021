@@ -110,20 +110,24 @@ function calculateDistance(){
   
   if(distance.toFixed(2)<=.5){
     if(distance.toFixed(2)<=.1){
-      score=latestScore+=150;
+      score+=150;
+      latestScore+=150;
     }
     else{
-      score=latestScore+=100;
+      score += 100;
+      latestScore+=100;
     }
     
   }
   if(distance.toFixed(2)>.5){
 
     if(distance.toFixed(2)<=1){
-      score=latestScore+=80
+      score += 80;
+      latestScore+=80;
     }
     else{
-      score=latestScore += Math.floor(80/distance.toFixed(2));
+      score+= Math.floor(80/distance.toFixed(2));
+      latestScore += Math.floor(80/distance.toFixed(2));
     }
   }
   document.getElementById('distancefrom').innerHTML = "You clicked: " + distance.toFixed(2) + " km away from the actual location"+"<br/>"+"Points earned: "+latestScore;
@@ -166,11 +170,12 @@ function nextImage(){
     initMap();
   }
   else{
-    alert("Game Over");
+    gameOver();
   }
-    
-  
-
+}
+function gameOver(){
+  document.getElementById("scoreform").style.display = "block";
+  document.getElementById("id_high_score").value = score;
 }
 var dict = {
   "barrackStreet":['/static/images/hard/bstreet.jpg',{"lat":51.893897,"lng":-8.477632}],
@@ -193,7 +198,10 @@ window.onload = function(){
   const placeList = shufflePlaces(places);
 
   img.src = dict[placeList[currentIndex]][0];
-
+  
+  var form = document.getElementById("scoreform");
+  form.elements[1].readOnly = true;
+  //form.style.display = "none";
   window.onclick = function(event) {
     if(event.target == popup){
       info.style.display = "none";
