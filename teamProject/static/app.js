@@ -10,7 +10,7 @@ const gamemodeText = document.getElementById('mode-text')
 const corkImage = document.getElementById('cork-flag')
 const userName = document.getElementById('user-name')
 const userScore = document.getElementById('user-score')
-const highScore = document.getElementById('user-high-score')
+const highScore = document.getElementById('high-score')
 const easyMode = document.getElementById('easy-mode')
 const hardMode = document.getElementById('hard-mode')
 const retroMode = document.getElementById('retro-mode')
@@ -202,20 +202,17 @@ function calculateScore() {
 }
 
 var highScoreElem = document.getElementById('best-score');
-function easygameEnd(){
-    questionContainerElement.classList.add('hide')
-    if (scoreElem > highScoreElem){
-        var tempscore = 0;
-        tempscore += scoreElem;
-        highScoreElem.innerHTML = tempscore;
-    }
-    
-}
 
 function retrogameEnd(){
     questionContainerElement.classList.add('hide')
-
+    highScoreElem.innerHTML = scoreElem.innerHTML;
 }
+
+function easygameEnd(){
+    questionContainerElement.classList.add('hide')
+    highScoreElem.innerHTML = scoreElem.innerHTML;
+}
+
 
 const questions = [
     {
@@ -427,13 +424,13 @@ const retroquestions = [
         answers: [
             { text: 'UCC Green', correct: false },
             { text: 'Fitzgeralds Park', correct: true},
-            { text: 'St Finbars Cemetery', correct: false},
-            { text: 'St Annes Pitch & Putt', correct: false }
+            { text: 'St Finbars', correct: false},
+            { text: 'St Annes', correct: false }
         ]
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Grande Parade Retro.jpg',
+        image: '/static/images/retro/Dominican Church Retro.jpg',
         answers: [
             { text: 'Shandon Bells', correct: false },
             { text: 'North Cathedral', correct: false },
