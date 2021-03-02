@@ -5,6 +5,7 @@ let coords = [];
 let currentIndex = 0;
 let disableClicks = false;
 let score =0;
+let latestScore = 0;
 
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in miles
@@ -106,19 +107,27 @@ function calculateDistance(){
   //addLine(linepath);
   var distance = haversine_distance(markers[0],markers[1]);
   console.log("Distance between markers: " + distance.toFixed(2) + " mi.");
-  document.getElementById('distancefrom').innerHTML = "You clicked: " + distance.toFixed(2) + " km away from the actual location";
+  
   if(distance.toFixed(2)<=.5){
-    score+=100
-  }
-  if(distance.toFixed(2)>.5){
-    if(distance.toFixed(2)<=1){
-      score+=90
+    if(distance.toFixed(2)<=.1){
+      score=latestScore+=150;
     }
     else{
-      score += Math.floor(90/distance.toFixed(2));
+      score=latestScore+=100;
+    }
+    
+  }
+  if(distance.toFixed(2)>.5){
+
+    if(distance.toFixed(2)<=1){
+      score=latestScore+=80
+    }
+    else{
+      score=latestScore += Math.floor(80/distance.toFixed(2));
     }
   }
-  
+  document.getElementById('distancefrom').innerHTML = "You clicked: " + distance.toFixed(2) + " km away from the actual location"+"<br/>"+"Points earned: "+latestScore;
+  latestScore = 0;
   
   document.getElementById('result').style.display = "block";
 
