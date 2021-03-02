@@ -20,9 +20,7 @@
                 <div id="user-name">Welcome {{request.user}}!</div>
                 <div id="score">
                     <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
-                    <div id="user-high-score" class="hide">High Score : <span id="best-score">0</span>
-                    </div>
-                </div>
+                    <div id="high-score" class="hide">High Score : <span id="best-score">0</span></div>
             </section>
             <img id="cork-flag" src="https://images-na.ssl-images-amazon.com/images/I/61212Gwv4nL._AC_SL1500_.jpg">
             <h1 id="mode-text">Select Gamemode</h1>
@@ -39,15 +37,17 @@
                 <section id="question-timer"></section>
             </section>
             <section id="controls" class="hide">
-                <button id="leaderboard" class="btn" onclick="document.location.href='/leaderboard'"><i class="fas fa-crown"> </i> Leaderboard</button>
+                <button id="leaderboard" class="btn" onclick="document.location.href='/leaderboard'"><i
+                        class="fas fa-crown"> </i> Leaderboard</button>
                 <button id="next-btn" class="next-btn btn hide">Next Location</button>
                 <button id="restart-btn" class="hide btn">End Game</button>
                 <button id="easy-mode" class=" btn">Easy Mode</button>
                 <button id="retro-mode" class=" btn">Retro Mode</button>
                 <button id="hard-mode" class=" btn" onclick="document.location.href='/game1'">Hard Mode</button>
             </section>
-            <button id="redirect_home" onclick="document.location.href='/home'" class="hide"><i class="fas fa-home"></i></button>
-        
+            <button id="redirect_home" onclick="document.location.href='/home'" class="hide"><i
+                    class="fas fa-home"></i></button>
+
         </section>
     </main>
     {% endblock content %}
