@@ -29,9 +29,12 @@
             </li>
         </ul>-->
         <ol id="leaderboard1">
-            {% for user in users %}
+            {% for user,score in users.items %}
                 <li>
-                    <span> {{ user }} </span>
+                    <span> 
+                        {{ user }} 
+                        {{ score }}
+                    </span>
                 </li>
             {% endfor %}
         </ol>
