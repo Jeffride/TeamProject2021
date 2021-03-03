@@ -1,10 +1,10 @@
 # forms.py 
 from django import forms 
-from upload_image.models import Hotel
+from upload_image.models import Image_Upload
   
-class HotelForm(forms.ModelForm): 
+class Image_Upload_Form(forms.ModelForm): 
   
     class Meta: 
-        model = Hotel 
-        fields = ['hotel_Main_Img', 'hotel_medium_img', 'hotel_retro_img']
+        model = Image_Upload 
+        fields = ['easy_img', 'hard_img', 'retro_img']
         

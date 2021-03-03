@@ -3,11 +3,12 @@ from django.contrib.auth.models import Group
 
 
 # Register your models here.
-from .models import Hotel
-admin.site.site_header = "John is cool"
+from upload_image.models import Image_Upload
 
-class SnippetHotel(admin.ModelAdmin):
+admin.site.site_header = "John is nice"
+
+class Snippet_Image_Upload(admin.ModelAdmin):
     exclude = ("name",)
 
 
-admin.site.register(Hotel, SnippetHotel)
+admin.site.register(Image_Upload, Snippet_Image_Upload)
