@@ -24,9 +24,9 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             # create user object with score set to 0
-            user = User(user_name=username,high_score=0)
+            #user = User(user_name=username,high_score=0)
             # save the user in the django database using API
-            user.save()
+            #user.save()
             messages.success(request, f"New account created: {username}")
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username,password=raw_password)
