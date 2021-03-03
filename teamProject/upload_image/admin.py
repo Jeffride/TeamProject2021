@@ -8,7 +8,6 @@ admin.site.site_header = "John is cool"
 
 class SnippetHotel(admin.ModelAdmin):
     exclude = ("name",)
-    #change_list_template = 'admin/snippets/snippets_change_list.html'
 
 
 admin.site.register(Hotel, SnippetHotel)
