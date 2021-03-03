@@ -22,8 +22,7 @@ from datetime import date
         context={'number_of_users':User.objects.count()}
     return render(request, 'leaderboard.html', context)'''
 
-            #score = user1.high_score
-            #print(score)
+
 
 def leaderboard(request):
     userScores = {}
@@ -33,6 +32,7 @@ def leaderboard(request):
                 userScores[user.username] = user1.high_score
             else:
                 userScores[user.username] = "No high score yet"
+
     context={
 
         #"users": User.objects.all(),
