@@ -10,7 +10,7 @@ def hotel_image_view(request):
   
         if form.is_valid(): 
             form.save() 
-            return redirect('success') 
+            return redirect('image_upload') 
     else: 
         form = HotelForm() 
     return render(request, 'hotel_image_form.html', {'form' : form}) 
