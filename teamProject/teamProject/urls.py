@@ -35,7 +35,7 @@ urlpatterns = [
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
     path('game1/',mapsViews.main, name='main-game'),
     path('image_upload/', uploadViews.hotel_image_view, name = 'image_upload'), 
-    path('success/', uploadViews.success, name = 'success'), 
+    #path('success/', uploadViews.success, name = 'success'), 
 
 ]
 

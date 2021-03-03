@@ -9,12 +9,12 @@ def hotel_image_view(request):
         form = HotelForm(request.POST, request.FILES) 
   
         if form.is_valid(): 
-            #form.save() 
-            return redirect('success') 
+            form.save() 
+            #return redirect('success') 
     else: 
         form = HotelForm() 
-    return render(request, 'hotel_image_form.html', {'form' : form}) 
+    return render(request, 'hotel_image_form.html') 
   
   
-def success(request): 
-    return HttpResponse('successfully uploaded') 
+#def success(request): 
+#    return HttpResponse('successfully uploaded') 
