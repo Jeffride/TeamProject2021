@@ -7,4 +7,5 @@ class Image_Upload_Form(forms.ModelForm):
     class Meta: 
         model = Image_Upload 
         fields = ['easy_img', 'hard_img', 'retro_img']
+
         

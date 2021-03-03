@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <head>
+        {% load static %}
+        <link rel="stylesheet"  href="{% static 'leaderboard.css' %}">
+        <!-- Google fonts links -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <div class="container">
+        <div id="database_swtiches">
+            <button class="all_time">All time</button>
+            <button class="weekly">Weekly</button>
+        </div>
+        {% if number_of_users > 0 %}
+        <ul class="container">
+            <li id="first">
+                <span> {{ 1rst }}</span>
+            </li>
+            <li id="second">
+                <span> {{ 2nd }}</span>
+            </li>
+            <li id="third">
+                <span> {{ 3rd }}</span>
+            </li>
+        </ul>
+        <ol id="leaderboard1">
+            {% for user in rest_of_users %}
+                <li>
+                    <span> {{ user }} {{ high_score }} </span>
+                </li>
+            {% endfor %}
+        </ol>
+        {% else %}
+            <p>No users available.</p>
+        {% endif %}
+
+    </div>
+{% endblock content %}

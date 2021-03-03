@@ -1,0 +1,16 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Hotel_image</title> 
+</head> 
+<body> 
+    <form method = "post" enctype="multipart/form-data"> 
+        <h1>EASY</h1>
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button type="submit">Upload</button> 
+        <h1>---------------------------------------------</h1>
+    </form> 
+</body> 
+</html> 
