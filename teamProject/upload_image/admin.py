@@ -5,7 +5,7 @@ from django.contrib.auth.models import Group
 # Register your models here.
 from upload_image.models import Image_Upload
 
-admin.site.site_header = "John is nice"
+admin.site.site_header = "Administration Page"
 
 class Snippet_Image_Upload(admin.ModelAdmin):
     exclude = ("name",)
