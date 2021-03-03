@@ -3,9 +3,10 @@ from django.contrib.auth.models import Group
 
 # Register your models here.
 from .models import Hotel
+admin.site.site_header = "John is cool"
 
 class SnippetHotel(admin.ModelAdmin):
-    exclude = ("title", )
+    exclude = ("name",)
 
 admin.site.register(Hotel, SnippetHotel)
 

@@ -8,4 +8,4 @@ class HotelForm(forms.ModelForm):
         model = Hotel 
         #fields = ['name', 'hotel_Main_Img']
         fields = ['hotel_Main_Img', 'hotel_medium_img', 'hotel_retro_img']
-        #fields = ['hotel_medium_img']
+        
