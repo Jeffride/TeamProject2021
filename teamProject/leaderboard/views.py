@@ -21,16 +21,18 @@ from datetime import date
     else:
         context={'number_of_users':User.objects.count()}
     return render(request, 'leaderboard.html', context)'''
-userScores = {}
-for user in User.objects.all():
-    for user1 in Profile.objects.all():
-        if user.username == user1.user_name:
-            userScores[user.username] = user1.high_score
-        else:
-            userScores[user.username] = "No high score yet"
+
             #score = user1.high_score
             #print(score)
+
 def leaderboard(request):
+    userScores = {}
+    for user in User.objects.all():
+        for user1 in Profile.objects.all():
+            if user.username == user1.user_name:
+                userScores[user.username] = user1.high_score
+            else:
+                userScores[user.username] = "No high score yet"
     context={
 
         #"users": User.objects.all(),
