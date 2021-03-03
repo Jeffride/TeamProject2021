@@ -130,3 +130,20 @@ header .container{
 #scoreform input{
     padding: .5em;
 }
+#endGame {
+    border: solid black 1.5px;
+    position: absolute;
+    right: 1%;
+    padding: .8em;
+    margin: .5em;
+    font-size: 1em;
+    font-family: 'Slabo 27px', serif;
+    box-shadow: 2px 2px 5px;
+
+}
+#endGame:hover{
+    border: solid white 1.5px;
+    color: white;
+    background-color: black;
+    box-shadow: black 2px 2px 5px;
+}

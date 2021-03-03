@@ -12,6 +12,7 @@
 </head>
 {% load static %}
   <body>
+    <button id="endGame" onclick="gameOver()">End game</button> 
     <form method="POST" id="scoreform">
       {% csrf_token %}
       {{ form }}
