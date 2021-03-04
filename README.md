@@ -11,6 +11,10 @@
 * [Mark Cullinane](https://github.com/mcullinane28)
 * [Jeff Attride](https://github.com/Jeffride)
 
+## Contribution
+![image](https://user-images.githubusercontent.com/43136483/109977951-461bf080-7cf5-11eb-9080-f17b147a38aa.png)
+
+
 ## Scrum Standup Timetable
 1. [Jeff Attride](https://github.com/Jeffride) (3rd February)
 2. [John Wales](https://github.com/JohnWales) (8th February)
