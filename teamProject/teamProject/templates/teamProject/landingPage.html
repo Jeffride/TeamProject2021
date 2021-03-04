@@ -1,12 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
+<head>
+    {% load static %}
+    <link href="{% static 'landingPage/main.css' %}" rel="stylesheet">
+    {% load static %}
+</head>
 <div class="container">
-    <div id="login"> 
-        <ul >
-        <li><a href="/signin">Log in</a></li>
-        <li><a href="/register">Register</a></li>
-        </ul>
+    {% load static %}
+    
+    <div id="register">
+        <div id="top1">
+            <p>Register now and start exploring!</p>
+            <img src="{% static 'images/geotag.png' %}" id="geotag">
+
+        </div>
+    
+    <form method="POST" id="regform">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Sign Up</button>
+    </form>
     </div>
+    <div id="signin">
+        <p>Already have an account , <a href="/signin">Log in now</a></li></p>
+    
+        </div>
     <footer>
     
     </footer>
