@@ -14,10 +14,13 @@
     </head>
     <div class="container">
         <div id="database_swtiches">
-            <button class="all_time">All time</button>
-            <button class="weekly">Weekly</button>
+            <button class="all_time" onclick=showAllTime()>All time</button>
+            <button class="easy" onclick=showEasy()>Easy Mode</button>
+            <button class="hard" onclick=showHard()>Hard Mode</button>
+            <button class="retor" onclick=showRetro()>Retro Mode</button>
         </div>
         <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
+        <h2 id="leaderboard_name">All time</h2>
         {% if number_of_users > 0 %}
         <!--<ul class="container">
             <li id="first">
