@@ -4,6 +4,8 @@
     <head>
         {% load static %}
         <link rel="stylesheet"  href="{% static 'leaderboard.css' %}">
+        {% load static %}
+        <script src="{% static 'leaderboard.js' %}"></script>
         <!-- Google fonts links -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
@@ -29,14 +31,21 @@
             </li>
         </ul>-->
         <ol id="leaderboard1">
-            {% for user,score in users.items %}
+            <p>Username | EasyScore HardScore RetroScore</p>
+            {% for user in users %}
                 <li>
-                    <span> 
-                        {{ user }} 
-                        {{ score }}
-                    </span>
+                    <span>{{ user }} | <> <> <> </span>
                 </li>
             {% endfor %}
+        </ol>
+        <ol id="easyLeaderboard">
+            <p>Easy leaderboard goes here</p>
+        </ol>
+        <ol id="HardLeaderboard">
+            <p>Hard leaderboard goes here</p>
+        </ol>
+        <ol id="RetroLeaderboard">
+            <p>Retro leaderboard goes here</p>
         </ol>
         {% else %}
             <p>No users available.</p>

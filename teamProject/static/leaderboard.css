@@ -82,3 +82,12 @@ ul li{
     border-radius: 50px;
     padding: 10px;
 }
+#leaderboard_name{
+    position: relative;
+    left: 150%;
+    margin: 20px;
+    font-size: 40px;
+}
+#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
+    display: none;
+}
