@@ -11,6 +11,10 @@
 * [Mark Cullinane](https://github.com/mcullinane28)
 * [Jeff Attride](https://github.com/Jeffride)
 
+## Contribution
+![image](https://user-images.githubusercontent.com/43136483/109977951-461bf080-7cf5-11eb-9080-f17b147a38aa.png)
+
+
 ## Scrum Standup Timetable
 1. [Jeff Attride](https://github.com/Jeffride) (3rd February)
 2. [John Wales](https://github.com/JohnWales) (8th February)
@@ -18,19 +22,30 @@
 4. [Mark Cullinane](https://github.com/mcullinane28) (22nd February)
 5. [Eoin Treacy](https://github.com/treacy998) (1st March)
 
-### Guide:
+### Prerequisites for running locally
+- latest version of Django framework
+- Python3
 
-* Starting the Django developement server: 
-1. CD into the git directory containing the project and navigate to the folder containing manage.py
-2. Next type the commmand "python manage.py runserver", this will start a developement server at http://127.0.0.1:8000/ in your browser, all changes made locally will be visible here.
+### Start-up Guide:
+1. Clone this repo to your local machine
+2. Navigate to the downloaded folder.
+3. CD into the git directory containing the project and navigate to the folder containing manage.py
+4. Next type the commmand "python manage.py runserver", this will start a developement server at http://127.0.0.1:8000/ in your browser.
+5. Open your browser and open http://127.0.0.1:8000/.
 
 ### Compatibility
 
 * This project has been tested on Mac, Linux and Windows
 
 ### Booch Diagram
-![Untitled Diagram](https://user-images.githubusercontent.com/43136483/108704752-5ae1d280-7504-11eb-853a-7e442a0b13a6.png)
+![Image 04-03-2021 at 14 07](https://user-images.githubusercontent.com/55900589/109976239-75c9f900-7cf3-11eb-88e1-659fe70b8753.jpg)
 
+## Latest Updates 04/03/2021
+* Admin page added for private image uploading
+* Retro mode implemented
+* leaderboard linked to maps mode
+* improved css styling accross the app
+* bug fixes
 
 ## Latest Updates 22/02/2021
 * Random place generated on page load
