@@ -36,6 +36,12 @@
 ### Booch Diagram
 ![Image 04-03-2021 at 14 07](https://user-images.githubusercontent.com/55900589/109976239-75c9f900-7cf3-11eb-88e1-659fe70b8753.jpg)
 
+## Latest Updates 22/03/2021
+* Admin page added for private image uploading
+* Retro mode implemented
+* leaderboard linked to maps mode
+* improved css styling accross the app
+* bug fixes
 
 ## Latest Updates 22/02/2021
 * Random place generated on page load
