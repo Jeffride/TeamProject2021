@@ -30,5 +30,4 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
     path('game1/',mapsViews.main, name='main-game')
-
 ]
