@@ -44,7 +44,26 @@
 * common css styling across pages using a grid layout.
 * images fetched and stored in effiecient manor.
 * each page linked up to each other.
-### Latest Screenshots
+### Latest Screenshots 
+## 04/03/2021
+#### Login page
+![image](Screenshots/screenshots04-03-21/loginPage.PNG)
+#### Registration page
+![image](Screenshots/screenshots04-03-21/registerPage.PNG)
+#### Home page
+![image](Screenshots/screenshots04-03-21/homepage.PNG)
+#### Easy mode
+![image](Screenshots/screenshots04-03-21/easymode.PNG)
+![image](Screenshots/screenshots04-03-21/easymode2.PNG)
+#### Retro mode
+![image](Screenshots/screenshots04-03-21/retromode.PNG)
+#### Hard mode
+![image](Screenshots/screenshots04-03-21/mapsmode1.PNG)
+![image](Screenshots/screenshots04-03-21/mapsmode2.PNG)
+#### Leaderboard
+![image](Screenshots/screenshots04-03-21/leaderboard.PNG)
+
+## 07/02/2021
 #### Login page
 
 ![image](https://user-images.githubusercontent.com/43136483/107159909-e008ab80-698a-11eb-9618-390b662a4d33.png)
