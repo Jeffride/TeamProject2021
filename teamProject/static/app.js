@@ -22,6 +22,7 @@ var elem = document.getElementById('question-timer');
 var timerReset = 20;
 var timeLeft = 20;
 var timer1 = setInterval(countdown,1500)
+var highScoreElem = document.getElementById('best-score');
 
 
 showLeaderboard.addEventListener('click', showLeaderboard)
@@ -89,6 +90,7 @@ function setNextQuestion() {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
     nextButton.addEventListener('click', resetTimer())
+    highScoreElem.innerHTML = scoreElem.innerHTML;
 }
 
 function setNextRetroQuestion() {
@@ -99,6 +101,7 @@ function setNextRetroQuestion() {
     resetState()
     showRetroQuestion(shuffledQuestions[currentQuestionIndex])
     nextButton.addEventListener('click', resetTimer())
+    highScoreElem.innerHTML = scoreElem.innerHTML;
 }
 
 function showQuestion(question) {
@@ -142,27 +145,6 @@ function resetTimer() {
     countdown()
 }
 
-function countdown() {
-    elem.innerHTML = timeLeft + ' seconds remaining';
-    if (timeLeft == 0) {
-        elem.innerHTML = 'Ran out of time!'
-        currentQuestionIndex++
-        setTimeout(setNextQuestion,1000)
-    }
-    else {
-        elem.innerHTML = timeLeft + ' seconds remaining';
-        timeLeft--;
-    }
-}
-
-function resetState() {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-    }
-}
-
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -179,6 +161,29 @@ function selectAnswer(e) {
     redirectHome.classList.remove('hide')
     
 }
+
+function countdown() {
+    elem.innerHTML = timeLeft + ' seconds remaining';
+    if (timeLeft == 0) {
+        elem.innerHTML = 'Ran out of time!'
+        currentQuestionIndex++
+        setTimeout(setNextQuestion,2000)
+    }
+    else{
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+    }
+}
+
+function resetState() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+}
+
+
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
@@ -200,8 +205,6 @@ function calculateScore() {
     roundScore += timeLeft;
     scoreElem.innerHTML = roundScore;
 }
-
-var highScoreElem = document.getElementById('best-score');
 
 function retrogameEnd(){
     questionContainerElement.classList.add('hide')
