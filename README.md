@@ -18,11 +18,15 @@
 4. [Mark Cullinane](https://github.com/mcullinane28) (22nd February)
 5. [Eoin Treacy](https://github.com/treacy998) (1st March)
 
-### Guide:
+### Prerequisites for running locally
+- latest version of Django framework
+- Python3
 
-* Starting the Django developement server: 
-1. CD into the git directory containing the project and navigate to the folder containing manage.py
-2. Next type the commmand "python manage.py runserver", this will start a developement server at http://127.0.0.1:8000/ in your browser, all changes made locally will be visible here.
+### Start-up Guide:
+1. Clone this repo to your local machine
+2. Navigate to the downloaded folder.
+3. CD into the git directory containing the project and navigate to the folder containing manage.py
+4. Next type the commmand "python manage.py runserver", this will start a developement server at http://127.0.0.1:8000/ in your browser, all changes made locally will be visible here.
 
 ### Compatibility
 
