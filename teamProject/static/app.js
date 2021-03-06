@@ -10,7 +10,6 @@ const gamemodeText = document.getElementById('mode-text')
 const corkImage = document.getElementById('cork-flag')
 const userName = document.getElementById('user-name')
 const userScore = document.getElementById('user-score')
-const highScore = document.getElementById('high-score')
 const easyMode = document.getElementById('easy-mode')
 const hardMode = document.getElementById('hard-mode')
 const retroMode = document.getElementById('retro-mode')
@@ -21,8 +20,7 @@ let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
 var timeLeft = 20;
-var timer1 = setInterval(countdown,1500)
-var highScoreElem = document.getElementById('best-score');
+var timer1;
 
 
 showLeaderboard.addEventListener('click', showLeaderboard)
@@ -45,7 +43,6 @@ function pickEasyMode() {
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
-    highScore.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -62,7 +59,6 @@ function pickRetroMode() {
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
-    highScore.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = retroquestions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -89,8 +85,7 @@ function setNextQuestion() {
     }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
-    nextButton.addEventListener('click', resetTimer())
-    highScoreElem.innerHTML = scoreElem.innerHTML;
+    nextButton.addEventListener('click', restart())
 }
 
 function setNextRetroQuestion() {
@@ -100,8 +95,7 @@ function setNextRetroQuestion() {
     }
     resetState()
     showRetroQuestion(shuffledQuestions[currentQuestionIndex])
-    nextButton.addEventListener('click', resetTimer())
-    highScoreElem.innerHTML = scoreElem.innerHTML;
+    nextButton.addEventListener('click', restart())
 }
 
 function showQuestion(question) {
@@ -145,7 +139,12 @@ function resetTimer() {
     countdown()
 }
 
+function restart(){
+    timer1=setInterval(countdown,1500)
+}
+
 function selectAnswer(e) {
+    clearInterval(timer1);
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     if (correct) {
@@ -200,20 +199,24 @@ function clearStatusClass(element) {
 }
 
 var roundScore = 0;
+var endScore = 0;
 var scoreElem = document.getElementById('new-score');
 function calculateScore() {
     roundScore += timeLeft;
     scoreElem.innerHTML = roundScore;
+    endScore = roundScore;
 }
 
 function retrogameEnd(){
     questionContainerElement.classList.add('hide')
-    highScoreElem.innerHTML = scoreElem.innerHTML;
+    var retroHighScore = endScore;
+    //Variable for leaderboard 
 }
 
 function easygameEnd(){
     questionContainerElement.classList.add('hide')
-    highScoreElem.innerHTML = scoreElem.innerHTML;
+    var easyHighScore = endScore;
+    //Variable for leaderboard 
 }
 
 
