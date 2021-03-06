@@ -203,7 +203,7 @@ var endScore = 0;
 var scoreElem = document.getElementById('new-score');
 function calculateScore() {
     roundScore += timeLeft;
-    scoreElem.innerHTML = roundScore;
+    scoreElem.innerHTML = roundScore + 1;
     endScore = roundScore;
 }
 
