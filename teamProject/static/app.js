@@ -15,7 +15,8 @@ const hardMode = document.getElementById('hard-mode')
 const retroMode = document.getElementById('retro-mode')
 const controls = document.getElementById('controls')
 const containerElem = document.getElementById('container')
-
+const userInfo = document.getElementById('user-info')
+const timerElem = document.getElementById('question-timer')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -52,6 +53,10 @@ function pickEasyMode() {
 }
 
 function pickRetroMode() {
+    document.body.style.backgroundImage ="url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
+    containerElem.style.backgroundColor = "#a9a29e";
+    timerElem.style.backgroundColor = "#477b65";
+    userInfo.style.backgroundColor = "#477b65";
     showLeaderboard.classList.add('hide')
     corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
