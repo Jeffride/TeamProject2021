@@ -3,6 +3,9 @@
     margin: 0;
     font-family: 'Expletus Sans', cursive;
 }
+.container{
+    width: 100%;
+}
 
 body {
     padding: 0;
