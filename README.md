@@ -23,7 +23,7 @@
 5. [Eoin Treacy](https://github.com/treacy998) (1st March)
 
 ### Prerequisites for running locally
-- latest version of Django framework
+- Latest version of Django framework
 - Python3
 
 ### Start-up Guide:
@@ -44,21 +44,21 @@
 * Admin page added for private image uploading
 * Retro mode implemented
 * leaderboard linked to maps mode
-* improved css styling accross the app
-* bug fixes
+* Improved CSS styling accross the app
+* Bug fixes
 
 ## Latest Updates 22/02/2021
 * Random place generated on page load
-* google maps implemented under the hard mode
-* improved css styling
-* bug fixes
+* Google maps implemented under the hard mode
+* Improved CSS styling
+* Bug fixes
 
 ## Latest Updates 7/02/2021
 * login/registration page styled and tested with many test cases such as invalid passwords/usernames etc.
 * leaderboard implemented.
-* common css styling across pages using a grid layout.
-* images fetched and stored in effiecient manor.
-* each page linked up to each other.
+* Common CSS styling across pages using a grid layout.
+* Images fetched and stored in effiecient manor.
+* Each page linked up to each other.
 ### Latest Screenshots 
 ## 04/03/2021
 #### Login page
