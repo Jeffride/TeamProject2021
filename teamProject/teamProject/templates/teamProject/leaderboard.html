@@ -35,9 +35,10 @@
         </ul>-->
         <ol id="leaderboard1">
             <p>Username | EasyScore HardScore RetroScore</p>
-            {% for user in users %}
+            {% for user,score in users %}
                 <li>
-                    <span>{{ user }} | <> <> <> </span>
+                    <!--<span>{{ user }} | <> <> <> </span>-->
+                    <span> {{ user }} | {{ score }}</span>
                 </li>
             {% endfor %}
         </ol>

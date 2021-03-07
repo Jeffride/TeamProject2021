@@ -31,13 +31,23 @@ def leaderboard(request):
             if user.username == user1.user_name:
                 userScores[user.username] = user1.high_score
             else:
-                userScores[user.username] = "No high score yet"
-
+                userScores[user.username] = 0
+    dict1 = userScores
+    sorted_values = sorted(dict1.values(),reverse=True) # Sort the values
+    sorted_dict = {}
+    for i in sorted_values:
+        for k in dict1.keys():
+            if dict1[k] == i and k not in sorted_dict:
+                sorted_dict[k] = dict1[k]
+                break
     context={
-
         #"users": User.objects.all(),
-        "users": userScores,
+        #"users": sorted_dict.items(),
+        #"UserScore": userScores,
+        #"dict1":dict1,
+        #"sorted_values":sorted_values,
         #"score":userScores.values(),
+        "users": sorted_dict.items(),
         "number_of_users": User.objects.count(),
     }
     return render(request, 'leaderboard.html', context)
