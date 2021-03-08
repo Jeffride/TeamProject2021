@@ -37,7 +37,7 @@ main {
     height: 600px;
     width: 400px;
     padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     border-radius: 5px;
     text-align: center;
 }
@@ -201,7 +201,7 @@ main {
 }
 
 #scoreform{
-    left: -550px;
+    left: -620px;
     top: 300px;
     font-size: 2em;
     display: none;

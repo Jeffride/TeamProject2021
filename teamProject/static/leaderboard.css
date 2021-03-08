@@ -23,7 +23,7 @@ li,p{
     margin: 5px;
     border: 2px solid black;
     padding:10px;
-    width: 30%;
+    width: 30vw;
     background-color: white;
 }
 span{
@@ -75,7 +75,7 @@ ul li{
 /* centre the ol in the page */
 #leaderboard1{
     display: grid;
-    width: 80%;
+    width: 80vw;
     grid-area: footer;
     margin: auto;
     align-items: center;
@@ -89,6 +89,9 @@ ul li{
     border: 2px solid black;
     border-radius: 50px;
     padding: 10px;
+    top: 40px;
+    left: 100px;
+    
 }
 #leaderboard_name{
     position: relative;
@@ -98,4 +101,18 @@ ul li{
 }
 #easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     display: none;
+}
+
+#database_swtiches{
+    top: 60px;
+    width: 400px;
+    left: 1200px;
+}
+
+#database_swtiches button{
+    padding: 5px;
+    border: solid black 1.5px;
+    font-size: 1em;
+    font-family: 'Slabo 27px', serif;
+    box-shadow: 2px 2px 5px;
 }

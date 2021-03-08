@@ -225,6 +225,7 @@ function retrogameEnd() {
     //Variable for leaderboard 
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = retroHighScore;
+    submitButton.classList.remove('hide')
 }
 
 function easygameEnd() {
@@ -233,6 +234,7 @@ function easygameEnd() {
     //Variable for leaderboard 
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = easyHighScore;
+    submitButton.classList.remove('hide')
 }
 
 

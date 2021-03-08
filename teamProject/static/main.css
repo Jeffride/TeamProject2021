@@ -9,7 +9,7 @@
 .container {  
     width: 100vw;
     display: grid;  
-    height: 150px;
+    height: 130px;
     grid-template-columns: 20% 60% 20%; 
     grid-template-rows: auto;  
     grid-template-areas: 
@@ -22,7 +22,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;  
-    background-image: url("/static/images/corkCity.png");
+    background-image: url("/static/images/pages/corkAerial.jpg");
     max-width: 100%;
     padding: 0;
     margin: 0;
@@ -31,14 +31,14 @@ body {
     background-color: #000000;
 }
 #top {
-    padding-top: 1em;
     padding-bottom:0px;
     width: 100vw;
     font-family: 'Slabo 27px', serif;
     font-weight: 400;
     grid-area: header;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.637);
+    background-color: rgb(255, 255, 255);
+    border-bottom: 5px solid red ;
 }
 #top button{
     width: max-content;
@@ -50,6 +50,7 @@ body {
 }
 #top h1{
     grid-area: main;
+    top: 2px;
 }
 #login {
     font-weight: bold;
@@ -89,10 +90,11 @@ a:hover {
     background-color: black;
 }
 #redirect_home{
+    font-size: 2em;
     border: 2px solid black;
     border-radius: 50px;
     padding: 10px;
     position: absolute;
-    top:1.5%;
-    left:2%;
+    top: 40px;
+    left: 100px;
 }
