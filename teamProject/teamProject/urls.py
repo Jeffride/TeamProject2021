@@ -29,5 +29,6 @@ urlpatterns = [
     path('signin/',userViews.signin,name='signin'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
-    path('game1/',mapsViews.main, name='main-game')
+    path('game1/',mapsViews.main, name='main-game'),
+    path('about_us/', userViews.about_us, name='about-us')
 ]
