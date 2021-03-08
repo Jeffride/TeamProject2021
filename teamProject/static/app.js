@@ -150,7 +150,7 @@ function resetTimer() {
 }
 
 function restart() {
-    timer1 = setInterval(countdown, 1500)
+    timer1 = setInterval(countdown, 900)
     answerButtonsElement.classList.remove('hide')
 }
 
