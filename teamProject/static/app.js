@@ -17,12 +17,13 @@ const controls = document.getElementById('controls')
 const containerElem = document.getElementById('container')
 const userInfo = document.getElementById('user-info')
 const timerElem = document.getElementById('question-timer')
+const endButton = document.getElementById('endGame')
+const submitButton = document.getElementById('submit')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
 var timeLeft = 20;
 var timer1;
-
 
 showLeaderboard.addEventListener('click', showLeaderboard)
 easyMode.classList.remove('hide')
@@ -37,6 +38,8 @@ nextButton.addEventListener('click', () => {
 
 
 function pickEasyMode() {
+    document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
+    endButton.classList.remove('hide')
     showLeaderboard.classList.add('hide')
     corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
@@ -53,7 +56,9 @@ function pickEasyMode() {
 }
 
 function pickRetroMode() {
-    document.body.style.backgroundImage ="url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
+    document.getElementById('endGame').setAttribute('onclick', "retrogameEnd()")
+    endButton.classList.remove('hide')
+    document.body.style.backgroundImage = "url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
     containerElem.style.backgroundColor = "#a9a29e";
     timerElem.style.backgroundColor = "#477b65";
     userInfo.style.backgroundColor = "#477b65";
@@ -144,8 +149,9 @@ function resetTimer() {
     countdown()
 }
 
-function restart(){
-    timer1=setInterval(countdown,1500)
+function restart() {
+    timer1 = setInterval(countdown, 1500)
+    answerButtonsElement.classList.remove('hide')
 }
 
 function selectAnswer(e) {
@@ -154,6 +160,7 @@ function selectAnswer(e) {
     const correct = selectedButton.dataset.correct
     if (correct) {
         calculateScore()
+        answerButtonsElement.classList.add('hide')
     }
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
@@ -161,9 +168,9 @@ function selectAnswer(e) {
     })
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove('hide')
-    } 
+    }
     redirectHome.classList.remove('hide')
-    
+
 }
 
 function countdown() {
@@ -171,9 +178,9 @@ function countdown() {
     if (timeLeft == 0) {
         elem.innerHTML = 'Ran out of time!'
         currentQuestionIndex++
-        setTimeout(setNextQuestion,2000)
+        setTimeout(setNextQuestion, 2000)
     }
-    else{
+    else {
         elem.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
     }
@@ -212,16 +219,20 @@ function calculateScore() {
     endScore = roundScore;
 }
 
-function retrogameEnd(){
+function retrogameEnd() {
     questionContainerElement.classList.add('hide')
     var retroHighScore = endScore;
     //Variable for leaderboard 
+    document.getElementById("scoreform").style.display = "block";
+    document.getElementById("id_high_score").value = retroHighScore;
 }
 
-function easygameEnd(){
+function easygameEnd() {
     questionContainerElement.classList.add('hide')
     var easyHighScore = endScore;
     //Variable for leaderboard 
+    document.getElementById("scoreform").style.display = "block";
+    document.getElementById("id_high_score").value = easyHighScore;
 }
 
 
@@ -365,7 +376,7 @@ const retroquestions = [
         answers: [
             { text: 'South Mall', correct: true },
             { text: 'Dillons Cross', correct: false },
-            { text: 'Oliver Plunkett St', correct: false},
+            { text: 'Oliver Plunkett St', correct: false },
             { text: 'Washington St', correct: false }
         ]
     },
@@ -385,7 +396,7 @@ const retroquestions = [
         answers: [
             { text: 'Mercy Hospital', correct: false },
             { text: 'Cork University Hospital', correct: false },
-            { text: 'Mahon', correct: false},
+            { text: 'Mahon', correct: false },
             { text: 'Parnell Place', correct: true }
         ]
     },
@@ -395,7 +406,7 @@ const retroquestions = [
         answers: [
             { text: 'Mercy Hospital', correct: true },
             { text: 'Penrose Dock', correct: false },
-            { text: 'Firkin Crane', correct: false},
+            { text: 'Firkin Crane', correct: false },
             { text: 'Paul Street', correct: false }
         ]
     },
@@ -405,7 +416,7 @@ const retroquestions = [
         answers: [
             { text: 'Douglas River', correct: false },
             { text: 'The Lough', correct: false },
-            { text: 'Lee Fields', correct: true},
+            { text: 'Lee Fields', correct: true },
             { text: 'Port of Cork', correct: false }
         ]
     },
@@ -415,7 +426,7 @@ const retroquestions = [
         answers: [
             { text: 'Merchants Quay', correct: false },
             { text: 'Lapps Quay', correct: false },
-            { text: 'Patrick Street', correct: false},
+            { text: 'Patrick Street', correct: false },
             { text: 'Grande Parade', correct: true }
         ]
     },
@@ -425,7 +436,7 @@ const retroquestions = [
         answers: [
             { text: 'Fr Matthew Quay', correct: true },
             { text: 'Popes Quay', correct: false },
-            { text: 'Lower Glamire Road', correct: false},
+            { text: 'Lower Glamire Road', correct: false },
             { text: 'Grande Parade', correct: false }
         ]
     },
@@ -434,8 +445,8 @@ const retroquestions = [
         image: '/static/images/retro/Fitzgeralds Park Retro.jpg',
         answers: [
             { text: 'UCC Green', correct: false },
-            { text: 'Fitzgeralds Park', correct: true},
-            { text: 'St Finbars', correct: false},
+            { text: 'Fitzgeralds Park', correct: true },
+            { text: 'St Finbars', correct: false },
             { text: 'St Annes', correct: false }
         ]
     },
@@ -445,7 +456,7 @@ const retroquestions = [
         answers: [
             { text: 'Shandon Bells', correct: false },
             { text: 'North Cathedral', correct: false },
-            { text: 'Dominican Church', correct: true},
+            { text: 'Dominican Church', correct: true },
             { text: 'City Hall', correct: false }
         ]
     },
@@ -455,7 +466,7 @@ const retroquestions = [
         answers: [
             { text: 'Michael Collins Bridge', correct: false },
             { text: 'Brian Boru Bridge', correct: true },
-            { text: 'North Gate Bridge', correct: false},
+            { text: 'North Gate Bridge', correct: false },
             { text: 'Nano Nagle Bridge', correct: false }
         ]
     },
@@ -465,7 +476,7 @@ const retroquestions = [
         answers: [
             { text: 'Farrenree', correct: false },
             { text: 'Blackpool', correct: true },
-            { text: 'Knocknaheeny', correct: false},
+            { text: 'Knocknaheeny', correct: false },
             { text: 'Mayfield', correct: false }
         ]
     },
@@ -475,7 +486,7 @@ const retroquestions = [
         answers: [
             { text: 'Jacobs Island', correct: false },
             { text: 'Shanakiel', correct: false },
-            { text: 'Ballincollig', correct: true},
+            { text: 'Ballincollig', correct: true },
             { text: 'Wilton', correct: false }
         ]
     }
