@@ -26,7 +26,7 @@ SECRET_KEY = 'u%cs@^(cuxy&p=rhy0nsv#aerjp04kbw#0bem42q2secv6l3=9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1:8000','https://whereami.netsoc.cloud/','whereami.netsoc.cloud/','whereami.netsoc.cloud']
 
 
 # Application definition
