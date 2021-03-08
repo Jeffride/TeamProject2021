@@ -9,6 +9,7 @@
 .container {  
     width: 100vw;
     display: grid;  
+    height: 150px;
     grid-template-columns: 20% 60% 20%; 
     grid-template-rows: auto;  
     grid-template-areas: 
@@ -31,8 +32,8 @@ body {
 }
 #top {
     padding-top: 1em;
-    padding-bottom:1em;
-    width: 100%;
+    padding-bottom:0px;
+    width: 100vw;
     font-family: 'Slabo 27px', serif;
     font-weight: 400;
     grid-area: header;

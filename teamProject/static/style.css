@@ -9,9 +9,10 @@
 
 #finishGame{
     position: relative;
-   top: -50px;
-   right: -1300px;
+    top: -80px;
+    right: -1300px;
 }
+
 body {
     padding: 0;
     margin: 0;
@@ -26,7 +27,7 @@ main {
     grid-area: main;
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 /*-----------------------------Landing Page------------------------------------*/
@@ -119,7 +120,7 @@ main {
 }
 
 #question-container {
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 #question-image {
@@ -178,6 +179,8 @@ main {
 #next-btn {
     background-color: white;
     position: fixed;
+    margin: 10px;
+    right: 610px;
 }
 
 .fa-crown::before {
@@ -195,4 +198,47 @@ main {
 
 .hide {
     display: none;
+}
+
+#scoreform{
+    left: -550px;
+    top: 300px;
+    font-size: 2em;
+    display: none;
+    border: solid;
+    background-color: rgba(255, 255, 255, 0.753);
+    position: absolute;
+    padding: 2em;
+    z-index: +10;
+    text-align: center;
+    box-shadow: 0px 1px 20px 1px;
+
+}
+#scoreform input{
+    padding: .5em;
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size: 1em;
+    width: 4em;
+    border: .5px solid black;
+}
+#endGame {
+    padding: 10px;
+    border: solid black 1.5px;
+    position: absolute;
+    font-size: 1em;
+    font-family: 'Slabo 27px', serif;
+    box-shadow: 2px 2px 5px;
+
+}
+#endGame:hover{
+    border: solid white 1.5px;
+    color: white;
+    background-color: black;
+    box-shadow: black 2px 2px 5px;
+}
+#submit{
+    padding: 1em;
+    margin: 1em;
 }
