@@ -95,13 +95,3 @@ a:hover {
     top:1.5%;
     left:2%;
 }
-
-#about_us {
-    width: max-content;
-    padding: 1em;
-    grid-area: aside1;
-    margin-left: 1em;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-    font-size: 100px;
-}
