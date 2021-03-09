@@ -44,6 +44,7 @@ body {
     background-color: rgb(255, 255, 255);
     border-bottom: 5px solid red ;
 }
+/*
 #top button{
     width: max-content;
     padding: 1em;
@@ -51,7 +52,7 @@ body {
     margin-left: 1em;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-}
+}*/
 #top h1{
     grid-area: main;
     top: 2px;
