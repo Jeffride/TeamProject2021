@@ -68,6 +68,9 @@ def signin(request):
     form = AuthenticationForm()
     return render(request,"login.html",{"form":form})
 
+def about_us(request):
+    return render(request, "about_us.html")
+
 def logout_request(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
