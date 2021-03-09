@@ -1,8 +1,12 @@
-<h1>Hi</h1>
 {% extends 'base.html' %}
 {% block content %}
 <!DOCTYPE html>
 <html>
+    <head>
+        {% load static %}
+        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>
+        <img src="{% static 'favicon.ico' %}"/>
+    </head>
     <h1>John</h1>
 </html>
 {% endblock content %}
