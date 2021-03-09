@@ -7,11 +7,12 @@
     width: 100%;
 }
 
-#finishGame{
+/*#finishGame{
     position: relative;
     top: -80px;
     right: -1300px;
 }
+*/
 
 body {
     padding: 0;
@@ -201,7 +202,8 @@ main {
 }
 
 #scoreform{
-    left: -620px;
+    left: 30%;
+    right: 30%;
     top: 300px;
     font-size: 2em;
     display: none;
@@ -224,12 +226,14 @@ main {
     border: .5px solid black;
 }
 #endGame {
-    padding: 10px;
+    padding: 10px; 
     border: solid black 1.5px;
-    position: absolute;
     font-size: 1em;
     font-family: 'Slabo 27px', serif;
     box-shadow: 2px 2px 5px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
 
 }
 #endGame:hover{

@@ -222,6 +222,7 @@ function calculateScore() {
 function retrogameEnd() {
     questionContainerElement.classList.add('hide')
     var retroHighScore = endScore;
+    document.getElementById("id_high_score").value = endScore;
     //Variable for leaderboard 
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = retroHighScore;
@@ -231,13 +232,18 @@ function retrogameEnd() {
 function easygameEnd() {
     questionContainerElement.classList.add('hide')
     var easyHighScore = endScore;
+    document.getElementById("id_high_score").value = endScore;
     //Variable for leaderboard 
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = easyHighScore;
     submitButton.classList.remove('hide')
 }
 
-
+//PAGE LOADING INSTRUCTIONS
+window.onload = function(){
+    var form = document.getElementById("scoreform");
+    form.elements[1].readOnly = true;
+}
 const questions = [
     {
         question: 'Where is this?',
