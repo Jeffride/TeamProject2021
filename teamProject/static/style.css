@@ -5,6 +5,7 @@
 }
 .container{
     width: 100%;
+    
 }
 
 /*#finishGame{
@@ -15,6 +16,7 @@
 */
 #top{
     width: 100%;
+    background-color: #ffffffc9;
 }
 body {
     padding: 0;
@@ -36,7 +38,7 @@ main {
 /*-----------------------------Landing Page------------------------------------*/
 
 #container {
-    background-color: white;
+    background-color: #ffffffc9;
     height: 600px;
     width: 400px;
     padding: 20px;

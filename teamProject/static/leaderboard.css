@@ -37,11 +37,7 @@ p{
     position: relative;
 }
 /*postion swtiches */
-#redirect_home{
-    position: absolute;
-    top:1%;
-    left: 1%;
-}
+
 #database_swtiches{
     position: absolute;
     top:1%;
@@ -85,14 +81,6 @@ ul li{
     grid-template-columns: 30% 40% 30%;
 }
 
-#redirect_home{
-    border: 2px solid black;
-    border-radius: 50px;
-    padding: 10px;
-    top: 40px;
-    left: 100px;
-    
-}
 #leaderboard_name{
     position: relative;
     left: 150%;
