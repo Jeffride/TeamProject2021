@@ -170,6 +170,7 @@ function selectAnswer(e) {
         nextButton.classList.remove('hide')
     }
     redirectHome.classList.remove('hide')
+    document.getElementById("endGame").style.display="block";
 
 }
 
@@ -222,7 +223,7 @@ function calculateScore() {
 function retrogameEnd() {
     questionContainerElement.classList.add('hide')
     var retroHighScore = endScore;
-    document.getElementById("id_high_score").value = endScore;
+    document.getElementById("id_high_score").value = endScore+1;
     //Variable for leaderboard 
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = retroHighScore;
@@ -232,7 +233,7 @@ function retrogameEnd() {
 function easygameEnd() {
     questionContainerElement.classList.add('hide')
     var easyHighScore = endScore;
-    document.getElementById("id_high_score").value = endScore;
+    document.getElementById("id_high_score").value = endScore+1;
     //Variable for leaderboard 
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = easyHighScore;
@@ -241,6 +242,7 @@ function easygameEnd() {
 
 //PAGE LOADING INSTRUCTIONS
 window.onload = function(){
+    document.getElementById("endGame").style.display="none";
     var form = document.getElementById("scoreform");
     form.elements[1].readOnly = true;
 }

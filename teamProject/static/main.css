@@ -35,14 +35,16 @@ body {
     background-color: #000000;
 }
 #top {
-    padding-bottom:0px;
+    padding-bottom: 0px;
     width: 100vw;
     font-family: 'Slabo 27px', serif;
     font-weight: 400;
     grid-area: header;
     text-align: center;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 5px solid red ;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    background-color: #ffffffc9;
+    /* background-color: rgb(0 0 0 / 30%); */
+    /* border-bottom: 5px solid black;*/
 }
 /*
 #top button{
