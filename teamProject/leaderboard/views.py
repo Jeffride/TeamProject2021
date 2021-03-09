@@ -26,13 +26,14 @@ from datetime import date
 
 def leaderboard(request):
     userScores = {}
-    for user in User.objects.all():
-        for user1 in Profile.objects.all():
-            if user.username == user1.user_name:
-                if user1.high_score > userScores[user.username]:
-                    userScores[user.username] = user1.high_score
+    username = request.user.username
+    print(username)
+    for user1 in Profile.objects.all():
+            if username == user1.user_name:
+                if user1.high_score > userScores[username]:
+                    userScores[username] = user1.high_score
             else:
-                userScores[user.username] = 0
+                userScores[username] = 0
     dict1 = userScores
     sorted_values = sorted(dict1.values(),reverse=True) # Sort the values
     sorted_dict = {}
