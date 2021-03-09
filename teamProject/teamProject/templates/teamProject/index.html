@@ -14,14 +14,12 @@
 </head>
 
 <body>
-    <section id="finishGame">
-        <button id="endGame" class="hide" onclick="">End game</button>
-        <form method="POST" id="scoreform">
-            {% csrf_token %}
-            {{ form }}
-            <button id="submit" type="submit" class="">Submit Score</button>
-        </form>
-    </section>
+    <button id="endGame">End game</button> 
+    <form method="POST" id="scoreform">
+        {% csrf_token %}
+        {{ form }}
+        <button id="submit" type="submit">Submit Score</button>
+    </form>
     <main>
         <section id="container">
             <section id="user-info">

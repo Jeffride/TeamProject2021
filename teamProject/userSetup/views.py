@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from mapsMode.forms import scoreForm
 #from leaderboard.models import User
 from django.contrib.auth.models import User
 # Create your views here.
@@ -11,7 +12,19 @@ from django.contrib.auth.models import User
 
 @login_required
 def home(request):
-    return render(request,'index.html')
+    highscore = 0
+    if request.method == "POST":
+        form = scoreForm(request.POST)
+        if form.is_valid():
+            pendingForm = form.save(commit=False)
+            pendingForm.user_name = request.user.username
+            pendingForm.save()
+
+            return redirect('/leaderboard')
+        else:
+            form = scoreForm()
+    context = {'form':scoreForm}
+    return render(request,'index.html',context)
 
 def defaultpage(request):
     #return render(request,'landingPage.html')
