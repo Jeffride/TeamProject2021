@@ -123,7 +123,6 @@ main {
 }
 
 #question-container {
-    margin-top: 60px;
 }
 
 #question-image {
@@ -181,9 +180,8 @@ main {
 
 #next-btn {
     background-color: white;
-    position: fixed;
     margin: 10px;
-    right: 610px;
+
 }
 
 .fa-crown::before {
