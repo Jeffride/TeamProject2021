@@ -29,7 +29,8 @@ def leaderboard(request):
     for user in User.objects.all():
         for user1 in Profile.objects.all():
             if user.username == user1.user_name:
-                userScores[user.username] = user1.high_score
+                if user1.high_score > userScores[user.username]:
+                    userScores[user.username] = user1.high_score
             else:
                 userScores[user.username] = 0
     dict1 = userScores

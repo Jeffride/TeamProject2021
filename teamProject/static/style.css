@@ -13,7 +13,9 @@
     right: -1300px;
 }
 */
-
+#top{
+    width: 100%;
+}
 body {
     padding: 0;
     margin: 0;

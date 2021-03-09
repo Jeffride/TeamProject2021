@@ -9,7 +9,7 @@
 .container {  
     width: 100vw;
     display: grid;  
-    height: 130px;
+    height: 10vh;
     grid-template-columns: 20% 60% 20%; 
     grid-template-rows: auto;  
     grid-template-areas: 
@@ -17,6 +17,10 @@
     "aside1 main aside2"
     "aside3 main1 aside4"
     "footer footer footer";
+}
+#logo {
+    height: 2em;
+    max-width: 100%;
 }
 body {
     background-size: cover;
