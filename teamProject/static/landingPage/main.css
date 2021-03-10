@@ -46,15 +46,22 @@ body{
     text-align: center;
     margin-top: 1em;
     font-size: 1.3em;
+    font-weight: bold;
 }
 #register{
     grid-area: main;
+    margin-top: 15%;
 }
 #signin {
     font-family: 'Open Sans', sans-serif;
     grid-area: main;
     margin: auto;
     margin-bottom: 1.5em;
+}
+
+#signin button{
+    padding: 5px;
+    margin-left: 12px;
 }
 #signin a {
     color: black;

@@ -1,44 +1,69 @@
-{% extends 'base.html' %}
 {% block content %}
 <!DOCTYPE html>
 <html>
-    <head>
-        {% load static %}
-        <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon"/>
-    </head>
-    <body>
-        <div></div>
-        <div>
-            <h1>Aim of the game</h1>
-            <p>Have you been stuck inside for almost a year now beacause of lockdown?
-                Well your answer better be yes becasye we sure have!
-                This game is designed to make you feel like you get can outside and virtually break the 5km restrictions!
-                You are thrown into a random place in Cork and you must guess where that is.
-                We have 3 gamemodes: Easy ( for kids ), Retro ( for the rents or if you're feeling a bit ambitious ) and finally Hard mode if you're a pro.
-                The Easy and Retro mode are simple MCQ games, whereas the Hard mode provides you with a map where you must pinpoint where you are on it.
-            </p>
-        </div>
 
-        <div></div>
-        <div></div>
+<head>
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <link href="{% static 'aboutus.css' %}" rel="stylesheet">
+</head>
 
-        <div>
-            <h1>Scoring</h1>
-            <p>Each gamemode consists of 5 rounds. 
-                The maximum amount points you can obtain each round is 150.
+
+<body>
+    <div id="top">
+        <header>
+            <img id="logo" src="/static/images/LostInCork.png">
+        </header>
+    </div>
+    <button id="redirect_home" onclick="document.location.href='/'"><i class="fas fa-home"></i></button>
+    <div class="about-section">
+        <h1>Aim of the Game</h1>
+        <p>Have you been stuck inside for almost a year now beacause of lockdown?
+            Well your answer better be yes becasye we sure have!
+            This game is designed to make you feel like you get can outside and virtually break the 5km
+            restrictions!
+            You are thrown into a random place in Cork and you must guess where that is.
+            We have 3 gamemodes: Easy ( for kids ), Retro ( for the rents or if you're feeling a bit ambitious ) and
+            finally Hard mode if you're a pro.
+            The Easy and Retro mode are simple MCQ games, whereas the Hard mode provides you with a map where you
+            must pinpoint where you are on it.</p>
+        <h1>Scoring</h1>
+        <p>Each gamemode consists of 5 rounds.
+            The maximum amount points you can obtain each round is 150.
             Therefore the mamimum amount of points you are able to achieve is 750!!</p>
-        </div>
+    </div>
 
-        <div></div>
-        <div></div>
-
-        <div>
-            <h1>Meet the team</h1>
-            <p>John Wales</p>
-            <p>Mark Cullinane</p>
-            <p>Jeff Attride</p>
-            <p>Nathan Crowley</p>
+    <div class="wrapper">
+        <h1>Meet Our Team</h1>
+        <div class="our_team">
+            <div class="team_member">
+              <h3>John Wales</h3>
+              <span>Python Developer & Backend Infrastructure</span>
+              <p>I have been developing  functionality which uploads  images using an administration page, without directly contacting the project structure. Images are stored within Django's db and are presented on the web app.
+            </p>
+            </div>
+            <div class="team_member">
+              <h3>Mark Culliane</h3>
+              <span>Javascript Developer & Game implementation</span>
+              <p>I work with creating the location guessing game experience and other features through Javascript, implementing easy-to-use UI across the platform and linking user information (username & score data) to other pages on the application.
+            </p>
+          </div>
+            <div class="team_member">
+              <h3>Jeff Attride</h3>
+              <span>API implementation/ Python Developer</span>
+              <p>I work with an external google maps Javascript API which is integrated into one of our game modes. Within the application itself I primarily use python and some Javascript  to develop new features. 
+            </p>
+          </div>
+            <div class="team_member">
+              <h3>Nathan Crowley</h3>
+              <span>Python Developer  & Leaderboard implementation with User object creation</span>
+              <p>Create a django User model in Python to store username after registration as well as storing the user’s score throughout the application. I implemented a Python django view to pass django user object attributes to HTML files in the app.</p>
+          </div>  
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
 {% endblock content %}
