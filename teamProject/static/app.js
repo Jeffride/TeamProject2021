@@ -19,6 +19,7 @@ const userInfo = document.getElementById('user-info')
 const timerElem = document.getElementById('question-timer')
 const endButton = document.getElementById('endGame')
 const submitButton = document.getElementById('submit')
+const wrongAnswer = document.getElementById('wrong-answer')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -34,8 +35,6 @@ nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
-
-
 
 function pickEasyMode() {
     document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
@@ -76,7 +75,6 @@ function pickRetroMode() {
     scoreElem.innerHTML = 0;
     setNextRetroQuestion()
 }
-
 
 function shuffleArray(questions) {
     for (var i = questions.length - 1; i > 0; i--) {
@@ -152,15 +150,23 @@ function resetTimer() {
 function restart() {
     timer1 = setInterval(countdown, 900)
     answerButtonsElement.classList.remove('hide')
+    wrongAnswer.classList.add('hide')
 }
 
 function selectAnswer(e) {
     clearInterval(timer1);
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    if (correct) {
-        calculateScore()
-        answerButtonsElement.classList.add('hide')
+    selectedButton.disabled = true;
+    if (selectedButton){
+        if (correct) {
+            calculateScore()
+        }
+        else{
+            answerButtonsElement.classList.add('hide')
+            wrongAnswer.classList.remove('hide')
+            wrongAnswer.innerHTML = "That answer was incorrect, better luck next time!"
+        }
     }
     setStatusClass(document.body, correct)
     Array.from(answerButtonsElement.children).forEach(button => {
@@ -194,8 +200,6 @@ function resetState() {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
-
-
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
@@ -251,10 +255,10 @@ const questions = [
         question: 'Where is this?',
         image: '/static/images/easy/UCC.jpg',
         answers: [
-            { text: 'Shandon Street', correct: false },
-            { text: 'Franciscan Well', correct: false },
+            { text: 'Shandon Street', notcorrect: false },
+            { text: 'Franciscan Well', notcorrect: false },
             { text: 'University College Cork', correct: true },
-            { text: 'Cork City Hall', correct: false }
+            { text: 'Cork City Hall', notcorrect: false }
         ]
     },
     {
@@ -262,38 +266,38 @@ const questions = [
         image: '/static/images/easy/douglas.jpg',
         answers: [
             { text: 'Douglas', correct: true },
-            { text: 'Blackpool', correct: false },
-            { text: 'Mayfield', correct: false },
-            { text: 'Mallow', correct: false }
+            { text: 'Blackpool', notcorrect: false },
+            { text: 'Mayfield', notcorrect: false },
+            { text: 'Mallow', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/easy/patricksStreet.jpg',
         answers: [
-            { text: 'South Mall', correct: false },
-            { text: 'College Road', correct: false },
+            { text: 'South Mall', notcorrect: false },
+            { text: 'College Road', notcorrect: false },
             { text: 'Patrick Street', correct: true },
-            { text: 'North Cathedral', correct: false }
+            { text: 'North Cathedral', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/easy/shandonBells.jpg',
         answers: [
-            { text: "Saint Fin Barre's", correct: false },
+            { text: "Saint Fin Barre's", notcorrect: false },
             { text: 'Shandon Bells', correct: true },
-            { text: 'Holy Trinity', correct: false },
-            { text: 'North Cathedral', correct: false }
+            { text: 'Holy Trinity', notcorrect: false },
+            { text: 'North Cathedral', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/easy/knocka.png',
         answers: [
-            { text: 'Farrenree', correct: false },
-            { text: 'Mahon Point', correct: false },
-            { text: 'Wilton', correct: false },
+            { text: 'Farrenree', notcorrect: false },
+            { text: 'Mahon Point', notcorrect: false },
+            { text: 'Wilton', notcorrect: false },
             { text: 'Knockanaheeny', correct: true }
         ]
     },
@@ -301,9 +305,9 @@ const questions = [
         question: 'Where is this?',
         image: '/static/images/easy/fitzgeraldsPark.jpg',
         answers: [
-            { text: 'Bishopstown Playground', correct: false },
-            { text: 'Ballincollig Park', correct: false },
-            { text: 'Tramore Valley Park', correct: false },
+            { text: 'Bishopstown Playground', notcorrect: false },
+            { text: 'Ballincollig Park', notcorrect: false },
+            { text: 'Tramore Valley Park', notcorrect: false },
             { text: 'Fizgeralds Park', correct: true }
         ]
     },
@@ -311,20 +315,20 @@ const questions = [
         question: 'Where is this?',
         image: '/static/images/easy/patrickshill.jpg',
         answers: [
-            { text: 'Strawberry Hill', correct: false },
-            { text: 'Shandon Street', correct: false },
+            { text: 'Strawberry Hill', notcorrect: false },
+            { text: 'Shandon Street', notcorrect: false },
             { text: 'Patricks Hill', correct: true },
-            { text: 'Dublin Hill', correct: false }
+            { text: 'Dublin Hill', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/easy/cobh.jpg',
         answers: [
-            { text: 'Kinsale', correct: false },
-            { text: 'Cork Docklands', correct: false },
+            { text: 'Kinsale', notcorrect: false },
+            { text: 'Cork Docklands', notcorrect: false },
             { text: 'Cobh', correct: true },
-            { text: 'Youghal', correct: false }
+            { text: 'Youghal', notcorrect: false }
         ]
     },
     {
@@ -332,19 +336,19 @@ const questions = [
         image: '/static/images/easy/blackpool.jpg',
         answers: [
             { text: 'Blackpool', correct: true },
-            { text: 'Douglas', correct: false },
-            { text: 'Wilton', correct: false },
-            { text: 'Little Island', correct: false }
+            { text: 'Douglas', notcorrect: false },
+            { text: 'Wilton', notcorrect: false },
+            { text: 'Little Island', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/easy/oval.jpg',
         answers: [
-            { text: 'Old Oak', correct: false },
+            { text: 'Old Oak', notcorrect: false },
             { text: 'The Oval', correct: true },
-            { text: 'Cissie Youngs', correct: false },
-            { text: 'The Rock', correct: false }
+            { text: 'Cissie Youngs', notcorrect: false },
+            { text: 'The Rock', notcorrect: false }
         ]
     }
 ]
@@ -354,9 +358,9 @@ const retroquestions = [
         question: 'Where is this?',
         image: '/static/images/retro/UCC Entrance Retro.jpg',
         answers: [
-            { text: 'Blackpool', correct: false },
-            { text: 'Franciscan Well', correct: false },
-            { text: 'North Monastery School', correct: false },
+            { text: 'Blackpool', notcorrect: false },
+            { text: 'Franciscan Well', notcorrect: false },
+            { text: 'North Monastery School', notcorrect: false },
             { text: 'UCC Entrance', correct: true }
         ]
     },
@@ -364,10 +368,10 @@ const retroquestions = [
         question: 'Where is this?',
         image: '/static/images/retro/Youghal Retro.jpg',
         answers: [
-            { text: 'Mallow', correct: false },
-            { text: 'Bandon', correct: false },
+            { text: 'Mallow', notcorrect: false },
+            { text: 'Bandon', notcorrect: false },
             { text: 'Youghal', correct: true },
-            { text: 'Douglas', correct: false }
+            { text: 'Douglas', notcorrect: false }
         ]
     },
     {
@@ -375,9 +379,9 @@ const retroquestions = [
         image: '/static/images/retro/The Lough Retro.jpg',
         answers: [
             { text: 'The Lough', correct: true },
-            { text: 'Blackrock', correct: false },
-            { text: 'The Lee Fields', correct: false },
-            { text: 'Little Island', correct: false }
+            { text: 'Blackrock', notcorrect: false },
+            { text: 'The Lee Fields', notcorrect: false },
+            { text: 'Little Island', notcorrect: false }
         ]
     },
     {
@@ -385,28 +389,28 @@ const retroquestions = [
         image: '/static/images/retro/South Mall Retro.jpg',
         answers: [
             { text: 'South Mall', correct: true },
-            { text: 'Dillons Cross', correct: false },
-            { text: 'Oliver Plunkett St', correct: false },
-            { text: 'Washington St', correct: false }
+            { text: 'Dillons Cross', notcorrect: false },
+            { text: 'Oliver Plunkett St', notcorrect: false },
+            { text: 'Washington St', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Patricks Hill Retro.jpg',
         answers: [
-            { text: 'Shandon St', correct: false },
+            { text: 'Shandon St', notcorrect: false },
             { text: 'Patricks Hill', correct: true },
-            { text: 'Barrack St', correct: false },
-            { text: 'Donovan Road', correct: false }
+            { text: 'Barrack St', notcorrect: false },
+            { text: 'Donovan Road', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Parnell Place Retro.jpg',
         answers: [
-            { text: 'Mercy Hospital', correct: false },
-            { text: 'Cork University Hospital', correct: false },
-            { text: 'Mahon', correct: false },
+            { text: 'Mercy Hospital', notcorrect: false },
+            { text: 'Cork University Hospital', notcorrect: false },
+            { text: 'Mahon', notcorrect: false },
             { text: 'Parnell Place', correct: true }
         ]
     },
@@ -415,28 +419,28 @@ const retroquestions = [
         image: '/static/images/retro/Mercy Hospital Retro.jpg',
         answers: [
             { text: 'Mercy Hospital', correct: true },
-            { text: 'Penrose Dock', correct: false },
-            { text: 'Firkin Crane', correct: false },
-            { text: 'Paul Street', correct: false }
+            { text: 'Penrose Dock', notcorrect: false },
+            { text: 'Firkin Crane', notcorrect: false },
+            { text: 'Paul Street', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Lee Fields Retro.jpg',
         answers: [
-            { text: 'Douglas River', correct: false },
-            { text: 'The Lough', correct: false },
+            { text: 'Douglas River', notcorrect: false },
+            { text: 'The Lough', notcorrect: false },
             { text: 'Lee Fields', correct: true },
-            { text: 'Port of Cork', correct: false }
+            { text: 'Port of Cork', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Grande Parade Retro.jpg',
         answers: [
-            { text: 'Merchants Quay', correct: false },
-            { text: 'Lapps Quay', correct: false },
-            { text: 'Patrick Street', correct: false },
+            { text: 'Merchants Quay', notcorrect: false },
+            { text: 'Lapps Quay', notcorrect: false },
+            { text: 'Patrick Street', notcorrect: false },
             { text: 'Grande Parade', correct: true }
         ]
     },
@@ -445,59 +449,59 @@ const retroquestions = [
         image: '/static/images/retro/Fr Matthew Quay.jpg',
         answers: [
             { text: 'Fr Matthew Quay', correct: true },
-            { text: 'Popes Quay', correct: false },
-            { text: 'Lower Glamire Road', correct: false },
-            { text: 'Grande Parade', correct: false }
+            { text: 'Popes Quay', notcorrect: false },
+            { text: 'Lower Glamire Road', notcorrect: false },
+            { text: 'Grande Parade', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Fitzgeralds Park Retro.jpg',
         answers: [
-            { text: 'UCC Green', correct: false },
+            { text: 'UCC Green', notcorrect: false },
             { text: 'Fitzgeralds Park', correct: true },
-            { text: 'St Finbars', correct: false },
-            { text: 'St Annes', correct: false }
+            { text: 'St Finbars', notcorrect: false },
+            { text: 'St Annes', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Dominican Church Retro.jpg',
         answers: [
-            { text: 'Shandon Bells', correct: false },
-            { text: 'North Cathedral', correct: false },
+            { text: 'Shandon Bells', notcorrect: false },
+            { text: 'North Cathedral', notcorrect: false },
             { text: 'Dominican Church', correct: true },
-            { text: 'City Hall', correct: false }
+            { text: 'City Hall', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Brian Boru Bridge Retro.jpg',
         answers: [
-            { text: 'Michael Collins Bridge', correct: false },
+            { text: 'Michael Collins Bridge', notcorrect: false },
             { text: 'Brian Boru Bridge', correct: true },
-            { text: 'North Gate Bridge', correct: false },
-            { text: 'Nano Nagle Bridge', correct: false }
+            { text: 'North Gate Bridge', notcorrect: false },
+            { text: 'Nano Nagle Bridge', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Blackpool Retro.jpg',
         answers: [
-            { text: 'Farrenree', correct: false },
+            { text: 'Farrenree', notcorrect: false },
             { text: 'Blackpool', correct: true },
-            { text: 'Knocknaheeny', correct: false },
-            { text: 'Mayfield', correct: false }
+            { text: 'Knocknaheeny', notcorrect: false },
+            { text: 'Mayfield', notcorrect: false }
         ]
     },
     {
         question: 'Where is this?',
         image: '/static/images/retro/Ballincollig Retro.jpg',
         answers: [
-            { text: 'Jacobs Island', correct: false },
-            { text: 'Shanakiel', correct: false },
+            { text: 'Jacobs Island', notcorrect: false },
+            { text: 'Shanakiel', notcorrect: false },
             { text: 'Ballincollig', correct: true },
-            { text: 'Wilton', correct: false }
+            { text: 'Wilton', notcorrect: false }
         ]
     }
 ]
