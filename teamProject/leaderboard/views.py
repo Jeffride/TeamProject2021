@@ -27,13 +27,10 @@ from datetime import date
 def leaderboard(request):
     userScores = {}
     username = request.user.username
-    print(username)
     for user1 in Profile.objects.all():
-            if username == user1.user_name:
-                if user1.high_score > userScores[username]:
-                    userScores[username] = user1.high_score
-            else:
-                userScores[username] = 0
+        userScores[user1.user_name]=user1.high_score
+          
+                
     dict1 = userScores
     sorted_values = sorted(dict1.values(),reverse=True) # Sort the values
     sorted_dict = {}
@@ -43,13 +40,7 @@ def leaderboard(request):
                 sorted_dict[k] = dict1[k]
                 break
     context={
-        #"users": User.objects.all(),
-        #"users": sorted_dict.items(),
-        #"UserScore": userScores,
-        #"dict1":dict1,
-        #"sorted_values":sorted_values,
-        #"score":userScores.values(),
         "users": sorted_dict.items(),
-        "number_of_users": User.objects.count(),
+        "number_of_users": Profile.objects.count(),
     }
     return render(request, 'leaderboard.html', context)
