@@ -10,6 +10,10 @@
     min-height: 100%;
     overflow: hidden;
 }*/
+html,body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body{
     padding: 0;
     margin: 0;
@@ -36,13 +40,6 @@ p{
     text-align: center;
     position: relative;
 }
-/*postion swtiches */
-
-#database_swtiches{
-    position: absolute;
-    top:1%;
-    left:85%;
-}
 /*top three user css*/
 ul,ol{
    list-style-type: none; 
@@ -53,21 +50,16 @@ ul li{
     height: 200px;
     text-align: center;
 }
-#first{
-    grid-area: aside1;
+/* rest of users */
+ol li{
+    border-radius: 10px;
 }
-#second{
-    position: main;
-    grid-area: main;
+ol li #username{
+    color:black;
 }
-#third{
-    grid-area: aside2;
+ol li #score{
+    color:red;
 }
-/*
-.container{
-    grid-template-columns: auto;
-}*/
-
 /* centre the ol in the page */
 #leaderboard1{
     display: grid;
@@ -80,25 +72,22 @@ ul li{
 .container{
     grid-template-columns: 30% 40% 30%;
 }
-
 #leaderboard_name{
     position: relative;
-    left: 150%;
+    top:150%;
+    left: 155%;
     margin: 20px;
     font-size: 40px;
 }
 #easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     display: none;
 }
-
-#database_swtiches{
-    position: absolute;
-    top: 1%;
-    left: 80%;
-    width: 400px;
+#leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
+    position: relative;
+    top:5%;
+    left: 0;
 }
-
-#database_swtiches button{
+/*#database_swtiches button{
     padding: 5px;
     border: solid black 1.5px;
     font-size: 1em;
@@ -112,4 +101,35 @@ ul li{
     -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
     box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
     transition: all 0.4s ease 0s;
+}*/
+#database_swtiches{
+    position: absolute;
+    top:1%;
+    left: 70%;
+}
+.btn{
+    border:none;
+    outline:none;
+    padding:10px 16px;
+    color:lightgray;
+    cursor:pointer;
+    font-size:15px;
+}
+.active, .btn:hover{
+    color: black;
+    font-size: 18px;
+    border-bottom: 5px solid blue;
+}
+@media screen and (max-width:1500px) {
+    #database_swtiches{
+        top:6%;
+        left: 35%;
+        font-size: 25px;
+    }
+    .active, .btn:hover{
+        font-size: 20px;
+    }
+    #leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
+        top:10%
+    }
 }
