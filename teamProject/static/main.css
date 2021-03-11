@@ -63,6 +63,10 @@ body {
     cursor: pointer;
     transition: all 1s;
 }
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
 #login {
     font-weight: bold;
     margin-top: 5em;
