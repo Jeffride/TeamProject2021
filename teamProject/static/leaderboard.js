@@ -2,7 +2,13 @@ function showAllTime(){
     document.body.style.backgroundImage ="url('/static/images/pages/corkAerial.jpg')";
     document.getElementById("leaderboard_name").innerHTML = "All time";
     var oldL = document.getElementById("leaderboard1");
+    var easyL = document.getElementById("easyLeaderboard");
+    var hardL = document.getElementById("HardLeaderboard");
+    var retroL = document.getElementById("RetroLeaderboard");
     oldL.style.cssText = "display: grid; width: 80%; grid-area: footer; margin: auto; align-items: center; justify-items: center;"
+    easyL.style.display = "none";
+    hardL.style.display = "none";
+    retroL.style.display = "none";
 }
 function showEasy(){
     document.body.style.backgroundImage ="url('/static/images/pages/corkAerial.jpg')";
