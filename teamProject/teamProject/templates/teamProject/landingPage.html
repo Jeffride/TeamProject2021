@@ -16,10 +16,20 @@
 
         <script>
         var object = document.getElementById('geotag');
+
         object.onclick=function(){
         var x = Math.floor(Math.random()*300);
         object.style.top = x + 'px';
         };
+
+        /*var x=document.getElementById('geotag');
+
+        object.onclick=function(){
+            var step = 50;
+
+            x= x -step;
+            document.getElementById('geotag').style.top= x + "px";
+        }*/
         </script>
     
     <form method="POST" id="regform">

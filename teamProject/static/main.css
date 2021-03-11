@@ -60,7 +60,6 @@ body {
     top: 2px;
 }
 #geotag {
-    background-color: red;
     cursor: pointer;
     transition: all 1s;
 }
