@@ -8,6 +8,8 @@
     <!-- Google fonts links -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1,0">
     <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
     <div id="database_swtiches">
@@ -32,23 +34,25 @@
 <body>
     <div class="container">
         {% if number_of_users > 0 %}
-        <!--<ul class="container">
-            <li id="first">
-                <span> {{ 1rst }}</span>
-            </li>
+        <ul class="container" id="top_three">
             <li id="second">
-                <span> {{ 2nd }}</span>s
+                <span> {{ 2nd }}</span>
+                <div>second</div>
+            </li>
+            <li id="first">
+                <div>King of Cork!</div>
+                <span> {{ 1rst }}</span>
+                <div>first</div>
             </li>
             <li id="third">
                 <span> {{ 3rd }}</span>
+                <div>third</div>
             </li>
-        </ul>-->
+        </ul>
         <ol id="leaderboard1">
-            <!--<p>Username | EasyScore HardScore RetroScore</p>-->
-            {% for user,score in users %}
+            {% for user,score in rest_of_users %}
                 <li>
-                    <!--<span>{{ user }} | <> <> <> </span>-->
-                    <span><span id="username">{{ user }}</span>| <span id="score">{{ score }} pts</span></span>
+                    <span><span id="username">{{ user }}</span>|<span id="hardscore">{{ score }}pts |</span></span>
                 </li>
             {% endfor %}
         </ol>
