@@ -22,6 +22,7 @@ const submitButton = document.getElementById('submit')
 const wrongAnswer = document.getElementById('wrong-answer')
 const roundNum = document.getElementById('game-round')
 const roundAmt = document.getElementById('round')
+const slideshow = document.getElementById('slideshow-container')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -42,8 +43,10 @@ nextButton.addEventListener('click', () => {
 function pickEasyMode() {
     document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
     endButton.classList.remove('hide')
+    slideshow.classList.add('hide')
+    userInfo.classList.add('hide')
     showLeaderboard.classList.add('hide')
-    corkImage.classList.add('hide')
+    //corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
@@ -61,12 +64,14 @@ function pickEasyMode() {
 function pickRetroMode() {
     document.getElementById('endGame').setAttribute('onclick', "retrogameEnd()")
     endButton.classList.remove('hide')
+    slideshow.classList.add('hide')
+    userInfo.classList.add('hide')
     document.body.style.backgroundImage = "url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
     containerElem.style.backgroundColor = "#a9a29e";
     timerElem.style.backgroundColor = "#477b65";
     userInfo.style.backgroundColor = "#477b65";
     showLeaderboard.classList.add('hide')
-    corkImage.classList.add('hide')
+    //corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
@@ -269,8 +274,15 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change image every 2 seconds
+  setTimeout(showSlides, 6000); // Change image every 2 seconds
 }
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
 const questions = [
     {
         question: 'Where is this?',
