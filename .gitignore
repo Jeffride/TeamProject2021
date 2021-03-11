@@ -2,9 +2,7 @@
 *.md
 *.sqlite3
 **/*.pyc
-*.pyc 
 *.vscode
-*.pyc
 *~
 *.swp
 *.pyc
