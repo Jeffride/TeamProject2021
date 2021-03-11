@@ -59,6 +59,11 @@ body {
     grid-area: main;
     top: 2px;
 }
+#geotag {
+    background-color: red;
+    cursor: pointer;
+    transition: all 1s;
+}
 #login {
     font-weight: bold;
     margin-top: 5em;
