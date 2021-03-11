@@ -105,3 +105,11 @@ a:hover {
     top: 1%;
     left: 1%;
 }
+#aboutus {
+    width: max-content;
+    padding: 1em;
+    grid-area: aside1;
+    margin-left: 1em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
