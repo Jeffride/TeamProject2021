@@ -60,8 +60,10 @@ body {
     top: 2px;
 }
 #geotag {
-    cursor: pointer;
-    transition: all 1s;
+    /*cursor: pointer;*/
+    /*transition: all 1s;*/
+    animation: spin 3s;
+    animation-iteration-count: 1;
 }
 @keyframes spin {
     from {transform:rotate(0deg);}
