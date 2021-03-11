@@ -13,11 +13,12 @@
 
 <body>
     <div id="top">
+      
         <header>
             <img id="logo" src="/static/images/LostInCork.png">
         </header>
+        <button id="redirect_home" onclick="document.location.href='/'"><i class="fas fa-home"></i></button>
     </div>
-    <button id="redirect_home" onclick="document.location.href='/'"><i class="fas fa-home"></i></button>
     <div class="about-section">
         <h1>Aim of the Game</h1>
         <p>Have you been stuck inside for almost a year now beacause of lockdown?
@@ -63,6 +64,17 @@
           </div>  
         </div>
     </div>
+    <form id="contact" action="118392816@umail.ucc.ie" method="post" enctype="text/plain">
+      <h1>Contact Us</h1>
+      <h3>Send us an email to get in touch</h3>
+      Name:<br>
+      <input type="text" name="name"><br>
+      E-mail:<br>
+      <input type="text" name="mail"><br>
+      Comment:<br>
+      <input type="text" name="comment" size="50"><br><br>
+      <input type="submit" value="Send">
+      </form>
 </body>
 
 </html>

@@ -20,6 +20,8 @@ const timerElem = document.getElementById('question-timer')
 const endButton = document.getElementById('endGame')
 const submitButton = document.getElementById('submit')
 const wrongAnswer = document.getElementById('wrong-answer')
+const roundNum = document.getElementById('game-round')
+const roundAmt = document.getElementById('round')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -33,6 +35,7 @@ retroMode.classList.remove('hide')
 retroMode.addEventListener('click', pickRetroMode)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
+    roundAmt.innerHTML = currentQuestionIndex + 1
     setNextQuestion()
 })
 
@@ -46,6 +49,7 @@ function pickEasyMode() {
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
+    roundNum.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -68,6 +72,7 @@ function pickRetroMode() {
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
+    roundNum.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = retroquestions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -232,6 +237,7 @@ function retrogameEnd() {
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = retroHighScore;
     submitButton.classList.remove('hide')
+    roundNum.classList.add('hide')
 }
 
 function easygameEnd() {
@@ -242,6 +248,7 @@ function easygameEnd() {
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = easyHighScore;
     submitButton.classList.remove('hide')
+    roundNum.classList.add('hide')
 }
 
 //PAGE LOADING INSTRUCTIONS
