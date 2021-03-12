@@ -40,6 +40,15 @@
 ### Booch Diagram
 ![Image 04-03-2021 at 14 07](https://user-images.githubusercontent.com/55900589/109976239-75c9f900-7cf3-11eb-88e1-659fe70b8753.jpg)
 
+## Latest Updates 12/03/2021
+* About us page added
+* Restyling of key pages
+* Functional leaderboard
+* Docker-ized application for server deployement
+* new image carousel on home page
+* rounds implemented
+* Bug fixes
+
 ## Latest Updates 04/03/2021
 * Admin page added for private image uploading
 * Retro mode implemented
