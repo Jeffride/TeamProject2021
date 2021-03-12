@@ -23,6 +23,7 @@ const wrongAnswer = document.getElementById('wrong-answer')
 const roundNum = document.getElementById('game-round')
 const roundAmt = document.getElementById('round')
 const slideshow = document.getElementById('slideshow-container')
+const scoreDisplay = document.getElementById('score')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -44,9 +45,7 @@ function pickEasyMode() {
     document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
     endButton.classList.remove('hide')
     slideshow.classList.add('hide')
-    userInfo.classList.add('hide')
     showLeaderboard.classList.add('hide')
-    //corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
@@ -65,13 +64,11 @@ function pickRetroMode() {
     document.getElementById('endGame').setAttribute('onclick', "retrogameEnd()")
     endButton.classList.remove('hide')
     slideshow.classList.add('hide')
-    userInfo.classList.add('hide')
     document.body.style.backgroundImage = "url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
     containerElem.style.backgroundColor = "#a9a29e";
     timerElem.style.backgroundColor = "#477b65";
     userInfo.style.backgroundColor = "#477b65";
     showLeaderboard.classList.add('hide')
-    //corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
@@ -118,6 +115,7 @@ function setNextRetroQuestion() {
 
 function showQuestion(question) {
     resetTimer()
+    nextButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -136,6 +134,7 @@ function showQuestion(question) {
 
 function showRetroQuestion(question) {
     resetTimer()
+    nextButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -165,6 +164,7 @@ function restart() {
 
 function selectAnswer(e) {
     clearInterval(timer1);
+    nextButton.classList.remove('hide')
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     selectedButton.disabled = true;
@@ -205,7 +205,6 @@ function countdown() {
 
 function resetState() {
     clearStatusClass(document.body)
-    nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
