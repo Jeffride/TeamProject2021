@@ -22,6 +22,9 @@ span{
     margin: 5px;
     padding:5px;
 }
+#king{
+    font-size: 30px;
+}
 /* to be shown when now users in database */
 p{
     color: red;
@@ -112,7 +115,5 @@ ol li #hardscore{
     }
     ul{
         top: 80%;
-    }
-    #first{
     }
 }
