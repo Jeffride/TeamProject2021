@@ -52,6 +52,7 @@ function pickEasyMode() {
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
     roundNum.classList.remove('hide')
+    redirectHome.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -64,10 +65,10 @@ function pickRetroMode() {
     document.getElementById('endGame').setAttribute('onclick', "retrogameEnd()")
     endButton.classList.remove('hide')
     slideshow.classList.add('hide')
-    document.body.style.backgroundImage = "url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
-    containerElem.style.backgroundColor = "#a9a29e";
-    timerElem.style.backgroundColor = "#477b65";
-    userInfo.style.backgroundColor = "#477b65";
+    redirectHome.classList.remove('hide')
+    document.body.style.backgroundImage = "url('/static/images/pages/corkAerialRetro.jpg')";
+    containerElem.style.backgroundColor = "#d8c788d1";
+    timerElem.style.backgroundColor = " #B4B990";
     showLeaderboard.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
@@ -164,7 +165,7 @@ function restart() {
 
 function selectAnswer(e) {
     clearInterval(timer1);
-    nextButton.classList.remove('hide')
+    nextButton.classList.remove()
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     selectedButton.disabled = true;
