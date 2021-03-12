@@ -50,7 +50,7 @@ body{
 }
 #register{
     grid-area: main;
-    margin-top: 15%;
+    margin-top: 5%;
 }
 #signin {
     font-family: 'Open Sans', sans-serif;
