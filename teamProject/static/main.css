@@ -59,6 +59,16 @@ body {
     grid-area: main;
     top: 2px;
 }
+#geotag {
+    /*cursor: pointer;*/
+    /*transition: all 1s;*/
+    animation: spin 3s;
+    animation-iteration-count: 1;
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
 #login {
     font-weight: bold;
     margin-top: 5em;

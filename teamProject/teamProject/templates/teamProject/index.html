@@ -4,59 +4,118 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link href="{% static 'style.css' %}" rel="stylesheet">
-    {% load static %}
-    <script defer src="{% static 'app.js' %}"></script>
-    <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link href="{% static 'style.css' %}" rel="stylesheet">
+  {% load static %}
+  <script defer src="{% static 'app.js' %}"></script>
+  <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <button id="endGame">End game</button> 
-    <form method="POST" id="scoreform">
-        {% csrf_token %}
-        {{ form }}
-        <button id="submit" type="submit">Submit Score</button>
-    </form>
-    <main>
-        <section id="container">
-            <section id="user-info">
-                <div id="user-name">Welcome {{request.user}}!</div>
-                <div id="score">
-                    <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
-            </section>
-            <img id="cork-flag" src="https://images-na.ssl-images-amazon.com/images/I/61212Gwv4nL._AC_SL1500_.jpg">
-            <h1 id="mode-text">Select Gamemode</h1>
-            <button id="next-btn" class="next-btn btn hide">Next Location</button>
-            <section id="question-container" class="hide">
-                <div id="question">Question</div>
-                <img src="https://www.iedepot.ie/blog/wp-content/themes/fearless/images/missing-image-640x360.png"
-                    id="question-image">
-                <div id="answer-buttons" class="btn-grid">
-                    <button class="btn" onclick="calculateScore()">Option 1</button>
-                    <button class="btn" onclick="calculateScore()">Option 2</button>
-                    <button class="btn" onclick="calculateScore()">Option 3</button>
-                    <button class="btn" onclick="calculateScore()">Option 4</button>
-                </div>
-                <div id="wrong-answer" class="hide"></div>
-                <section id="question-timer"></section>
-            </section>
-            <section id="controls" class="hide">
-                <button id="leaderboard" class="btn" onclick="document.location.href='/leaderboard'"><i
-                        class="fas fa-crown"> </i> Leaderboard</button>
-                <button id="restart-btn" class="hide btn">End Game</button>
-                <button id="easy-mode" class=" btn">Easy Mode</button>
-                <button id="retro-mode" class=" btn">Retro Mode</button>
-                <button id="hard-mode" class=" btn" onclick="document.location.href='/game1'">Hard Mode</button>
-            </section>
-            <button id="redirect_home" onclick="document.location.href='/home'" ><i
-                    class="fas fa-home"></i></button>
+  <button id="redirect_home" onclick="document.location.href='/home'" class="hide"><i class="fas fa-home"></i></button>
+  <button id="endGame" class="hide">End game</button>
+  <form method="POST" id="scoreform">
+    {% csrf_token %}
+    {{ form }}
+    <button id="submit" type="submit">Submit Score</button>
+  </form>
+  <main>
+    <section id="container">
+      <section id="user-info">
+        <div id="user-name">Welcome {{request.user}}!</div>
+        <div id="score">
+          <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
+          <div id="game-round" class="hide">Round: <span id="round"> 1 </span></div>
+      </section>
+      <!-- Slideshow container -->
+      <div id="slideshow-container">
 
-        </section>
-    </main>
-    {% endblock content %}
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 8</div>
+          {% load static %}
+          <img src="{% static '/images/slider/BlackObserver.png' %}" style="width:100%">
+          <div class="text">Blackrock Observatory</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 8</div>
+          <img src="{% static '/images/slider/engmark.png' %}" style="width:100%">
+          <div class="text">English Market</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 8</div>
+          <img src="{% static '/images/slider/lizfort.png' %}" style="width:100%">
+          <div class="text">Elizabeth Fort</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 8</div>
+          <img src="{% static '/images/slider/pstreet.png' %}" style="width:100%">
+          <div class="text">St. Patricks Street</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 8</div>
+          <img src="{% static '/images/slider/quays.png' %}" style="width:100%">
+          <div class="text">The Quays</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 8</div>
+          <img src="{% static '/images/slider/sbells.png' %}" style="width:100%">
+          <div class="text">Shandon Bells</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">7 / 8</div>
+          <img src="{% static '/images/slider/spike.png' %}" style="width:100%">
+          <div class="text">Spike Island</div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext">8 / 8</div>
+          <img src="{% static '/images/slider/ucc.png' %}" style="width:100%">
+          <div class="text">University College Cork</div>
+        </div>
+
+
+
+        <!-- Next and previous buttons -->
+
+      </div>
+
+      <h1 id="mode-text">Select Gamemode</h1>
+
+      <section id="question-container" class="hide">
+
+        <div id="question">Question</div>
+        <section id="question-timer"></section>
+        <div id="img-container">
+          <img src="" id="question-image">
+        </div>
+
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn" onclick="calculateScore()">Option 1</button>
+          <button class="btn" onclick="calculateScore()">Option 2</button>
+          <button class="btn" onclick="calculateScore()">Option 3</button>
+          <button class="btn" onclick="calculateScore()">Option 4</button>
+        </div>
+        <h1 id="wrong-answer"></h1>
+        <button id="next-btn" class="next-btn btn hide">Next Location</button>
+      </section>
+      <section id="controls" class="hide">
+        <button id="leaderboard" class="btn" onclick="document.location.href='/leaderboard'"><i class="fas fa-crown">
+          </i> Leaderboard</button>
+        <button id="easy-mode" class=" btn">Easy</button>
+        <button id="retro-mode" class=" btn">Retro </button>
+        <button id="hard-mode" class=" btn" onclick="document.location.href='/game1'">Hard</button>
+      </section>
+
+
+    </section>
+  </main>
+  {% endblock content %}
 </body>
 
 </html>

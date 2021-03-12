@@ -11,6 +11,9 @@
             {% csrf_token %}
             {{ form }}
             <button type="submit">Log in</button>
+            <button id="goback" onclick="window.location.href='/';">
+                Go Back
+            </button>
         </form>
         </div>
     </div>

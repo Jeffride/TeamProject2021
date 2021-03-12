@@ -20,6 +20,10 @@ const timerElem = document.getElementById('question-timer')
 const endButton = document.getElementById('endGame')
 const submitButton = document.getElementById('submit')
 const wrongAnswer = document.getElementById('wrong-answer')
+const roundNum = document.getElementById('game-round')
+const roundAmt = document.getElementById('round')
+const slideshow = document.getElementById('slideshow-container')
+const scoreDisplay = document.getElementById('score')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -33,19 +37,22 @@ retroMode.classList.remove('hide')
 retroMode.addEventListener('click', pickRetroMode)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
+    roundAmt.innerHTML = currentQuestionIndex + 1
     setNextQuestion()
 })
 
 function pickEasyMode() {
     document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
     endButton.classList.remove('hide')
+    slideshow.classList.add('hide')
     showLeaderboard.classList.add('hide')
-    corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
+    roundNum.classList.remove('hide')
+    redirectHome.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -57,17 +64,18 @@ function pickEasyMode() {
 function pickRetroMode() {
     document.getElementById('endGame').setAttribute('onclick', "retrogameEnd()")
     endButton.classList.remove('hide')
-    document.body.style.backgroundImage = "url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
-    containerElem.style.backgroundColor = "#a9a29e";
-    timerElem.style.backgroundColor = "#477b65";
-    userInfo.style.backgroundColor = "#477b65";
+    slideshow.classList.add('hide')
+    redirectHome.classList.remove('hide')
+    document.body.style.backgroundImage = "url('/static/images/pages/corkAerialRetro.jpg')";
+    containerElem.style.backgroundColor = "#d8c788d1";
+    timerElem.style.backgroundColor = " #B4B990";
     showLeaderboard.classList.add('hide')
-    corkImage.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
+    roundNum.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = retroquestions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -108,6 +116,7 @@ function setNextRetroQuestion() {
 
 function showQuestion(question) {
     resetTimer()
+    nextButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -126,6 +135,7 @@ function showQuestion(question) {
 
 function showRetroQuestion(question) {
     resetTimer()
+    nextButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -155,6 +165,7 @@ function restart() {
 
 function selectAnswer(e) {
     clearInterval(timer1);
+    nextButton.classList.remove()
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     selectedButton.disabled = true;
@@ -195,7 +206,6 @@ function countdown() {
 
 function resetState() {
     clearStatusClass(document.body)
-    nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
@@ -232,6 +242,7 @@ function retrogameEnd() {
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = retroHighScore;
     submitButton.classList.remove('hide')
+    roundNum.classList.add('hide')
 }
 
 function easygameEnd() {
@@ -242,6 +253,7 @@ function easygameEnd() {
     document.getElementById("scoreform").style.display = "block";
     document.getElementById("id_high_score").value = easyHighScore;
     submitButton.classList.remove('hide')
+    roundNum.classList.add('hide')
 }
 
 //PAGE LOADING INSTRUCTIONS
@@ -250,6 +262,27 @@ window.onload = function(){
     var form = document.getElementById("scoreform");
     form.elements[1].readOnly = true;
 }
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 6000); // Change image every 2 seconds
+}
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
 const questions = [
     {
         question: 'Where is this?',
