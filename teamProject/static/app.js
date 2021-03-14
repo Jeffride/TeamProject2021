@@ -286,14 +286,14 @@ function currentSlide(n) {
 const questions = [
     {
         question: 'Where is this?',
-        image: '/static/images/easy/UCC.jpg',
+        image: '/media/easy/UCC.jpg',
         answers: [
             { text: 'Shandon Street', notcorrect: false },
             { text: 'Franciscan Well', notcorrect: false },
             { text: 'University College Cork', correct: true },
             { text: 'Cork City Hall', notcorrect: false }
         ]
-    },
+    }/*,
     {
         question: 'Where is this?',
         image: '/static/images/easy/douglas.jpg',
@@ -383,7 +383,7 @@ const questions = [
             { text: 'Cissie Youngs', notcorrect: false },
             { text: 'The Rock', notcorrect: false }
         ]
-    }
+    }*/
 ]
 
 const retroquestions = [
