@@ -39,11 +39,10 @@ def leaderboard(request):
                 break
     top_three_users={k: sorted_dict[k] for k in list(sorted_dict)[:3]}
     rest={k: sorted_dict[k] for k in list(sorted_dict)[3:]}
+    first={k: top_three_users[k] for k in list(top_three_users)[0:1]}
     context={
         "users": sorted_dict.items(),
-        "1rst":{k: top_three_users[k] for k in list(top_three_users)[0:1]},
-        "2nd":{k: top_three_users[k] for k in list(top_three_users)[1:2]},
-        "3rd":{k: top_three_users[k] for k in list(top_three_users)[2:3]},
+        "top_three":top_three_users.items(),
         "rest_of_users":rest.items(),
         "number_of_users": Profile.objects.count(),
     }
