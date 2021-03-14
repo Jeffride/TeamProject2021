@@ -39,10 +39,12 @@ html {
 .wrapper h1{
   font-size: 48px;
   color: black;
-  margin: 0 150px 25px 150px;
+  margin: auto;
+  margin-bottom: 5px;
   background-color: #ffffffc9;
   padding: 5px;
   border-radius: 5px;
+  width: 80%;
   box-shadow: 0 0 1px rgb(0 0 0 / 30%), 0 3px 7px rgb(0 0 0 / 30%), inset 0 1px rgb(255 255 255), inset 0 -3px 2px rgb(0 0 0 / 25%);
 }
 
@@ -54,7 +56,7 @@ html {
 }
 
 .our_team .team_member{
-  width: 300px;
+  width: 250px;
   margin: 5px;
   background: #fff;
   padding: 20px 10px;
@@ -153,7 +155,7 @@ html {
 
 #contact{
   background-color: white;
-  width: 30%;
+  width: 300px;
   padding: 10px;
   background-color: #ffffffc9;
   color: black;
@@ -161,10 +163,11 @@ html {
   border-radius: 5px;
   text-align: center;
   margin: auto;
+  margin-bottom: 10px;
 }
 
 input{
-  width: 350px;
+  width: 250px;
   margin-bottom: 10px;
 }
 
