@@ -396,10 +396,10 @@ const retroquestions = [
             { text: 'North Monastery School', notcorrect: false },
             { text: 'UCC Entrance', correct: true }
         ]
-    }/*,
+    },
     {
         question: 'Where is this?',
-        image: '/media/retro/Youghal Retro.jpg',
+        image: '/media/retro/Youghal_Retro.jpg',
         answers: [
             { text: 'Mallow', notcorrect: false },
             { text: 'Bandon', notcorrect: false },
@@ -409,7 +409,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/The Lough Retro.jpg',
+        image: '/media/retro/The_Lough_Retro.jpg',
         answers: [
             { text: 'The Lough', correct: true },
             { text: 'Blackrock', notcorrect: false },
@@ -536,5 +536,5 @@ const retroquestions = [
             { text: 'Ballincollig', correct: true },
             { text: 'Wilton', notcorrect: false }
         ]
-    }*/
+    }
 ]
