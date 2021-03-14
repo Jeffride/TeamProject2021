@@ -21,6 +21,10 @@ from userSetup import views as userViews
 from leaderboard import views as leaderboardViews
 from mapsMode import views as mapsViews
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', userViews.defaultpage),
@@ -31,4 +35,4 @@ urlpatterns = [
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
     path('game1/',mapsViews.main, name='main-game'),
     path('about_us/', userViews.about_us, name='about-us')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
