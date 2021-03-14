@@ -389,17 +389,17 @@ const questions = [
 const retroquestions = [
     {
         question: 'Where is this?',
-        image: '/static/images/retro/UCC Entrance Retro.jpg',
+        image: '/media/retro/UCC_Entrance_Retro.jpg',
         answers: [
             { text: 'Blackpool', notcorrect: false },
             { text: 'Franciscan Well', notcorrect: false },
             { text: 'North Monastery School', notcorrect: false },
             { text: 'UCC Entrance', correct: true }
         ]
-    },
+    }/*,
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Youghal Retro.jpg',
+        image: '/media/retro/Youghal Retro.jpg',
         answers: [
             { text: 'Mallow', notcorrect: false },
             { text: 'Bandon', notcorrect: false },
@@ -536,5 +536,5 @@ const retroquestions = [
             { text: 'Ballincollig', correct: true },
             { text: 'Wilton', notcorrect: false }
         ]
-    }
+    }*/
 ]
