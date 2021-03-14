@@ -419,7 +419,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/South Mall Retro.jpg',
+        image: '/media/retro/South_Mall_Retro.jpg',
         answers: [
             { text: 'South Mall', correct: true },
             { text: 'Dillons Cross', notcorrect: false },
@@ -429,7 +429,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Patricks Hill Retro.jpg',
+        image: '/media/retro/Patricks_Hill_Retro.jpg',
         answers: [
             { text: 'Shandon St', notcorrect: false },
             { text: 'Patricks Hill', correct: true },
@@ -439,7 +439,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Parnell Place Retro.jpg',
+        image: '/media/retro/Parnell_Place_Retro.jpg',
         answers: [
             { text: 'Mercy Hospital', notcorrect: false },
             { text: 'Cork University Hospital', notcorrect: false },
@@ -449,7 +449,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Mercy Hospital Retro.jpg',
+        image: '/media/retro/Mercy_Hospital_Retro.jpg',
         answers: [
             { text: 'Mercy Hospital', correct: true },
             { text: 'Penrose Dock', notcorrect: false },
@@ -459,7 +459,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Lee Fields Retro.jpg',
+        image: '/media/retro/Lee_Fields_Retro.jpg',
         answers: [
             { text: 'Douglas River', notcorrect: false },
             { text: 'The Lough', notcorrect: false },
@@ -469,7 +469,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Grande Parade Retro.jpg',
+        image: '/media/retro/Grande_Parade_Retro.jpg',
         answers: [
             { text: 'Merchants Quay', notcorrect: false },
             { text: 'Lapps Quay', notcorrect: false },
@@ -479,7 +479,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Fr Matthew Quay.jpg',
+        image: '/media/retro/Fr_Matthew_Quay.jpg',
         answers: [
             { text: 'Fr Matthew Quay', correct: true },
             { text: 'Popes Quay', notcorrect: false },
@@ -489,7 +489,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Fitzgeralds Park Retro.jpg',
+        image: '/media/retro/Fitzgeralds_Park_Retro.jpg',
         answers: [
             { text: 'UCC Green', notcorrect: false },
             { text: 'Fitzgeralds Park', correct: true },
@@ -499,7 +499,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Dominican Church Retro.jpg',
+        image: '/media/retro/Dominican_Church_Retro.jpg',
         answers: [
             { text: 'Shandon Bells', notcorrect: false },
             { text: 'North Cathedral', notcorrect: false },
@@ -509,7 +509,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Brian Boru Bridge Retro.jpg',
+        image: '/media/retro/Brian_Boru_Bridge_Retro.jpg',
         answers: [
             { text: 'Michael Collins Bridge', notcorrect: false },
             { text: 'Brian Boru Bridge', correct: true },
@@ -519,7 +519,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Blackpool Retro.jpg',
+        image: '/media/retro/Blackpool_Retro.jpg',
         answers: [
             { text: 'Farrenree', notcorrect: false },
             { text: 'Blackpool', correct: true },
@@ -529,7 +529,7 @@ const retroquestions = [
     },
     {
         question: 'Where is this?',
-        image: '/static/images/retro/Ballincollig Retro.jpg',
+        image: '/media/retro/Ballincollig_Retro.jpg',
         answers: [
             { text: 'Jacobs Island', notcorrect: false },
             { text: 'Shanakiel', notcorrect: false },
