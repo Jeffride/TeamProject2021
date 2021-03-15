@@ -7,6 +7,7 @@ from django.contrib import messages
 from mapsMode.forms import scoreForm
 #from leaderboard.models import User
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 # Create your views here.
 
 
@@ -81,6 +82,7 @@ def signin(request):
     form = AuthenticationForm()
     return render(request,"login.html",{"form":form})
 
+@login_required
 def about_us(request):
     return render(request, "about_us.html")
 

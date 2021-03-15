@@ -28,6 +28,7 @@
         <div id="score">
           <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
           <div id="game-round" class="hide">Round: <span id="round"> 1 </span></div>
+          <button id="logout" class="btn" onclick="document.location.href='/signin'">Logout</button>
       </section>
       <!-- Slideshow container -->
       <div id="slideshow-container">
@@ -111,8 +112,6 @@
         <button id="retro-mode" class=" btn">Retro </button>
         <button id="hard-mode" class=" btn" onclick="document.location.href='/game1'">Hard</button>
       </section>
-
-
     </section>
   </main>
   {% endblock content %}

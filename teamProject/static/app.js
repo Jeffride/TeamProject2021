@@ -24,6 +24,7 @@ const roundNum = document.getElementById('game-round')
 const roundAmt = document.getElementById('round')
 const slideshow = document.getElementById('slideshow-container')
 const scoreDisplay = document.getElementById('score')
+const logoutButton = document.getElementById('logout')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -51,6 +52,7 @@ function pickEasyMode() {
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
+    logoutButton.classList.remove('hide')
     roundNum.classList.remove('hide')
     redirectHome.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
@@ -76,6 +78,7 @@ function pickRetroMode() {
     retroMode.classList.add('hide')
     userScore.classList.remove('hide')
     roundNum.classList.remove('hide')
+    logoutButton.classList.remove('hide')
     elem.innerHTML = timerReset + " seconds remaining"
     shuffledQuestions = retroquestions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
@@ -117,6 +120,7 @@ function setNextRetroQuestion() {
 function showQuestion(question) {
     resetTimer()
     nextButton.classList.add('hide')
+    logoutButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -136,6 +140,7 @@ function showQuestion(question) {
 function showRetroQuestion(question) {
     resetTimer()
     nextButton.classList.add('hide')
+    logoutButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -243,6 +248,7 @@ function retrogameEnd() {
     document.getElementById("id_high_score").value = retroHighScore;
     submitButton.classList.remove('hide')
     roundNum.classList.add('hide')
+    logoutButton.classList.add('hide')
 }
 
 function easygameEnd() {
@@ -254,6 +260,8 @@ function easygameEnd() {
     document.getElementById("id_high_score").value = easyHighScore;
     submitButton.classList.remove('hide')
     roundNum.classList.add('hide')
+    logoutButton.classList.add('hide')
+
 }
 
 //PAGE LOADING INSTRUCTIONS

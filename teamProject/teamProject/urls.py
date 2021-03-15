@@ -34,5 +34,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('leaderboard/', leaderboardViews.leaderboard, name='leaderboard-page'),
     path('game1/',mapsViews.main, name='main-game'),
-    path('about_us/', userViews.about_us, name='about-us')
+    path('about_us/', userViews.about_us, name='about-us'),
+    path('logout/', userViews.logout_request, name='logout')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
