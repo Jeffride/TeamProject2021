@@ -120,6 +120,7 @@ function setNextRetroQuestion() {
 function showQuestion(question) {
     resetTimer()
     nextButton.classList.add('hide')
+    logoutButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';
@@ -139,6 +140,7 @@ function showQuestion(question) {
 function showRetroQuestion(question) {
     resetTimer()
     nextButton.classList.add('hide')
+    logoutButton.classList.add('hide')
     questionElement.innerText = question.question
     questionImage.src = question.image
     questionImage.style.height = '250px';

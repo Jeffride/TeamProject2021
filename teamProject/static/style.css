@@ -186,6 +186,7 @@ main {
     margin: 2px;
     padding: 5px;
     background-color: #ececec9e;
+    margin-top: .5em;
 }
 
 .fa-crown::before {
