@@ -24,12 +24,18 @@
   <main>
     <section id="container">
       <section id="user-info">
-        <div id="user-name">Welcome {{request.user}}</div>
+        <div id="user-name">Welcome {{request.user}}!</div>
         <div id="disclaimer" class="hide">
           <h1>Gamemode Instructions</h1>
-          <p>Before you start this gamemode, you must know that this gamemode is being timed. 
+          <p>Before you start this gamemode, you must know that this gamemode is being timed.
             You have 20 seconds to select an answer or else you will be awarded 0 points if the time runs out!
           </p>
+          <p>Select one of the 4 options, if it is correct, you earn points based on how quick you clicked the answer or else you move onto the next round without getting any points.
+          </p>
+          <p>Please enjoy traversing the beautiful city of Cork!
+          </p>
+          <button id="easy-start" class="hide">Start Game</button>
+          <button id="retro-start" class="hide">Start Game</button>
         </div>
         <div id="score">
           <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
