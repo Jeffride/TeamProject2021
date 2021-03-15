@@ -25,6 +25,12 @@
     <section id="container">
       <section id="user-info">
         <div id="user-name">Welcome {{request.user}}!</div>
+        <div id="disclaimer" class="hide">
+          <h1>Gamemode Instructions</h1>
+          <p>Before you start this gamemode, you must know that this gamemode is being timed. 
+            You have 20 seconds to select an answer or else you will be awarded 0 points if the time runs out!
+          </p>
+        </div>
         <div id="score">
           <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
           <div id="game-round" class="hide">Round: <span id="round"> 1 </span></div>
