@@ -5,6 +5,7 @@ from .models import User as Profile
 from django.contrib.auth.models import User
 from datetime import date
 
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 '''def leaderboard(request):
@@ -23,7 +24,7 @@ from datetime import date
     return render(request, 'leaderboard.html', context)'''
 
 
-
+@login_required
 def leaderboard(request):
     userScores = {}
     username = request.user.username
