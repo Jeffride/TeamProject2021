@@ -180,7 +180,12 @@ main {
 #next-btn {
     background-color: white;
     margin: 10px;
+}
 
+#logout {
+    margin: 2px;
+    padding: 5px;
+    background-color: #ececec9e;
 }
 
 .fa-crown::before {
