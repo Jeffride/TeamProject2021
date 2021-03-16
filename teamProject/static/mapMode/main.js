@@ -208,8 +208,8 @@ var dict = {
 	"Paddy the farmer":['static/images/hard/Paddy the Farmers.jpg',{"lat":51.892866, "lng":-8.465993}],
 	"O'Sho":['static/images/hard/Osho.jpg',{"lat":51.894760, "lng":-8.476443}],
 	"Opera Lane":['static/images/hard/Opera Lane.jpg',{"lat":51.899517, "lng":-8.472913}],
-	"Bowling":['static/images/hard/Bowling.jpg',{"lat":51.900563, "lng":-8.465549}]
-	"Opera House":['static/images/hard/Opera House.jpg',{"lat":51.900384, "lng":-8.472303}]
+	"Bowling":['static/images/hard/Bowling.jpg',{"lat":51.900563, "lng":-8.465549}],
+	"Opera House":['static/images/hard/Opera House.jpg',{"lat":51.900384, "lng":-8.472303}],
 	"Opera Lane":['static/images/hard/Opera Lane.jpg',{"lat":51.899517, "lng":-8.472913}],
 	"North Main":['static/images/hard/North Main.jpg',{"lat":51.899690, "lng":-8.478374}],
 	"Mercy":['static/images/hard/Mercy.jpg',{"lat":51.900165, "lng":-8.483202}],
@@ -253,7 +253,27 @@ var dict = {
 	"Bish5":['static/images/hard/Bish5.jpg',{"lat":51.885127, "lng":-8.530692}],
 	"Bish6":['static/images/hard/Bish6.jpg',{"lat":51.888976, "lng":-8.532927}],
 	"Bish7":['static/images/hard/Bish7.jpg',{"lat":51.888654, "lng":-8.538077}],
-	
+  "Bridge":['static/images/hard/Bridge.jpg',{"lat":51.873849, "lng":-8.430468}],
+	"Church flowers":['static/images/hard/Church flowers.jpg',{"lat":51.894131, "lng":-8.472938}],
+	"Douglas church":['static/images/hard/Douglas church.jpg',{"lat":51.873849, "lng":-8.434870}],
+	"Douglas Rd 1":['static/images/hard/Douglas rd 1.jpg',{"lat":51.879364, "lng":-8.444984}],
+	"Finline":['static/images/hard/Finline.jpg',{"lat":51.876558, "lng":-8.440912}],
+	"Grange road":['static/images/hard/Grange road.jpg',{"lat":51.873470, "lng":-8.439670}],
+	"Mayfield":['static/images/hard/Mayfield.jpg',{"lat":51.911464, "lng":-8.438045}],
+	"Maryborough":['static/images/hard/Maryborough.jpg',{"lat":51.875579, "lng":-8.430468}],
+	"Douglas park":['static/images/hard/Douglas park.jpg',{"lat":51.874381, "lng":-8.438106}],
+	"Kubo":['static/images/hard/Kubo.jpg',{"lat":51.873839, "lng":-8.438734}],
+	"Back douglas road":['static/images/hard/Back douglas road.jpg',{"lat":51.874874, "lng":-8.439780}],
+	"Link":['static/images/hard/Link.jpg',{"lat":51.877214, "lng":-8.441760}],
+	"Nemo":['static/images/hard/Nemo.jpg',{"lat":51.880268, "lng":-8.448186}],
+	"An Post":['static/images/hard/An Post.jpg',{"lat":51.884180, "lng":-8.458971}],
+	"Tavern":['static/images/hard/Tavern.jpg',{"lat":51.886385, "lng":-8.464636}],
+	"Douglas Rd church":['static/images/hard/Douglas Rd church.jpg',{"lat":51.887366, "lng":-8.466252}],
+	"Gals school":['static/images/hard/Gals school.jpg',{"lat":51.888715, "lng":-8.468385}],
+	"Jerry Hurley":['static/images/hard/Jerry Hurley.jpg',{"lat":51.891830, "lng":-8.471812}],
+	"Town church":['static/images/hard/Town church.jpg',{"lat":51.894051, "lng":-8.474981}],
+	"Town alley":['static/images/hard/Town alley.jpg',{"lat":51.894084, "lng":-8.474383}],
+
 
 }
 
