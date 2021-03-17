@@ -48,9 +48,9 @@ def leaderboard(request):
     context={
         "users": sorted_dict.items(),
         #"top_three":top_three_users.items(),
-        "1rst": first,
-        "2nd": second,
-        "3rd": third,
+        "1rst": first.items(),
+        "2nd": second.items(),
+        "3rd": third.items(),
         "rest_of_users":rest.items(),
         "number_of_users": Profile.objects.count(),
     }

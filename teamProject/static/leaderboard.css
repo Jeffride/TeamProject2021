@@ -38,13 +38,13 @@ li{
 ul,ol{
    list-style-type: none; 
 }
+/*top three user css*/
 ul li{
     margin: auto;
     width: 200px;
     height: 200px;
     text-align: center;
 }
-/*top three user css*/
 ul{
     position: relative;
     top: 10%;
@@ -108,14 +108,24 @@ ol li #hardscore{
 #username{
     float: left;
 }
+.name{
+    float: left;
+}
+.score{
+    float: right;
+}
+.name,.score{
+    position: relative;
+    top: 30%;
+    font-size: 25px;
+}
 
-@media screen and (max-width:1500px) {
+@media screen and (max-width:1000px) {
     #database_swtiches{
         top:6%;
         left: 35%;
         font-size: 25px;
-    }        background-color: blue;
-
+    } 
     .active, .btn:hover{
         font-size: 20px;
     }

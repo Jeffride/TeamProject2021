@@ -17,7 +17,7 @@
         <button class="btn" onclick=showEasy()>Easy Mode</button>
         <button class="btn" onclick=showHard()>Hard Mode</button>
         <button class="btn" onclick=showRetro()>Retro Mode</button>
-    </div>-->
+    </div>
     <script>
         var header = document.getElementById("database_swtiches");
         var btns = header.getElementsByClassName("btn");
@@ -28,30 +28,28 @@
             this.className += " active";
         });
         }
-    </script>
+    </script>-->
     <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
 </head>
 <body>
     <div class="container">
         {% if number_of_users > 0 %}
         <ul class="container" id="top_three">
-            <!--{% for user in top_three %}
-            <li>
-               <span>{{ user }}</span>
-            </li>
-            {% endfor %}-->
             <li id="second">
-                <span> {{ 2nd }}</span>
-                <div>second</div>
+                {% for name,score in 2nd %}
+                    <span><div class="name">{{ name }}</div><div class="score">{{ score }}</div></span>
+                {% endfor %}
             </li>
             <li id="first">
-                <div id="king">King of Cork!</div>
-                <span> {{ 1rst }}</span>
-                <div>first</div>
+                {% for name,score in 1rst %}
+                    <div id="king">King of Cork!</div>
+                    <span><div class="name">{{ name }}</div><div class="score">{{ score }}</div></span>
+                {% endfor %}
             </li>
             <li id="third">
-                <span> {{ 3rd }}</span>
-                <div>third</div>
+                {% for name,score in 3rd%}
+                    <span><div class="name">{{ name }}</div><div class="score">{{ score }}</div></span>
+                {% endfor %}
             </li>
         </ul>
         <ol id="leaderboard1">
@@ -61,7 +59,7 @@
                 </li>
             {% endfor %}
         </ol>
-        <ol id="easyLeaderboard">
+        <!--<ol id="easyLeaderboard">
             <p>Easy leaderboard goes here</p>
         </ol>
         <ol id="HardLeaderboard">
@@ -69,7 +67,7 @@
         </ol>
         <ol id="RetroLeaderboard">
             <p>Retro leaderboard goes here</p>
-        </ol>
+        </ol>-->
         {% else %}
             <p>No users available.</p>
         {% endif %}
