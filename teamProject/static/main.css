@@ -6,7 +6,9 @@
     margin: 0;
     padding: 0;
 }
+header {
     min-width: 100%;
+}
 .container {  
     width: 100vw;
     display: grid;  
