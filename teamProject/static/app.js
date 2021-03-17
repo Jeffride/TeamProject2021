@@ -413,9 +413,202 @@ const questions = [
             { text: 'Cissie Youngs', notcorrect: false },
             { text: 'The Rock', notcorrect: false }
         ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/baltimore.jpg',
+        answers: [
+            { text: 'Baltimore', correct: true },
+            { text: 'Schull', notcorrect: false },
+            { text: 'Roscarberry', notcorrect: false },
+            { text: 'Skibbereen', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/bandon.jpg',
+        answers: [
+            { text: 'Bandon', correct: true },
+            { text: 'Dunmanway', notcorrect: false },
+            { text: 'Kinsale', notcorrect: false },
+            { text: 'Clonalkilty', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/Bantry.jpg',
+        answers: [
+            { text: 'Glengarriff', notcorrect: false },
+            { text: 'Schull', notcorrect: false },
+            { text: 'Bantry', correct: true },
+            { text: 'Drimoleague', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/blarney.jpg',
+        answers: [
+            { text: 'Macroom', notcorrect: false },
+            { text: 'Blarney', correct: true },
+            { text: 'Midleton', notcorrect: false },
+            { text: 'Ballincollig', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/carrigaline.jpg',
+        answers: [
+            { text: 'Cobh', notcorrect: false },
+            { text: 'Monkstown', notcorrect: false },
+            { text: 'Ringaskiddy', notcorrect: false },
+            { text: 'Carrigaline', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/clonakilty.jpg',
+        answers: [
+            { text: 'Kinsale', notcorrect: false },
+            { text: 'Skibbereen', notcorrect: false },
+            { text: 'Clonakilty', correct: true },
+            { text: 'Cobh', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/cloyne.jpg',
+        answers: [
+            { text: 'Ballycotton', notcorrect: false },
+            { text: 'Cloyne', correct: true },
+            { text: 'Killeagh', notcorrect: false },
+            { text: 'Carrigtwohill', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/dunmanway.jpg',
+        answers: [
+            { text: 'Macroom', notcorrect: false },
+            { text: 'Dunmanway', correct: true },
+            { text: 'Ballyvourney', notcorrect: false },
+            { text: 'Goleen', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/Fermoy-river.jpg',
+        answers: [
+            { text: 'Fermoy', correct: true },
+            { text: 'Kilworth', notcorrect: false },
+            { text: 'Rathcormac', notcorrect: false },
+            { text: 'Glanmire', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/glanmire.jpg',
+        answers: [
+            { text: 'Glanmire', correct: true },
+            { text: 'Fermoy', notcorrect: false },
+            { text: 'Rathcormac', notcorrect: false },
+            { text: 'Watergrasshill', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/kanturk-castle-1.jpg',
+        answers: [
+            { text: 'Macroom', notcorrect: false },
+            { text: 'Cloyne', notcorrect: false },
+            { text: 'Blarney', notcorrect: false },
+            { text: 'Kanturk', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/Kilworth.JPG',
+        answers: [
+            { text: 'Rathcormac', notcorrect: false },
+            { text: 'Watergrasshill', notcorrect: false },
+            { text: 'Fermoy', notcorrect: false },
+            { text: 'Kilworth', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/kinsale-colourful.jpg',
+        answers: [
+            { text: 'Skibbereen', notcorrect: false },
+            { text: 'Courtmacsherry', notcorrect: false },
+            { text: 'Cobh', notcorrect: false },
+            { text: 'Kinsale', correct: true }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/mallow.jpg',
+        answers: [
+            { text: 'Doneraile', notcorrect: false },
+            { text: 'Fermoy', notcorrect: false },
+            { text: 'Mallow', correct: true },
+            { text: 'Blarney', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/McCroom_Castle.jpg',
+        answers: [
+            { text: 'Mallow', notcorrect: false },
+            { text: 'Kilmichael', notcorrect: false },
+            { text: 'Macroom', correct: true },
+            { text: 'Blarney', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/midleton.jpg',
+        answers: [
+            { text: 'Carrigtwohill', notcorrect: false },
+            { text: 'Cloyne', notcorrect: false },
+            { text: 'Midleton', correct: true },
+            { text: 'Castlemartyr', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/roscarberry.jpg',
+        answers: [
+            { text: 'Skibbereen', notcorrect: false },
+            { text: 'Courtmacsherry', notcorrect: false },
+            { text: 'Roscarberry', correct: true },
+            { text: 'Timoleague', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/skibbereen.jpg',
+        answers: [
+            { text: 'Skibbereen', correct: true },
+            { text: 'Courtmacsherry', notcorrect: false },
+            { text: 'Roscarberry', noncorrect: false },
+            { text: 'Timoleague', notcorrect: false }
+        ]
+    },
+    {
+        question: 'Where is this?',
+        image: '/media/easy/Yougha.jpg',
+        answers: [
+            { text: 'Ballymacoda', notcorrect: false },
+            { text: 'Ballycotton', notcorrect: false },
+            { text: 'Youghal', correct: true },
+            { text: 'Killeagh', notcorrect: false }
+        ]
     }
+
 ]
 
+
+// RETRO MODE 
 const retroquestions = [
     {
         question: 'Where is this?',
