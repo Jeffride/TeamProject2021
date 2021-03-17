@@ -25,6 +25,9 @@ const roundAmt = document.getElementById('round')
 const slideshow = document.getElementById('slideshow-container')
 const scoreDisplay = document.getElementById('score')
 const logoutButton = document.getElementById('logout')
+const gameInstructions = document.getElementById('disclaimer')
+const easyStartButton = document.getElementById('easy-start')
+const retroStartButton = document.getElementById('retro-start')
 let shuffledQuestions, currentQuestionIndex
 var elem = document.getElementById('question-timer');
 var timerReset = 20;
@@ -43,14 +46,37 @@ nextButton.addEventListener('click', () => {
 })
 
 function pickEasyMode() {
-    document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
-    endButton.classList.remove('hide')
+    gameInstructions.classList.remove('hide')
+    easyStartButton.classList.remove('hide')
+    easyStartButton.addEventListener('click', startEasyMode)
+    logoutButton.classList.add('hide')
     slideshow.classList.add('hide')
     showLeaderboard.classList.add('hide')
     gamemodeText.classList.add('hide')
     easyMode.classList.add('hide')
     hardMode.classList.add('hide')
     retroMode.classList.add('hide')
+    redirectHome.classList.remove('hide')
+}
+
+function pickRetroMode() {
+    gameInstructions.classList.remove('hide')
+    easyStartButton.classList.remove('hide')
+    easyStartButton.addEventListener('click', startRetroMode)
+    logoutButton.classList.add('hide')
+    slideshow.classList.add('hide')
+    showLeaderboard.classList.add('hide')
+    gamemodeText.classList.add('hide')
+    easyMode.classList.add('hide')
+    hardMode.classList.add('hide')
+    retroMode.classList.add('hide')
+    redirectHome.classList.remove('hide')
+}
+
+function startEasyMode(){
+    gameInstructions.classList.add('hide')
+    document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
+    endButton.classList.remove('hide')
     userScore.classList.remove('hide')
     logoutButton.classList.remove('hide')
     roundNum.classList.remove('hide')
@@ -63,7 +89,8 @@ function pickEasyMode() {
     setNextQuestion()
 }
 
-function pickRetroMode() {
+function startRetroMode() {
+    gameInstructions.classList.add('hide')
     document.getElementById('endGame').setAttribute('onclick', "retrogameEnd()")
     endButton.classList.remove('hide')
     slideshow.classList.add('hide')
@@ -71,11 +98,6 @@ function pickRetroMode() {
     document.body.style.backgroundImage = "url('/static/images/pages/corkAerialRetro.jpg')";
     containerElem.style.backgroundColor = "#d8c788d1";
     timerElem.style.backgroundColor = " #B4B990";
-    showLeaderboard.classList.add('hide')
-    gamemodeText.classList.add('hide')
-    easyMode.classList.add('hide')
-    hardMode.classList.add('hide')
-    retroMode.classList.add('hide')
     userScore.classList.remove('hide')
     roundNum.classList.remove('hide')
     logoutButton.classList.remove('hide')
