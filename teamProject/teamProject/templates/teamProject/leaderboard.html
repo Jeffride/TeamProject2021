@@ -1,48 +1,65 @@
 {% extends 'base.html' %}
 {% block content %}
+<head>
+    {% load static %}
+    <link rel="stylesheet"  href="{% static 'leaderboard.css' %}">
+    {% load static %}
+    <script src="{% static 'leaderboard.js' %}"></script>
+    <!-- Google fonts links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1,0">
+    <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
+    <!--<div id="database_swtiches">
+        <button class="btn active" onclick=showAllTime()>All time</button>
+        <button class="btn" onclick=showEasy()>Easy Mode</button>
+        <button class="btn" onclick=showHard()>Hard Mode</button>
+        <button class="btn" onclick=showRetro()>Retro Mode</button>
+    </div>
+    <script>
+        var header = document.getElementById("database_swtiches");
+        var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", " ");
+            this.className += " active";
+        });
+        }
+    </script>-->
+    <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
+</head>
 <body>
-    <head>
-        {% load static %}
-        <link rel="stylesheet"  href="{% static 'leaderboard.css' %}">
-        {% load static %}
-        <script src="{% static 'leaderboard.js' %}"></script>
-        <!-- Google fonts links -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
-    </head>
     <div class="container">
-        <div id="database_swtiches">
-            <button class="all_time" onclick=showAllTime()>All time</button>
-            <button class="easy" onclick=showEasy()>Easy Mode</button>
-            <button class="hard" onclick=showHard()>Hard Mode</button>
-            <button class="retor" onclick=showRetro()>Retro Mode</button>
-        </div>
-        <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
-        <h2 id="leaderboard_name">All time</h2>
         {% if number_of_users > 0 %}
-        <!--<ul class="container">
-            <li id="first">
-                <span> {{ 1rst }}</span>
-            </li>
+        <ul class="container" id="top_three">
             <li id="second">
-                <span> {{ 2nd }}</span>s
+                {% for name,score in 2nd %}
+                    <span><div class="name">{{ name }}</div><div class="score">{{ score }}</div></span>
+                {% endfor %}
+            </li>
+            <li id="first">
+                {% for name,score in 1rst %}
+                    <div id="king">King of Cork!</div>
+                    <span><div class="name">{{ name }}</div><div class="score">{{ score }}</div></span>
+                {% endfor %}
             </li>
             <li id="third">
-                <span> {{ 3rd }}</span>
+                {% for name,score in 3rd%}
+                    <span><div class="name">{{ name }}</div><div class="score">{{ score }}</div></span>
+                {% endfor %}
             </li>
-        </ul>-->
+        </ul>
         <ol id="leaderboard1">
-            <p>Username | EasyScore HardScore RetroScore</p>
-            {% for user,score in users %}
+            {% for user,score in rest_of_users %}
                 <li>
-                    <!--<span>{{ user }} | <> <> <> </span>-->
-                    <span> {{ user }} | {{ score }}</span>
+                    <span><span id="username">{{ user }}</span><span id="score">{{ score }}</span></span>
                 </li>
             {% endfor %}
         </ol>
-        <ol id="easyLeaderboard">
+        <!--<ol id="easyLeaderboard">
             <p>Easy leaderboard goes here</p>
         </ol>
         <ol id="HardLeaderboard">
@@ -50,11 +67,10 @@
         </ol>
         <ol id="RetroLeaderboard">
             <p>Retro leaderboard goes here</p>
-        </ol>
+        </ol>-->
         {% else %}
             <p>No users available.</p>
         {% endif %}
-
     </div>
 {% endblock content %}
 </body>

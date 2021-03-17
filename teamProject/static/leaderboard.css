@@ -1,15 +1,7 @@
-/*html{
-    background-image: url("images/corkAerial.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    min-width: 100%;
-    min-height: 100%;
-    overflow: hidden;
-}*/
+html,body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body{
     padding: 0;
     margin: 0;
@@ -30,44 +22,46 @@ span{
     margin: 5px;
     padding:5px;
 }
+#king{
+    font-size: 30px;
+}
 /* to be shown when now users in database */
 p{
     color: red;
     text-align: center;
     position: relative;
 }
-/*postion swtiches */
-
-#database_swtiches{
-    position: absolute;
-    top:1%;
-    left:85%;
+li{
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 10px;
 }
-/*top three user css*/
 ul,ol{
    list-style-type: none; 
 }
+/*top three user css*/
 ul li{
     margin: auto;
     width: 200px;
     height: 200px;
     text-align: center;
 }
+ul{
+    position: relative;
+    top: 10%;
+}
 #first{
-    grid-area: aside1;
+    background-color: red;
 }
-#second{
-    position: main;
-    grid-area: main;
+/* rest of users */
+ol li #username{
+    font-size: 20px;
 }
-#third{
-    grid-area: aside2;
+ol li #hardscore{
+    color:red;
 }
-/*
-.container{
-    grid-template-columns: auto;
-}*/
-
+#rank{
+    display: inline;
+}
 /* centre the ol in the page */
 #leaderboard1{
     display: grid;
@@ -80,27 +74,65 @@ ul li{
 .container{
     grid-template-columns: 30% 40% 30%;
 }
-
-#leaderboard_name{
-    position: relative;
-    left: 150%;
-    margin: 20px;
-    font-size: 40px;
-}
 #easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     display: none;
 }
-
+#leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
+    position: relative;
+    top:20%;
+    left: 0;
+}
 #database_swtiches{
-    top: 60px;
-    width: 400px;
-    left: 1200px;
+    position: absolute;
+    top:1%;
+    left: 70%;
+}
+.btn{
+    border:none;
+    outline:none;
+    padding:10px 16px;
+    color:lightgray;
+    cursor:pointer;
+    font-size:15px;
+}
+.active, .btn:hover{
+    color: black;
+    font-size: 18px;
+    border-bottom: 5px solid blue;
+}
+#score{
+    color: red;
+    float: right;
+    font-size: 20px;
+}
+#username{
+    float: left;
+}
+.name{
+    float: left;
+}
+.score{
+    float: right;
+}
+.name,.score{
+    position: relative;
+    top: 30%;
+    font-size: 25px;
 }
 
-#database_swtiches button{
-    padding: 5px;
-    border: solid black 1.5px;
-    font-size: 1em;
-    font-family: 'Slabo 27px', serif;
-    box-shadow: 2px 2px 5px;
+@media screen and (max-width:1000px) {
+    #database_swtiches{
+        top:6%;
+        left: 35%;
+        font-size: 25px;
+    } 
+    .active, .btn:hover{
+        font-size: 20px;
+    }
+    #leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
+        top:30%
+    }
+    ul{
+        top: 80%;
+    }
 }
