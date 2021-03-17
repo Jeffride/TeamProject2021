@@ -100,6 +100,15 @@ ol li #hardscore{
     font-size: 18px;
     border-bottom: 5px solid blue;
 }
+#score{
+    color: red;
+    float: right;
+    font-size: 20px;
+}
+#username{
+    float: left;
+}
+
 @media screen and (max-width:1500px) {
     #database_swtiches{
         top:6%;

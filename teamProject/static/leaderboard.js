@@ -30,7 +30,7 @@ function showHard(){
 }
 
 function showRetro(){
-    document.body.style.backgroundImage ="url('https://st.depositphotos.com/1022027/2484/i/950/depositphotos_24841573-stock-photo-old-newspaper-background.jpg')";
+    document.body.style.backgroundImage ="url('/static/images/pages/corkAerial.jpg')";
     //document.getElementById("leaderboard_name").innerHTML = "Retro mode";
     var oldL = document.getElementById("leaderboard1");
     var retroL = document.getElementById("RetroLeaderboard");

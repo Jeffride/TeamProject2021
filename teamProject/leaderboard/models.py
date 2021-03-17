@@ -10,3 +10,6 @@ class User(models.Model):
 
     user_name = models.CharField(max_length=200)
     high_score = models.IntegerField(default=0)
+    #easy_score = models.IntegerField(default=0)
+    #retro_score = models.IntegerField(default=0)
+    #scores = [high_score,easy_score,retro_score]

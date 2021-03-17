@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1,0">
     <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
-    <div id="database_swtiches">
+    <!--<div id="database_swtiches">
         <button class="btn active" onclick=showAllTime()>All time</button>
         <button class="btn" onclick=showEasy()>Easy Mode</button>
         <button class="btn" onclick=showHard()>Hard Mode</button>
         <button class="btn" onclick=showRetro()>Retro Mode</button>
-    </div>
+    </div>-->
     <script>
         var header = document.getElementById("database_swtiches");
         var btns = header.getElementsByClassName("btn");
@@ -35,12 +35,12 @@
     <div class="container">
         {% if number_of_users > 0 %}
         <ul class="container" id="top_three">
-            {% for user,score in top_three %}
+            <!--{% for user in top_three %}
             <li>
-               <span>{{ user }} | {{ score }}</span>
+               <span>{{ user }}</span>
             </li>
-            {% endfor %}
-            <!--<li id="second">
+            {% endfor %}-->
+            <li id="second">
                 <span> {{ 2nd }}</span>
                 <div>second</div>
             </li>
@@ -52,12 +52,12 @@
             <li id="third">
                 <span> {{ 3rd }}</span>
                 <div>third</div>
-            </li>-->
+            </li>
         </ul>
         <ol id="leaderboard1">
             {% for user,score in rest_of_users %}
                 <li>
-                    <span><span id="username">{{ user }}</span>|<span id="hardscore">{{ score }}pts |</span></span>
+                    <span><span id="username">{{ user }}</span><span id="score">{{ score }}</span></span>
                 </li>
             {% endfor %}
         </ol>
@@ -73,7 +73,6 @@
         {% else %}
             <p>No users available.</p>
         {% endif %}
-
     </div>
 {% endblock content %}
 </body>

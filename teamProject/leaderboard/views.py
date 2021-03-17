@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 '''
-    @login_required
+@login_required
     def leaderboard(request):
         if(User.objects.count()>3):
             leaderboard=User.objects.order_by("high_score").reverse()
@@ -43,9 +43,14 @@ def leaderboard(request):
     top_three_users={k: sorted_dict[k] for k in list(sorted_dict)[:3]}
     rest={k: sorted_dict[k] for k in list(sorted_dict)[3:]}
     first={k: top_three_users[k] for k in list(top_three_users)[0:1]}
+    second={k: top_three_users[k] for k in list(top_three_users)[1:2]}
+    third={k: top_three_users[k] for k in list(top_three_users)[2:3]}
     context={
         "users": sorted_dict.items(),
-        "top_three":top_three_users.items(),
+        #"top_three":top_three_users.items(),
+        "1rst": first,
+        "2nd": second,
+        "3rd": third,
         "rest_of_users":rest.items(),
         "number_of_users": Profile.objects.count(),
     }
