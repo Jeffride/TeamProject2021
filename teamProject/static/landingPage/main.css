@@ -41,12 +41,12 @@ body{
     font-family: 'Slabo 27px', serif;
 }
 #register p{
-    display: inline;
+    display:inline;
     grid-area: main;
     text-align: center;
-    margin-top: 1em;
-    font-size: 1.3em;
+    margin-top: .5em;
     font-weight: bold;
+    font-size: 1.5em;
 }
 #register{
     grid-area: main;
@@ -57,11 +57,15 @@ body{
     grid-area: main;
     margin: auto;
     margin-bottom: 1.5em;
+    font-size: 1.1em;
 }
-
+#signin p{
+    font-size: 1em;
+    display: block;
+}
 #signin button{
     padding: 5px;
-    margin-left: 12px;
+    margin:auto;
 }
 #signin a {
     color: black;
@@ -101,4 +105,15 @@ body{
     30%  { transform: scale(1,1) translateY(-10px); }
     50%  { transform: scale(1,1)    translateY(0); }
     100% { transform: scale(1,1)    translateY(0); }
+}
+
+/*~~~~~~~~~~~~~~~~MEDIA-QUEERIES~~~~~~~~~~~~~~~~~~~*/
+
+@media only screen and (max-width: 800px) {
+    .container{
+        display: block;
+    }
+    form{
+        width: 85%;
+    }
 }
