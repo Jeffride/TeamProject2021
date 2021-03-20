@@ -46,3 +46,11 @@ form button {
 
     
 }
+@media only screen and (max-width: 800px) {
+    .container{
+        display: block;
+    }
+    form{
+        width: 85%;
+    }
+}
