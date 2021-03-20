@@ -8,10 +8,12 @@
     {% load static %}
     <script src="{% static 'mapMode/main.js' %}"></script>
     <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 {% load static %}
   <body>
+    <aside id="scr">Score: 0</aside>
     <button id="endGame" onclick="gameOver()">End game</button> 
     <form method="POST" id="scoreform">
       {% csrf_token %}
@@ -36,6 +38,18 @@
       <button id="Yes">Yes</button>
       <button id="No">No</button>
     </div>
+    <div class="slideshow-container">
+     
+      <h1>Where is this?</h1>
+    
+      <div class="img-container">
+  
+        <img id = "place" src=""></img>
+      </div>
+      <div>
+        <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
+      </div>
+    </div>
     <div id= "map-container">
       <div id="score">
       <h1>Map of Cork</h1>
@@ -52,14 +66,5 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0p03pOFRi5rqeGAGEKbK2oi_zJqIZxJ0&callback=initMap&libraries=&v=weekly"
       async
     ></script>
-    <div class="slideshow-container">
-      <h1>Where is this?</h1>
-      <div class="img-container">
   
-        <img id = "place" src=""></img>
-      </div>
-      <div>
-        <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
-      </div>
-    </div>
 {% endblock content %}

@@ -167,3 +167,48 @@ header .container{
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
+body #scr {
+    display: none;
+}
+
+/* ~~~~~~~~~~~~~~~~~~ MEDIA QUEERIES ~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media only screen and (max-width: 800px) {
+    #score #scr{
+        display: none;
+    }
+    body #scr {
+        display: inline;
+        border: solid black 1.5px;
+        box-shadow: 2px 2px 5px;
+        position: absolute;
+        left: 1%;
+        background-color: #ffffffc9;
+        padding: .2em;
+        margin: .5em;
+    }
+    .container{
+        display: block;
+    }
+    .img-container img{
+        width: 95vw;
+        height: 40vh;
+    }
+    #score aside {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+    }
+    h1{
+        font-size: 1.2em;
+        display: inline;
+    }
+    #endGame{
+        padding: .2em;
+    }
+    #map-container{
+        width: 95vw;
+        margin: auto;
+        margin-top: .5em;
+    }
+  }
