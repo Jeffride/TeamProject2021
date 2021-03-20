@@ -37,3 +37,4 @@ urlpatterns = [
     path('about_us/', userViews.about_us, name='about-us'),
     path('logout/', userViews.logout_request, name='logout')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Line above allows us to display images that are stored in the media directory

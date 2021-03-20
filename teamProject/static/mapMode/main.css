@@ -158,3 +158,12 @@ header .container{
     padding: 1em;
     margin: 1em;
 }
+/* Styling buttons in hardmode */
+#contin, #Yes, #No, #nextLoc {
+  width: max-content;
+  padding: 1em;
+  grid-area: aside1;
+  margin-left: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}

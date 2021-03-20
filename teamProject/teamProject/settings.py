@@ -132,6 +132,7 @@ STATICFILES_DIRS = (
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = ''
 
-
+# MEDIA_ROOT is for server path to store files
+# MEDIA_URL is the reference URL for browser to access the files over HTTP
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
 MEDIA_URL = '/media/'

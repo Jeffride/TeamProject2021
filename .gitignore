@@ -1,3 +1,4 @@
+# Ignoring files which are included when the server is run causing unnecessary changes in the branch
 *.pdf
 *.md
 *.sqlite3
@@ -5,13 +6,4 @@
 *.vscode
 *~
 *.swp
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
-*.pyc
 *.pyc

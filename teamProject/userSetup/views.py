@@ -82,6 +82,8 @@ def signin(request):
     form = AuthenticationForm()
     return render(request,"login.html",{"form":form})
 
+# Function when called retruns the about us page. 
+# This is used for button redirects
 def about_us(request):
     return render(request, "about_us.html")
 
