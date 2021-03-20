@@ -184,14 +184,6 @@ var dict = {
     "Kcs":['/media/hard/Kcs.jpg',{"lat":51.877689,"lng":-8.436458}],
     "BusStation":['/media/hard/bstation.jpg',{"lat":51.899856,"lng":-8.467122}],
     "flyingEnterprise":['/media/hard/flyingEnterprise.jpg',{"lat":51.895295,"lng":-8.476253}],
-    "tomBarrys":['/media/hard/tomBarrys.jpg',{"lat":51.893586,"lng":-8.478064}],
-    "CollinsBarracks":['/media/hard/CollinsBarracks.jpg',{"lat":51.906835,"lng":-8.462115}],
-    "barrackStreet":['/media/hard/bstreet.jpg',{"lat":51.893897,"lng":-8.477632}],
-    "GrandParade":['/media/hard/gparade.jpg',{"lat":51.897118,"lng":-8.475033}],
-    "PatricksHill":['/media/hard/phill.jpg',{"lat":51.903363,"lng":-8.469804}],
-    "Kcs":['/media/hard/Kcs.jpg',{"lat":51.877689,"lng":-8.436458}],
-    "BusStation":['/media/hard/bstation.jpg',{"lat":51.899856,"lng":-8.467122}],
-    "flyingEnterprise":['/media/hard/flyingEnterprise.jpg',{"lat":51.895295,"lng":-8.476253}],
     "Tanora":['/media/hard/Tanora.jpg',{"lat":51.900863, "lng":-8.476560}],
     "CafeAlley":['/media/hard/CafeAlley.jpg',{"lat":51.901301, "lng":-8.476131}],
     "Mercy":['/media/hard/Mercy.jpg',{"lat":51.900295, "lng":-8.483187}],
@@ -286,7 +278,6 @@ var dict = {
     "Town alley":['/media/hard/TownAlley.jpg',{"lat":51.894084, "lng":-8.474383}],
     "CollinsBarracks":['/media/hard/CollinsBarracks.jpg',{"lat":51.906835,"lng":-8.462115}],
 };
-
 const places = Object.keys(dict);
 
 //PAGE LOADING INSTRUCTIONS
