@@ -32,8 +32,11 @@ p{
     position: relative;
 }
 li{
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     border-radius: 10px;
+}
+.position{
+    font-size: 15px;
 }
 ul,ol{
    list-style-type: none; 
@@ -51,6 +54,16 @@ ul{
 }
 #first{
     background-color: red;
+}
+#second{
+    position: relative;
+    top: 15%;
+    left: 50%;
+}
+#third{
+    position: relative;
+    top: 20%;
+    left: -50%;
 }
 /* rest of users */
 ol li #username{
@@ -74,19 +87,19 @@ ol li #hardscore{
 .container{
     grid-template-columns: 30% 40% 30%;
 }
-#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
+/*#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     display: none;
-}
+}*/
 #leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     position: relative;
     top:20%;
     left: 0;
 }
-#database_swtiches{
+/*#database_swtiches{
     position: absolute;
     top:1%;
     left: 70%;
-}
+}*/
 .btn{
     border:none;
     outline:none;
@@ -117,22 +130,60 @@ ol li #hardscore{
 .name,.score{
     position: relative;
     top: 30%;
-    font-size: 25px;
+    font-size: 23px;
 }
-
-@media screen and (max-width:1000px) {
-    #database_swtiches{
-        top:6%;
+@media screen and (max-width:1050px) {
+    ul li{
+        width: 70%;
+        height: auto;
+    }
+    #second, #third{
+        position: relative;
+        top: 100%;
+    }
+    #leaderboard1{
+        top:8%;
+    }
+}
+@media screen and (max-width: 800px) {
+    #leaderboard1{
+        top:13%;
+    }
+}
+@media screen and (max-width:400px){
+    li{
+        width: 85%;
+    }
+    #leaderboard1{
+        top:15%;
+    }
+    #second, #third{
+        top:100%;
+    }
+    #first{
+        width: 300px;
+        position: absolute;
+        left: 10%;
+        top: 5%;
+    }
+    #second{
+        width: 300px;
         left: 35%;
-        font-size: 25px;
-    } 
-    .active, .btn:hover{
+        top: 120%;
+        background-color: red;
+    }
+    #third{
+        width: 300px;
+        position: absolute;
+        left: 10%;
+        top: 200%;
+        background-color: red;
+    }
+    #king{
         font-size: 20px;
+        border-bottom: 2px solid black;
     }
-    #leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
-        top:30%
-    }
-    ul{
-        top: 80%;
+    ol{
+        border: none;
     }
 }
