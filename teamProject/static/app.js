@@ -39,12 +39,13 @@ easyMode.classList.remove('hide')
 easyMode.addEventListener('click', pickEasyMode)
 retroMode.classList.remove('hide')
 retroMode.addEventListener('click', pickRetroMode)
+/*Changes index for each round and sets a new question*/ 
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     roundAmt.innerHTML = currentQuestionIndex + 1
     setNextQuestion()
 })
-
+/*When easy button is selected, it hides the main menu and opens easy mode instructions waiting for game to start*/
 function pickEasyMode() {
     gameInstructions.classList.remove('hide')
     easyStartButton.classList.remove('hide')
@@ -58,7 +59,7 @@ function pickEasyMode() {
     retroMode.classList.add('hide')
     redirectHome.classList.remove('hide')
 }
-
+/*When retro button is selected, it hides the main menu and opens retro mode instructions waiting for game to start*/
 function pickRetroMode() {
     gameInstructions.classList.remove('hide')
     easyStartButton.classList.remove('hide')
@@ -73,6 +74,7 @@ function pickRetroMode() {
     redirectHome.classList.remove('hide')
 }
 
+/*When start button is clicked, easy mode begins and the timer starts */
 function startEasyMode(){
     gameInstructions.classList.add('hide')
     document.getElementById('endGame').setAttribute('onclick', "easygameEnd()")
@@ -88,7 +90,7 @@ function startEasyMode(){
     scoreElem.innerHTML = 0;
     setNextQuestion()
 }
-
+/*When start button is clicked, retro mode begins and the timer starts */
 function startRetroMode() {
     gameInstructions.classList.add('hide')
     document.getElementById('endGame').setAttribute('onclick', "retrogameEnd()")
@@ -108,7 +110,7 @@ function startRetroMode() {
     scoreElem.innerHTML = 0;
     setNextRetroQuestion()
 }
-
+/*This function is for selecting random images from the question arrays */
 function shuffleArray(questions) {
     for (var i = questions.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * i);
@@ -118,27 +120,28 @@ function shuffleArray(questions) {
     }
     return questions;
 }
-
+/*If game is after finishing round 5, the game ends. Otherwise a new question displays and the timer resets*/
 function setNextQuestion() {
     timeLeft = timerReset;
-    if (currentQuestionIndex >= 5) {
+    resetTimer()
+    if (currentQuestionIndex > 5) {
         easygameEnd()
     }
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
     nextButton.addEventListener('click', restart())
 }
-
+/*If game is after finishing round 5, the game ends. Otherwise a new question displays and the timer resets*/
 function setNextRetroQuestion() {
     timeLeft = timerReset;
-    if (currentQuestionIndex >= 5) {
+    if (currentQuestionIndex > 5) {
         retrogameEnd()
     }
     resetState()
     showRetroQuestion(shuffledQuestions[currentQuestionIndex])
     nextButton.addEventListener('click', restart())
 }
-
+/*It shows the question image with four possible answers, if a button is selected it goes to the selectAnswer function*/
 function showQuestion(question) {
     resetTimer()
     nextButton.classList.add('hide')
@@ -158,7 +161,7 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button)
     })
 }
-
+/*It shows the question image with four possible answers, if a button is selected it goes to the selectAnswer function*/
 function showRetroQuestion(question) {
     resetTimer()
     nextButton.classList.add('hide')
@@ -178,18 +181,20 @@ function showRetroQuestion(question) {
         answerButtonsElement.appendChild(button)
     })
 }
-
+/*Resets the question countdown timer to 20 seconds*/
 function resetTimer() {
     timeLeft = timerReset;
     countdown()
 }
 
+/*Hides the answers if the wrong answer is selected */
 function restart() {
     timer1 = setInterval(countdown, 900)
     answerButtonsElement.classList.remove('hide')
     wrongAnswer.classList.add('hide')
 }
 
+/*If correct answer is selected the score is calculated, if its incorrect then the answers are hidden */
 function selectAnswer(e) {
     clearInterval(timer1);
     nextButton.classList.remove()
@@ -217,13 +222,12 @@ function selectAnswer(e) {
     document.getElementById("endGame").style.display="block";
 
 }
-
+/*Timer countdown function */
 function countdown() {
     elem.innerHTML = timeLeft + ' seconds remaining';
     if (timeLeft == 0) {
-        elem.innerHTML = 'Ran out of time!'
-        currentQuestionIndex++
-        setTimeout(setNextQuestion, 2000)
+        clearInterval(timer1)
+        nextButton.classList.remove('hide')
     }
     else {
         elem.innerHTML = timeLeft + ' seconds remaining';
@@ -231,6 +235,7 @@ function countdown() {
     }
 }
 
+/*Resets the answers correct or incorrect from the array */
 function resetState() {
     clearStatusClass(document.body)
     while (answerButtonsElement.firstChild) {
@@ -238,6 +243,7 @@ function resetState() {
     }
 }
 
+/*If the button selected is correct it joins the correct class, otherwise it joins the wrong class*/
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -247,20 +253,34 @@ function setStatusClass(element, correct) {
     }
 }
 
+/*Remove answers classes */
 function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
+/*Score system for selecting correct answer*/
 var roundScore = 0;
 var endScore = 0;
 var scoreElem = document.getElementById('new-score');
 function calculateScore() {
-    roundScore += timeLeft;
-    scoreElem.innerHTML = roundScore + 1;
+    if(timeLeft >= 18){
+        roundScore += 150;
+    }
+    else if(timeLeft >= 15 && timeLeft < 18){
+        roundScore += 100;
+    }
+    else if(timeLeft > 0 && timeLeft < 15){
+        roundScore += (100/(20 - timeLeft)) >> 0;
+    }
+    else{
+        roundScore += 0;
+    }
+    scoreElem.innerHTML = roundScore;
     endScore = roundScore;
 }
 
+/*Finish the retro game mode and display submit highscore to leaderboard */
 function retrogameEnd() {
     questionContainerElement.classList.add('hide')
     var retroHighScore = endScore;
@@ -273,6 +293,7 @@ function retrogameEnd() {
     logoutButton.classList.add('hide')
 }
 
+/*Finish the easy game mode and display submit highscore to leaderboard */
 function easygameEnd() {
     questionContainerElement.classList.add('hide')
     var easyHighScore = endScore;
