@@ -72,9 +72,6 @@ ol li #username{
 ol li #hardscore{
     color:red;
 }
-ol{
-    border-top: 10px solid white;
-}
 #rank{
     display: inline;
 }
@@ -135,7 +132,6 @@ ol{
     top: 30%;
     font-size: 23px;
 }
-
 @media screen and (max-width:1050px) {
     ul li{
         width: 70%;
