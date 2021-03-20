@@ -52,6 +52,16 @@ ul{
 #first{
     background-color: red;
 }
+#second{
+    position: relative;
+    top: 15%;
+    left: 50%;
+}
+#third{
+    position: relative;
+    top: 20%;
+    left: -50%;
+}
 /* rest of users */
 ol li #username{
     font-size: 20px;
@@ -121,7 +131,50 @@ ol li #hardscore{
 }
 
 @media screen and (max-width:900px) {
+    ul li{
+        width: 70%;
+        height: auto;
+    }
+    #second, #third{
+        position: relative;
+        top: 35%;
+    }
+    #leaderboard1{
+        top:5%;
+    }
+}
+
+@media screen and (max-width:400px){
+    li{
+        width: 85%;
+    }
+    #leaderboard1{
+        top:15%;
+    }
+    #second, #third{
+        top:100%;
+    }
     #first{
-        background-color: blue;
+        width: 300px;
+        position: absolute;
+        left: 10%;
+        top: 5%;
+    }
+    #second{
+        width: 300px;
+        left: 35%;
+        top: 120%;
+        background-color: red;
+    }
+    #third{
+        width: 300px;
+        position: absolute;
+        left: 10%;
+        top: 200%;
+        background-color: red;
+    }
+    #king{
+        font-size: 20px;
+        border-bottom: 2px solid black;
     }
 }
