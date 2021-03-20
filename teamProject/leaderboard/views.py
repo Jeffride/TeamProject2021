@@ -32,6 +32,9 @@ def leaderboard(request):
     username = request.user.username
     for user1 in Profile.objects.all():
         userScores[user1.user_name]=user1.high_score       
+    indexs = []
+    for x in range(len(userScores)):
+        indexs.append(x+1)
     dict1 = userScores
     sorted_values = sorted(dict1.values(),reverse=True) # Sort the values
     sorted_dict = {}
@@ -52,6 +55,8 @@ def leaderboard(request):
         "2nd": second.items(),
         "3rd": third.items(),
         "rest_of_users":rest.items(),
+        "len_rest": len(rest.items()),
         "number_of_users": Profile.objects.count(),
+        "indexs":indexs[3:],
     }
     return render(request, 'leaderboard.html', context)

@@ -32,7 +32,7 @@ p{
     position: relative;
 }
 li{
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     border-radius: 10px;
 }
 ul,ol{
@@ -74,19 +74,19 @@ ol li #hardscore{
 .container{
     grid-template-columns: 30% 40% 30%;
 }
-#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
+/*#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     display: none;
-}
+}*/
 #leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     position: relative;
     top:20%;
     left: 0;
 }
-#database_swtiches{
+/*#database_swtiches{
     position: absolute;
     top:1%;
     left: 70%;
-}
+}*/
 .btn{
     border:none;
     outline:none;
@@ -117,22 +117,11 @@ ol li #hardscore{
 .name,.score{
     position: relative;
     top: 30%;
-    font-size: 25px;
+    font-size: 23px;
 }
 
-@media screen and (max-width:1000px) {
-    #database_swtiches{
-        top:6%;
-        left: 35%;
-        font-size: 25px;
-    } 
-    .active, .btn:hover{
-        font-size: 20px;
-    }
-    #leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
-        top:30%
-    }
-    ul{
-        top: 80%;
+@media screen and (max-width:900px) {
+    #first{
+        background-color: blue;
     }
 }
