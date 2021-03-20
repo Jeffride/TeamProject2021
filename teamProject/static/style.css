@@ -383,8 +383,15 @@ main {
         width: 100vw;
         padding: 10px;
     }
+    #disclaimer {
+        margin: 0;
+        padding: 0;
+    }
     #disclaimer p {
         font-size: .8em;
+    }
+    #user-info{
+        padding: 0;
     }
     #redirect_home{
         padding: 3px;
