@@ -19,12 +19,14 @@
       {% csrf_token %}
       {{ form }}
       <button id="submit" type="submit">Submit Score</button>
+      <p><a href="game1/" id="playAgain">Play again?</a></p>
     </form>
     
     <div id="popup">
       <div id="popUpContent">
         <h2>Instructions</h2>
         <ul>
+          <li>You will be given 10 random locations</li>
           <li>Observe the image on the left and think of whereabouts in Cork it is</li>
           <li>Then click on the map where you think this image is</li>
           <li>Points are awarded for how close you are</li>
