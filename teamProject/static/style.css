@@ -380,6 +380,13 @@ main {
 @media only screen and (max-width: 800px) {
     .container{
         display: block;
+        width: 100vw;
+    }
+    #img-container{
+        width: 95%;
+    }
+    #question-image{
+        width: 100%;
     }
     form{
         width: 85%;
