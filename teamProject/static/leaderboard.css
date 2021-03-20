@@ -114,7 +114,6 @@ ol li #hardscore{
     border-bottom: 5px solid blue;
 }
 #score{
-    color: red;
     float: right;
     font-size: 20px;
 }
@@ -147,7 +146,17 @@ ol li #hardscore{
 }
 @media screen and (max-width: 800px) {
     #leaderboard1{
-        top:13%;
+        top:27%;
+    }
+    #second, #third{
+        position: relative;
+        top: 100%;
+    }
+    #second, #third{
+        width: auto;
+    }
+    li{
+        width: 200px;
     }
 }
 @media screen and (max-width:400px){
