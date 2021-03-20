@@ -6,6 +6,7 @@ let currentIndex = 0;
 let disableClicks = false;
 let score =0;
 let latestScore = 0;
+let rounds = 0;
 
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in miles
@@ -154,11 +155,15 @@ return places;
 }
 function updateScore(){
   document.getElementById("scr").innerHTML = "Score: "+score;
+  rounds+=1;
 }
 function nextImage(){
   updateScore();
   disableClicks = false;
   console.log("btu");
+  if(rounds>4){
+    gameOver();
+  }
   if(currentIndex<places.length-1){
     currentIndex+=1;
     const img = document.getElementById("place");
@@ -168,6 +173,7 @@ function nextImage(){
     deleteMarkers();
     removeLine();
     initMap();
+    
   }
   else{
     gameOver();
