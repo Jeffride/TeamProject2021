@@ -90,6 +90,6 @@ def about_us(request):
 def logout_request(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
-    return redirect("defaultpage")
+    return redirect("signin")
 # do not create a view called login, it will conflict with the django
 # login function above

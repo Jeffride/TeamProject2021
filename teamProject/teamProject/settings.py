@@ -131,6 +131,7 @@ STATICFILES_DIRS = (
 )
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = ''
+LOGOUT_REDIRECT_URL = 'signin'
 
 # MEDIA_ROOT is for server path to store files
 # MEDIA_URL is the reference URL for browser to access the files over HTTP
