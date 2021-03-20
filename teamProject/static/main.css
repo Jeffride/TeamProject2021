@@ -37,6 +37,18 @@ body {
     height: 100vh;
     background-color: #000000;
 }
+.messages{
+    grid-area: main;
+    margin: auto;
+}
+.messages li {
+    font-size: 1.15em;
+    font-family: 'Open Sans', sans-serif;
+    padding: .2em 1em;
+    background-color: #ffffffc9;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+
+}
 #top {
     padding-bottom: 0px;
     width: 100vw;

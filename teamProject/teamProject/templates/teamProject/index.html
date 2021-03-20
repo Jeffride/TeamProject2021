@@ -40,7 +40,7 @@
         <div id="score">
           <div id="user-score" class="hide">Score: <span id="new-score"> 0 </span></div>
           <div id="game-round" class="hide">Round: <span id="round"> 1 </span></div>
-          <button id="logout" class="btn" onclick="document.location.href='/signin'">Logout</button>
+          <p><a href="{% url 'logout' %}">Log Out</a></p>
       </section>
       <!-- Slideshow container -->
       <div id="slideshow-container">
