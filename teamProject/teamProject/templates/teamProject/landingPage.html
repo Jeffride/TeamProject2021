@@ -4,6 +4,8 @@
     {% load static %}
     <link href="{% static 'landingPage/main.css' %}" rel="stylesheet">
     {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <div class="container">
     {% load static %}
@@ -29,16 +31,17 @@
         {% csrf_token %}
         {{ form }}
         <button type="submit">Sign Up</button>
+        <div id="signin">
+            <p>Already have an account , <a href="/signin">Log in now</a></li></p>
+            <p>Want to learn more about the game and us?<button id="aboutus" onclick="window.location.href='/about_us';">
+                Click here
+            </button></p>
+            {% load static %}
+            <img src="{% static 'images/GitHub-Mark-32px.png'" %}>
+            </div>
     </form>
     </div>
-    <div id="signin">
-        <p>Already have an account , <a href="/signin">Log in now</a></li></p>
-        <p>Want to learn more about the game and us?<button id="aboutus" onclick="window.location.href='/about_us';">
-            Click here
-        </button></p>
-        {% load static %}
-        <img src="{% static 'images/GitHub-Mark-32px.png'" %}>
-        </div>
+  
     <footer>
     
     </footer>
