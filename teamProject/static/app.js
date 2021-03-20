@@ -283,6 +283,8 @@ function calculateScore() {
 /*Finish the retro game mode and display submit highscore to leaderboard */
 function retrogameEnd() {
     questionContainerElement.classList.add('hide')
+    userInfo.classList.add('hide')
+    
     var retroHighScore = endScore;
     document.getElementById("id_high_score").value = endScore+1;
     //Variable for leaderboard 
@@ -296,6 +298,7 @@ function retrogameEnd() {
 /*Finish the easy game mode and display submit highscore to leaderboard */
 function easygameEnd() {
     questionContainerElement.classList.add('hide')
+    userInfo.classList.add('hide')
     var easyHighScore = endScore;
     document.getElementById("id_high_score").value = endScore+1;
     //Variable for leaderboard 
