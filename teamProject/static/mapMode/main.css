@@ -221,5 +221,12 @@ body #scr {
     top: 70%;
     width: 40%;
     }
+    #result
+    {
+        position: absolute;
+        top: 70%;
+        left: 20%;
+        right: 20%;
+    }
 
   }
