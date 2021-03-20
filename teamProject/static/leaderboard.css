@@ -35,6 +35,9 @@ li{
     font-family: 'Courier New', Courier, monospace;
     border-radius: 10px;
 }
+.position{
+    font-size: 15px;
+}
 ul,ol{
    list-style-type: none; 
 }
@@ -68,6 +71,9 @@ ol li #username{
 }
 ol li #hardscore{
     color:red;
+}
+ol{
+    border-top: 10px solid white;
 }
 #rank{
     display: inline;
@@ -130,20 +136,24 @@ ol li #hardscore{
     font-size: 23px;
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:1050px) {
     ul li{
         width: 70%;
         height: auto;
     }
     #second, #third{
         position: relative;
-        top: 35%;
+        top: 100%;
     }
     #leaderboard1{
-        top:5%;
+        top:8%;
     }
 }
-
+@media screen and (max-width: 800px) {
+    #leaderboard1{
+        top:13%;
+    }
+}
 @media screen and (max-width:400px){
     li{
         width: 85%;
@@ -176,5 +186,8 @@ ol li #hardscore{
     #king{
         font-size: 20px;
         border-bottom: 2px solid black;
+    }
+    ol{
+        border: none;
     }
 }
