@@ -7,6 +7,7 @@ let disableClicks = false;
 let score =0;
 let latestScore = 0;
 let rounds = 0;
+var contin = true;
 
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in miles
@@ -28,16 +29,22 @@ function initMap() {
   });
   
   // This event listener will call addMarker() when the map is clicked.
-  map.addListener("click", (event) => {
+  listener = map.addListener("click", (event) => {
     if(!disableClicks){
       if(markers.length>0){
         deleteMarkers();
       }
-      addMarker(event.latLng);
-      confirmAnswer();
+      if(contin){
+        addMarker(event.latLng);
+        confirmAnswer();
+      }
+      
     }
   });
   
+}
+function changeUI () {
+  map.setOptions({ disableDefaultUI: true });
 }
 
 // Adds a marker to the map and push to the array.
@@ -89,6 +96,8 @@ function confirmAnswer(){
     calculateDistance();
   }
 }
+ 
+
 
 function calculateDistance(){
   const answer = dict[places[currentIndex]][1];
@@ -180,6 +189,7 @@ function nextImage(){
   }
 }
 function gameOver(){
+  contin = false;
   document.getElementById("scoreform").style.display = "block";
   document.getElementById("id_high_score").value = score;
 }
