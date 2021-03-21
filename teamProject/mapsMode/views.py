@@ -4,9 +4,10 @@ from .forms import scoreForm
 from leaderboard.models import User as Profile
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
+
+originalScore = 0 
 @login_required
 def main(request):
-    originalScore = 0
     if request.method == "POST":
         form = scoreForm(request.POST)
         if form.is_valid():
@@ -16,11 +17,9 @@ def main(request):
             for user in Profile.objects.all():
                 if user.user_name == request.user.username:
                     originalscore = user.high_score
-                    break
-            
-            latestscore = pendingForm.high_score
-            if latestscore > originalScore:
-                    pendingForm.save()
+                    if originalscore >= pendingForm.high_score:
+                        pendingForm.high_score = originalscore
+            pendingForm.save()
             return redirect('/leaderboard')
         else:
             form = scoreForm()
