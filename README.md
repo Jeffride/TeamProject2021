@@ -1,8 +1,10 @@
 # TeamProject2021
 
-## Name: So you think know Cork?
+## Name: Lost in Cork
 ## Group: 6 
 ## Module: CS3305
+
+## Site Url : [Lost in Cork](https://lostincork.ie)
 
 ## Team members:
 * [John Wales](https://github.com/JohnWales)
