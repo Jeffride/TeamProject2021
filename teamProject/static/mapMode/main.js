@@ -279,7 +279,7 @@ var dict = {
     "Douglas Rd 1":['/media/hard/DouglasRd1.jpg',{"lat":51.879555, "lng":-8.445523}],
     "Finline":['/media/hard/Finline.jpg',{"lat":51.876558, "lng":-8.440912}],
     "Grange road":['/media/hard/GrangeRoad.jpg',{"lat":51.873470, "lng":-8.439670}],
-    "Mayfield":['/media/hard/Mayfield.jpg',{"lat":1.911523, "lng":-8.438112}],   
+    "Mayfield":['/media/hard/Mayfield.jpg',{"lat":51.911523, "lng":-8.438112}],   
     "Maryborough":['/media/hard/Maryborough.jpg',{"lat":51.875579, "lng":-8.430468}],
     "Douglas park":['/media/hard/DouglasPark.jpg',{"lat":51.874381, "lng":-8.438106}],
     "Kubo":['/media/hard/Kubo.jpg',{"lat":51.873839, "lng":-8.438734}],
