@@ -31,7 +31,7 @@ Commands to install
 - Pillow: python3 -m pip install --upgrade pip
           python3 -m pip install --upgrade Pillow
  
-### Start-up Guide when running locally:
+### Start-up Guide:
 1. Clone this repo to your local machine
 2. Navigate to the downloaded folder.
 3. CD into the git directory containing the project and navigate to the folder containing manage.py
@@ -44,8 +44,6 @@ Commands to install
 
 ### Booch Diagram
 ![Image 04-03-2021 at 14 07](https://user-images.githubusercontent.com/55900589/109976239-75c9f900-7cf3-11eb-88e1-659fe70b8753.jpg)
-## When a user access our application they are brought to out login/registration page, once they have been logged in they're then brought to the main menu where they can select from our different gamemodes 'Easy','Hard' and 'Retro'. All of these modes have an integrated scoring system which should display the users highscore to the leaderboard page when a game has finished. We also have a database for where the images we use in the modes are stored, the admin page is used by superusers to speed up the process of adding new questions by uploading the images directly.
-
 ## Latest Updates 21/03/2021
 * Application is now usable on mobile phones and tablets
 * extensive bug fixing
@@ -82,24 +80,24 @@ Commands to install
 * Images fetched and stored in effiecient manor.
 * Each page linked up to each other.
 ### Latest Screenshots 
-## 04/03/2021
-#### Login page
-![image](Screenshots/screenshots04-03-21/loginPage.PNG)
-#### Registration page
-![image](Screenshots/screenshots04-03-21/registerPage.PNG)
+## 21/03/2021
+#### Registration / Login page
+![Image 21-03-2021 at 21 13](https://user-images.githubusercontent.com/55900589/111921234-697fc300-8a8b-11eb-9c26-aae57f8917c6.jpg)
 #### Home page
-![image](Screenshots/screenshots04-03-21/homepage.PNG)
+![Image 21-03-2021 at 21 15](https://user-images.githubusercontent.com/55900589/111921273-a77ce700-8a8b-11eb-8cb7-76c56a908677.jpg)
 #### Easy mode
-![image](Screenshots/screenshots04-03-21/easymode.PNG)
-![image](Screenshots/screenshots04-03-21/easymode2.PNG)
+![Image 21-03-2021 at 21 16](https://user-images.githubusercontent.com/55900589/111921295-c67b7900-8a8b-11eb-9e47-0dae34a714e3.jpg)
 #### Retro mode
-![image](Screenshots/screenshots04-03-21/retromode.PNG)
+![Image 21-03-2021 at 21 17](https://user-images.githubusercontent.com/55900589/111921315-d85d1c00-8a8b-11eb-9d65-b20266be158d.jpg)
 #### Hard mode
-![image](Screenshots/screenshots04-03-21/mapsmode1.PNG)
-![image](Screenshots/screenshots04-03-21/mapsmode2.PNG)
+![Image 21-03-2021 at 21 18](https://user-images.githubusercontent.com/55900589/111921341-f460bd80-8a8b-11eb-82f2-c6ed5af44199.jpg)
+![Image 21-03-2021 at 21 18](https://user-images.githubusercontent.com/55900589/111921346-fb87cb80-8a8b-11eb-85dc-aaf06abaa0e4.jpg)
+![Image 21-03-2021 at 21 19](https://user-images.githubusercontent.com/55900589/111921355-04789d00-8a8c-11eb-844a-af8443e9492d.jpg)
 #### Leaderboard
-![image](Screenshots/screenshots04-03-21/leaderboard.PNG)
-
+![Image 21-03-2021 at 21 19](https://user-images.githubusercontent.com/55900589/111921358-09d5e780-8a8c-11eb-99a1-5ef06fe42738.jpg)
+#### About Us
+![Image 21-03-2021 at 21 14](https://user-images.githubusercontent.com/55900589/111921390-30941e00-8a8c-11eb-8c54-e92041fb9b78.jpg)
+![Image 21-03-2021 at 21 14](https://user-images.githubusercontent.com/55900589/111921395-34c03b80-8a8c-11eb-8b39-e2d2e7e5b4b4.jpg)
 ## 07/02/2021
 #### Login page
 
