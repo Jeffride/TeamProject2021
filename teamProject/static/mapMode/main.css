@@ -236,5 +236,9 @@ body #scr {
         left: 20%;
         right: 20%;
     }
+    #scoreform{
+        left:5%;
+        right: 5%;
+    }
 
   }
