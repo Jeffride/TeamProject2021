@@ -16,19 +16,17 @@
     <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
 </head>
 <body>
-    <!--
-        Body is split into two lists, ul and ol.
+    <!--Body is split into two lists, ul and ol.
         The ul is used for the top three users of the leaderboard.
         The ol is used for the rest of the users in the database.
         These are seperate lists to make it easier in the css to differenciate the two.
         If no users are present in the database a small message is shown tho represent the empty database.
-        The embedded Python code is contained within {% <python code> %}.
+        The embedded Python code is contained within curly braces and percentage signs.
             I use this Python code to loop through the dictionaries passed by the Django view.
             - number_of_users = count functioned called on the Profile model.
             - 1rst = dictionary containing the name and score of the user in first place of the database.
             - 2nd/3rd = are the same as '1rst' but represents the second and third user.
-            - rest_of_users = a dictionary containing users in the database from the 4th placed user to the end.
-    -->
+            - rest_of_users = a dictionary containing users in the database from the 4th placed user to the end.-->
     <div class="container">
         {% if number_of_users > 0 %}
         <ul class="container" id="top_three">
