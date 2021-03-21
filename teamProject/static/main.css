@@ -138,3 +138,13 @@ a:hover {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
 }
+@media only screen and (max-width: 800px) {
+    .container{
+        display: block;
+    }
+    main{
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+
+}
