@@ -193,6 +193,8 @@ function gameOver(){
   document.getElementById("scoreform").style.display = "block";
   document.getElementById("id_high_score").value = score;
 }
+
+//DICTIONARY WHICH HOUSES ALL LOCATIONS
 var dict = {
     "barrackStreet":['/media/hard/bstreet.jpg',{"lat":51.893897,"lng":-8.477632}],
     "GrandParade":['/media/hard/gparade.jpg',{"lat":51.897118,"lng":-8.475033}],
