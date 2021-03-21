@@ -11,10 +11,6 @@
 * [Mark Cullinane](https://github.com/mcullinane28)
 * [Jeff Attride](https://github.com/Jeffride)
 
-## Contribution
-![image](https://user-images.githubusercontent.com/43136483/109977951-461bf080-7cf5-11eb-9080-f17b147a38aa.png)
-
-
 ## Scrum Standup Timetable
 1. [Jeff Attride](https://github.com/Jeffride) (3rd February, 8th March)
 2. [John Wales](https://github.com/JohnWales) (8th February, 15th March)
@@ -25,7 +21,14 @@
 ### Prerequisites for running locally
 - Latest version of Django framework
 - Python3
+- Pillow
 
+Commands to install
+*using pip*
+Django: - python3 -m pip install Django
+Pillow: - python3 -m pip install --upgrade pip
+        - python3 -m pip install --upgrade Pillow
+ 
 ### Start-up Guide:
 1. Clone this repo to your local machine
 2. Navigate to the downloaded folder.
@@ -39,6 +42,12 @@
 
 ### Booch Diagram
 ![Image 04-03-2021 at 14 07](https://user-images.githubusercontent.com/55900589/109976239-75c9f900-7cf3-11eb-88e1-659fe70b8753.jpg)
+## Latest Updates 21/03/2021
+* Application is now usable on mobile phones and tablets
+* extensive bug fixing
+* improved styling 
+* image upload admin page added
+* launched on domain https://lostincork.ie
 
 ## Latest Updates 12/03/2021
 * About us page added
