@@ -89,7 +89,11 @@ When a user access our application they are brought to out login/registration pa
 #### Home page
 ![Image 21-03-2021 at 21 15](https://user-images.githubusercontent.com/55900589/111921273-a77ce700-8a8b-11eb-8cb7-76c56a908677.jpg)
 #### Easy mode
-![Image 21-03-2021 at 21 16](https://user-images.githubusercontent.com/55900589/111921295-c67b7900-8a8b-11eb-9e47-0dae34a714e3.jpg)
+![Image 21-03-2021 at 21 45](https://user-images.githubusercontent.com/55900589/111921933-2de6f800-8a8f-11eb-889f-6c29206ce3f5.jpg)
+![Image 21-03-2021 at 21 47](https://user-images.githubusercontent.com/55900589/111921936-32abac00-8a8f-11eb-81ae-378f6ca6734c.jpg)
+![Image 21-03-2021 at 21 47 (1)](https://user-images.githubusercontent.com/55900589/111921940-350e0600-8a8f-11eb-9fd4-78f88bc969ef.jpg)
+![Image 21-03-2021 at 21 46](https://user-images.githubusercontent.com/55900589/111921941-37706000-8a8f-11eb-9644-011a5c804171.jpg)
+![Image 21-03-2021 at 21 46 (1)](https://user-images.githubusercontent.com/55900589/111921944-39d2ba00-8a8f-11eb-935c-6fd759348d31.jpg)
 #### Retro mode
 ![Image 21-03-2021 at 21 17](https://user-images.githubusercontent.com/55900589/111921315-d85d1c00-8a8b-11eb-9d65-b20266be158d.jpg)
 #### Hard mode
@@ -99,7 +103,7 @@ When a user access our application they are brought to out login/registration pa
 #### Leaderboard
 ![Image 21-03-2021 at 21 19](https://user-images.githubusercontent.com/55900589/111921358-09d5e780-8a8c-11eb-99a1-5ef06fe42738.jpg)
 #### About Us
-![Image 21-03-2021 at 21 14](https://user-images.githubusercontent.com/55900589/111921390-30941e00-8a8c-11eb-8c54-e92041fb9b78.jpg)
+![Image 21-03-2021 at 21 14](https://user-images.githubusercontent.com/55900589/111921956-4525e580-8a8f-11eb-93da-a692f8579a53.jpg)
 ![Image 21-03-2021 at 21 14](https://user-images.githubusercontent.com/55900589/111921395-34c03b80-8a8c-11eb-8b39-e2d2e7e5b4b4.jpg)
 ## 07/02/2021
 #### Login page
