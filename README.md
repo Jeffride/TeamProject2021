@@ -44,7 +44,7 @@ Commands to install
 
 ### Booch Diagram
 ![Image 04-03-2021 at 14 07](https://user-images.githubusercontent.com/55900589/109976239-75c9f900-7cf3-11eb-88e1-659fe70b8753.jpg)
-### When a user access our application they are brought to out login/registration page, once they have been logged in they're then brought to the main menu where they can select from our different gamemodes 'Easy','Hard' and 'Retro'. All of these modes have an integrated scoring system which should display the users highscore to the leaderboard page when a game has finished. We also have a database for where the images we use in the modes are stored, the admin page is used by superusers to speed up the process of adding new questions by uploading the images directly.
+## When a user access our application they are brought to out login/registration page, once they have been logged in they're then brought to the main menu where they can select from our different gamemodes 'Easy','Hard' and 'Retro'. All of these modes have an integrated scoring system which should display the users highscore to the leaderboard page when a game has finished. We also have a database for where the images we use in the modes are stored, the admin page is used by superusers to speed up the process of adding new questions by uploading the images directly.
 
 ## Latest Updates 21/03/2021
 * Application is now usable on mobile phones and tablets
