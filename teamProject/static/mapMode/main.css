@@ -171,6 +171,14 @@ body #scr {
     display: none;
 }
 
+#playAgain{
+    margin-top: .5em;
+    margin-left: 0;
+    margin: auto;
+    font-size: .5em;
+    width: 50%;
+    padding: .2em;
+}
 /* ~~~~~~~~~~~~~~~~~~ MEDIA QUEERIES ~~~~~~~~~~~~~~~~~~~~~~~ */
 
 @media only screen and (max-width: 800px) {

@@ -6,6 +6,8 @@ let currentIndex = 0;
 let disableClicks = false;
 let score =0;
 let latestScore = 0;
+let rounds = 0;
+var contin = true;
 
 function haversine_distance(mk1, mk2) {
   var R = 6371.0710; // Radius of the Earth in miles
@@ -27,16 +29,22 @@ function initMap() {
   });
   
   // This event listener will call addMarker() when the map is clicked.
-  map.addListener("click", (event) => {
+  listener = map.addListener("click", (event) => {
     if(!disableClicks){
       if(markers.length>0){
         deleteMarkers();
       }
-      addMarker(event.latLng);
-      confirmAnswer();
+      if(contin){
+        addMarker(event.latLng);
+        confirmAnswer();
+      }
+      
     }
   });
   
+}
+function changeUI () {
+  map.setOptions({ disableDefaultUI: true });
 }
 
 // Adds a marker to the map and push to the array.
@@ -88,6 +96,8 @@ function confirmAnswer(){
     calculateDistance();
   }
 }
+ 
+
 
 function calculateDistance(){
   const answer = dict[places[currentIndex]][1];
@@ -154,11 +164,15 @@ return places;
 }
 function updateScore(){
   document.getElementById("scr").innerHTML = "Score: "+score;
+  rounds+=1;
 }
 function nextImage(){
   updateScore();
   disableClicks = false;
   console.log("btu");
+  if(rounds>4){
+    gameOver();
+  }
   if(currentIndex<places.length-1){
     currentIndex+=1;
     const img = document.getElementById("place");
@@ -168,12 +182,14 @@ function nextImage(){
     deleteMarkers();
     removeLine();
     initMap();
+    
   }
   else{
     gameOver();
   }
 }
 function gameOver(){
+  contin = false;
   document.getElementById("scoreform").style.display = "block";
   document.getElementById("id_high_score").value = score;
 }
@@ -190,7 +206,7 @@ var dict = {
     "AlleyBridge":['/media/hard/AlleyBridge.jpg',{"lat":51.901079, "lng":-8.476304}],
     "PortAcrossWater":['/media/hard/PortAcrossWater.jpg',{"lat":51.902744, "lng":-8.461080}],
     "FirkinCrane":['/media/hard/FirkinCrane.jpg',{"lat":51.902744, "lng":-8.475965}],
-    "OperaHouseBridge":['/media/hard/OperaHouseBridge.jpg',{"lat":51.900629, "lng":-8.470397}],
+    "OperaHouseBridge":['/media/hard/OperaHouse.jpg',{"lat":51.900629, "lng":-8.470397}],
     "Unity":['/media/hard/Unity.jpg',{"lat":51.901397, "lng":-8.463953}],
     "UCC":['/media/hard/UCC.jpg',{"lat":51.895333, "lng":-8.489148}],
     "UCC2":['/media/hard/UCC2.jpg',{"lat":51.895333, "lng":-8.489148}],
@@ -202,8 +218,8 @@ var dict = {
     "Shandon":['/media/hard/Shandon.jpg',{"lat":51.903251, "lng":-8.477732}],
     "Shandon Street":['/media/hard/ShandonStreet.jpg',{"lat":51.901623, "lng":-8.479642}],
     "Shakey Bridge":['/media/hard/ShakeyBridge.jpg',{"lat":51.898066, "lng":-8.490864}],
-    "Scoozi":['/media/hard/Scoozis.jpg',{"lat":51.898594, "lng":-8.469922}],
-    "St Mary Church":['/media/hard/StMaryChurch.jpg',{"lat":51.901179, "lng":-8.474818}],
+    "Scoozi":['/media/hard/Scoozi.jpg',{"lat":51.898594, "lng":-8.469922}],
+    "St Mary Church":['/media/hard/StMarys.jpg',{"lat":51.901179, "lng":-8.474818}],
     "Rob Roy":['/media/hard/RobRoy.jpg',{"lat":51.897674, "lng":-8.471823}],
     "R&H Hall":['/media/hard/RHHall.jpg',{"lat":51.898583, "lng":-8.459953}],
     "Alchemy":['/media/hard/Alchemy.jpg',{"lat":51.893977, "lng":-8.477519}],
@@ -217,7 +233,7 @@ var dict = {
     "North Main":['/media/hard/NorthMain.jpg',{"lat":51.899690, "lng":-8.478374}],
     "Mercy":['/media/hard/Mercy.jpg',{"lat":51.900165, "lng":-8.483202}],
     "Novacento":['/media/hard/Novacento.jpg',{"lat":51.901625, "lng":-8.469411}],
-    "Centra Mary":['/media/hard/MarybyCentra.jpg',{"lat":51.891242, "lng":-8.488524}],
+    "Centra Mary":['/media/hard/CentraMary.jpg',{"lat":51.891242, "lng":-8.488524}],
     "Lough Bar":['/media/hard/LoughBar.jpg',{"lat":51.886096, "lng":-8.488978}],
     "Jewton":['/media/hard/Jewtown.jpg',{"lat":51.896746, "lng":-8.459739}],
     "Jewtown Roundabout":['/media/hard/JewtownRoundabout.jpg',{"lat":51.897014, "lng":-8.458851}],
@@ -226,25 +242,24 @@ var dict = {
     "Hidden Mary":['/media/hard/HiddenMary.jpg',{"lat":51.894759, "lng":-8.471552}],
     "Gables":['/media/hard/Gables.jpg',{"lat":51.893475, "lng":-8.470255}],
     "Fountain":['/media/hard/Fountain.jpg',{"lat":51.896920, "lng":-8.474892}],
-    "Forde's Bridge":['/media/hard/Fordes.jpg',{"lat":51.895583, "lng":-8.476222}],
-    "Elizabeth Fort":['/media/hard/Elizabeth Fort.jpg',{"lat":51.894395, "lng":-8.477546}],
+    "Forde's Bridge":['/media/hard/FordesBridge.jpg',{"lat":51.895583, "lng":-8.476222}],
+    "Elizabeth Fort":['/media/hard/ElizabethFort.jpg',{"lat":51.894395, "lng":-8.477546}],
     "Echo Boy":['/media/hard/EchoBoy.jpg',{"lat":51.898509, "lng":-8.472210}],
     "Crane":['/media/hard/Crane.jpg',{"lat":51.897791, "lng":-8.469512}],
     "Comm":['/media/hard/CollegeComm.jpg',{"lat":51.895202, "lng":-8.468380}],
-    "City Hall":['/media/hard/CityHall.jpg',{"lat":51.897645, "lng":-8.465054}],
+    "City Hall":['/media/hard/CityAlley.jpg',{"lat":51.897645, "lng":-8.465054}],
     "Canty & Son":['/media/hard/CantyAndSon.jpg',{"lat":51.895381, "lng":-8.465322}],
     "Cafe Spresso":['/media/hard/CafeSpresso.jpg',{"lat":51.901573, "lng":-8.469345}],
     "ByUnityHouse":['/media/hard/ByUnityHouse.jpg',{"lat":51.901380, "lng":-8.467427}],
-    "By Sin É":['/media/hard/BySinE.jpg',{"lat":51.901865, "lng":-8.471284}],
-    "By NCT":['/media/hard/ByLicenceGaff.jpg',{"lat":51.895318, "lng":-8.466569}],
+    "By Sin É":['/media/hard/SinE.jpg',{"lat":51.901865, "lng":-8.471284}],
+    "By NCT":['/media/hard/ByLicenseGaff.jpg',{"lat":51.895318, "lng":-8.466569}],
     "By Leisureplex":['/media/hard/ByLeisureplex.jpg',{"lat":51.901314, "lng":-8.465548}],
     "By Franwell":['/media/hard/ByFranwell.jpg',{"lat":51.900552, "lng":-8.483401}],
     "By Comm":['/media/hard/ByCollegeComm.jpg',{"lat":51.895033, "lng":-8.469014}],
-    "Centra Mary":['/media/hard/ByCentraMary.jpg',{"lat":51.891244, "lng":-8.488542}],
+    "Centra Mary":['/media/hard/CentraMary.jpg',{"lat":51.891244, "lng":-8.488542}],
     "Before Alchemy":['/media/hard/BeforeAlchemy.jpg',{"lat":51.893704, "lng":-8.477830}],
     "Barrack's Junction":['/media/hard/BarracksJunction.jpg',{"lat":51.892688, "lng":-8.480826}],
     "Hurler":['/media/hard/Hurler.jpg',{"lat":51.894080, "lng":-8.464954}],
-    "Blackrock2":['/media/hard/Blackrock2.jpg',{"lat":51.889837, "lng":-8.494348}],
     "Blackrock5":['/media/hard/Blackrock5.jpg',{"lat":51.898269, "lng":-8.416264}],
     "Blackrock6":['/media/hard/Blackrock6.jpg',{"lat":51.897054, "lng":-8.416595}],
     "Blackrock7":['/media/hard/Blackrock7.jpg',{"lat":51.898346, "lng":-8.416944}],
@@ -268,7 +283,6 @@ var dict = {
     "Kubo":['/media/hard/Kubo.jpg',{"lat":51.873839, "lng":-8.438734}],
     "Back douglas road":['/media/hard/BackDouglasRoad.jpg',{"lat":51.874874, "lng":-8.439780}],
     "Link":['/media/hard/Link.jpg',{"lat":51.877214, "lng":-8.441760}],
-    "Nemo":['/media/hard/Nemo.jpg',{"lat":51.880268, "lng":-8.448186}],
     "An Post":['/media/hard/AnPost.jpg',{"lat":51.884180, "lng":-8.458971}],
     "Tavern":['/media/hard/Tavern.jpg',{"lat":51.886385, "lng":-8.464636}],
     "Douglas Rd church":['/media/hard/DouglasRdChurch.jpg',{"lat":51.887366, "lng":-8.466252}],

@@ -237,7 +237,7 @@ main {
     font-size: 2em;
     display: none;
     border: solid;
-    background-color: rgba(255, 255, 255, 0.753);
+    background-color: rgba(255, 255, 255, 9);
     position: absolute;
     padding: 2em;
     z-index: +10;
@@ -378,17 +378,40 @@ main {
 /* ~~~~~~~~~~~~~~~~~~ MEDIA QUEERIES ~~~~~~~~~~~~~~~~~~~~~~~ */
 
 @media only screen and (max-width: 800px) {
-    .container{
+    #container{
         display: block;
         width: 100vw;
+        padding: 10px;
+    }
+    #disclaimer {
+        margin: 0;
+        padding: 0;
+    }
+    #disclaimer p {
+        font-size: .8em;
+    }
+    #user-info{
+        padding: 0;
+    }
+    #redirect_home{
+        padding: 3px;
     }
     #img-container{
-        width: 95%;
+        width: 100%;
     }
     #question-image{
         width: 100%;
     }
+    #endGame{
+        font-size: .8em;
+        padding: 4px;
+    }
     form{
         width: 85%;
+    }
+    #scoreform{
+        padding: 10px;
+        top: 10%;
+        left: 10%;
     }
 }

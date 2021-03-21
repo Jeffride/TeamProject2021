@@ -1,0 +1,331 @@
+.
+├── db.sqlite3
+├── leaderboard
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── admin.cpython-38.pyc
+│   │   ├── apps.cpython-38.pyc
+│   │   ├── models.cpython-38.pyc
+│   │   └── views.cpython-38.pyc
+│   ├── __pycache__\ 2
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-38.pyc
+│   │       └── __init__.cpython-38.pyc
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── manage.py
+├── mapsMode
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── admin.cpython-38.pyc
+│   │   ├── forms.cpython-38.pyc
+│   │   ├── models.cpython-38.pyc
+│   │   └── views.cpython-38.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-38.pyc
+│   │       └── __init__.cpython-38.pyc
+│   ├── models.py
+│   ├── myModules
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-38.pyc
+│   │   │   └── imageListings.cpython-38.pyc
+│   │   └── imageListings.py
+│   ├── tests.py
+│   └── views.py
+├── media
+│   ├── easy
+│   │   ├── Ballincollig_caslte.JPG
+│   │   ├── Bantry.jpg
+│   │   ├── Fermoy-river.jpg
+│   │   ├── Kilworth.JPG
+│   │   ├── McCroom_Castle.JPG
+│   │   ├── UCC.jpg
+│   │   ├── Yougha.jpg
+│   │   ├── baltimore.jpg
+│   │   ├── bandon.jpg
+│   │   ├── blackpool.jpg
+│   │   ├── blarney.jpg
+│   │   ├── blarneyCastle.jpg
+│   │   ├── carrigaline.jpg
+│   │   ├── clonakilty.jpg
+│   │   ├── cloyne.jpg
+│   │   ├── cobh.jpg
+│   │   ├── douglas.jpg
+│   │   ├── dunmanway.jpg
+│   │   ├── englishMarket.jpg
+│   │   ├── finbarrsCathedral.jpg
+│   │   ├── fitzgeraldsPark.jpg
+│   │   ├── fotaWildlifePark.jpg
+│   │   ├── glanmire.jpg
+│   │   ├── kanturk-castle-1.jpg
+│   │   ├── kinsale-colourful.jpg
+│   │   ├── kinsale.jpg
+│   │   ├── knocka.png
+│   │   ├── mallow.jpg
+│   │   ├── midleton.jpg
+│   │   ├── oval.jpg
+│   │   ├── patricksStreet.jpg
+│   │   ├── patrickshill.jpg
+│   │   ├── patrickstreet.jpg
+│   │   ├── roscarberry.jpg
+│   │   ├── shandonBells.jpg
+│   │   ├── skibbereen.jpg
+│   │   └── spikeIsland.webp
+│   ├── hard
+│   │   ├── Alchemy.jpg
+│   │   ├── AlleyBridge.jpg
+│   │   ├── AnPost.jpg
+│   │   ├── BackDouglasRoad.jpg
+│   │   ├── BarracksJunction.jpg
+│   │   ├── BeforeAlchemy(1).jpg
+│   │   ├── BeforeAlchemy.jpg
+│   │   ├── BeforePaddyTheFarmers.jpg
+│   │   ├── Bish1.jpg
+│   │   ├── Bish2.jpg
+│   │   ├── Bish3.jpg
+│   │   ├── Bish4.jpg
+│   │   ├── Bish5.jpg
+│   │   ├── Bish6.jpg
+│   │   ├── Bish7.jpg
+│   │   ├── Blackrock5.jpg
+│   │   ├── Blackrock6.jpg
+│   │   ├── Blackrock7.jpg
+│   │   ├── BlackrockSnow.jpg
+│   │   ├── Bowling.jpg
+│   │   ├── Bridge.jpg
+│   │   ├── ByBusStation.jpg
+│   │   ├── ByCollegeComm.jpg
+│   │   ├── ByFranwell.jpg
+│   │   ├── ByLeisureplex.jpg
+│   │   ├── ByLicenseGaff.jpg
+│   │   ├── ByUnityHouse.jpg
+│   │   ├── ByUs.jpg
+│   │   ├── CafeAlley.jpg
+│   │   ├── CafeSpresso.jpg
+│   │   ├── CantyAndSon.jpg
+│   │   ├── CantyAndSon2.jpg
+│   │   ├── CentraMary.jpg
+│   │   ├── ChurchFlowers.jpg
+│   │   ├── CityAlley.jpg
+│   │   ├── CollegeComm.jpg
+│   │   ├── CollinsBarracks.jpg
+│   │   ├── Crane.jpg
+│   │   ├── DouglasChurch.jpg
+│   │   ├── DouglasPark.jpg
+│   │   ├── DouglasRd1.jpg
+│   │   ├── DouglasRdChurch.jpg
+│   │   ├── EchoBoy.jpg
+│   │   ├── ElizabethFort.jpg
+│   │   ├── Finline.jpg
+│   │   ├── FirkinCrane.jpg
+│   │   ├── FordesBridge.jpg
+│   │   ├── Fountain.jpg
+│   │   ├── Gables.jpg
+│   │   ├── GalsSchool.jpg
+│   │   ├── GrangeRoad.jpg
+│   │   ├── HiddenMary.jpg
+│   │   ├── Hurler.jpg
+│   │   ├── JerryHurley.jpg
+│   │   ├── Jewtown.jpg
+│   │   ├── JewtownPark.jpg
+│   │   ├── JewtownRoundabout(1).jpg
+│   │   ├── JewtownRoundabout.jpg
+│   │   ├── Kcs.jpg
+│   │   ├── Kubo.jpg
+│   │   ├── Link.jpg
+│   │   ├── Lough.jpg
+│   │   ├── LoughBar.jpg
+│   │   ├── MaryAlley.jpg
+│   │   ├── Maryborough.jpg
+│   │   ├── Mayfield.jpg
+│   │   ├── Mercy.jpg
+│   │   ├── MercyBridge.jpg
+│   │   ├── NorthMain.jpg
+│   │   ├── Novacento.jpg
+│   │   ├── OSho.jpg
+│   │   ├── OperaHouse.jpg
+│   │   ├── OperaLane.jpg
+│   │   ├── PaddyTheFarmers.jpg
+│   │   ├── Parnell.jpg
+│   │   ├── PissAlley.jpg
+│   │   ├── PoliceGaff.jpg
+│   │   ├── PortAcrossWater.jpg
+│   │   ├── RHHall.jpg
+│   │   ├── RobRoy.jpg
+│   │   ├── Scoozi.jpg
+│   │   ├── ShakeyBridge.jpg
+│   │   ├── Shandon.jpg
+│   │   ├── ShandonStreet.jpg
+│   │   ├── Sicillian.jpg
+│   │   ├── SinE.jpg
+│   │   ├── SkatePark.jpg
+│   │   ├── Spillys(1).jpg
+│   │   ├── Spillys.jpg
+│   │   ├── StMarys.jpg
+│   │   ├── Statue.jpg
+│   │   ├── Tanora.jpg
+│   │   ├── Tavern.jpg
+│   │   ├── TheMountain.jpg
+│   │   ├── TownAlley.jpg
+│   │   ├── TownChurch.jpg
+│   │   ├── UCC.jpg
+│   │   ├── UCC2.jpg
+│   │   ├── Unity.jpg
+│   │   ├── bstation.jpg
+│   │   ├── bstreet.jpg
+│   │   ├── flyingEnterprise.jpg
+│   │   ├── gparade.jpg
+│   │   ├── phill.jpg
+│   │   └── tomBarrys.jpg
+│   ├── retro
+│   │   ├── Ballincollig_Retro.jpg
+│   │   ├── Blackpool_Retro.jpg
+│   │   ├── Brian_Boru_Bridge_Retro.jpg
+│   │   ├── Dominican_Church_Retro.jpg
+│   │   ├── Fitzgeralds_Park_Retro.jpg
+│   │   ├── Fr_Matthew_Quay.jpg
+│   │   ├── Grande_Parade_Retro.jpg
+│   │   ├── Lee_Fields_Retro.jpg
+│   │   ├── Mercy_Hospital_Retro.jpg
+│   │   ├── Parnell_Place_Retro.jpg
+│   │   ├── Patricks_Hill_Retro.jpg
+│   │   ├── South_Mall_Retro.jpg
+│   │   ├── The_Lough_Retro.jpg
+│   │   ├── UCC_Entrance_Retro.jpg
+│   │   ├── Youghal_Retro.jpg
+│   │   ├── baltimore-retro.jpg
+│   │   ├── bandon-retro.jpeg
+│   │   ├── bantry-retro.jpg
+│   │   ├── blarney-retro.jpg
+│   │   ├── cobh-retro.jpeg
+│   │   ├── fermoy-retro.jpg
+│   │   ├── kanturk-retro.jpg
+│   │   ├── kinsale-retro.jpg
+│   │   ├── macroom-retro.jpg
+│   │   └── mallow-retro.jpg
+│   └── test
+├── requirements.txt
+├── static
+│   ├── aboutus.css
+│   ├── app.js
+│   ├── favicon.ico
+│   ├── images
+│   │   ├── GitHub-Mark-32px.png
+│   │   ├── LostInCork.png
+│   │   ├── corkAerial.jpg
+│   │   ├── corkCity.png
+│   │   ├── geotag.png
+│   │   ├── pages
+│   │   │   ├── corkAerial.jpg
+│   │   │   └── corkAerialRetro.jpg
+│   │   └── slider
+│   │       ├── BlackObserver.png
+│   │       ├── engmark.png
+│   │       ├── lizfort.png
+│   │       ├── pstreet.png
+│   │       ├── quays.png
+│   │       ├── sbells.png
+│   │       ├── spike.png
+│   │       └── ucc.png
+│   ├── landingPage
+│   │   └── main.css
+│   ├── leaderboard.css
+│   ├── leaderboard.js
+│   ├── login.css
+│   ├── main.css
+│   ├── mapMode
+│   │   ├── main.css
+│   │   └── main.js
+│   └── style.css
+├── teamProject
+│   ├── Dockerfile
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── settings.cpython-38.pyc
+│   │   ├── urls.cpython-38.pyc
+│   │   └── wsgi.cpython-38.pyc
+│   ├── admin.py
+│   ├── asgi.py
+│   ├── docker-compose.yml
+│   ├── forms.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── requirements.txt
+│   ├── settings.py
+│   ├── templates
+│   │   └── teamProject
+│   │       ├── about_us.html
+│   │       ├── base.html
+│   │       ├── game1.html
+│   │       ├── index.html
+│   │       ├── landingPage.html
+│   │       ├── leaderboard.html
+│   │       ├── login.html
+│   │       ├── messages.html
+│   │       └── register.html
+│   ├── urls.py
+│   └── wsgi.py
+├── tree.txt
+├── upload_image
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-38.pyc
+│   │   ├── admin.cpython-38.pyc
+│   │   ├── apps.cpython-38.pyc
+│   │   ├── forms.cpython-38.pyc
+│   │   ├── models.cpython-38.pyc
+│   │   └── views.cpython-38.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_auto_20210303_1454.py
+│   │   ├── 0003_auto_20210303_2022.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-38.pyc
+│   │       ├── 0002_auto_20210303_1454.cpython-38.pyc
+│   │       ├── 0003_auto_20210303_2022.cpython-38.pyc
+│   │       └── __init__.cpython-38.pyc
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── userSetup
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-38.pyc
+    │   ├── admin.cpython-38.pyc
+    │   ├── apps.cpython-38.pyc
+    │   ├── models.cpython-38.pyc
+    │   └── views.cpython-38.pyc
+    ├── admin.py
+    ├── apps.py
+    ├── forms.py
+    ├── migrations
+    │   ├── __init__.py
+    │   └── __pycache__
+    │       └── __init__.cpython-38.pyc
+    ├── models.py
+    ├── tests.py
+    └── views.py
+
+35 directories, 293 files
