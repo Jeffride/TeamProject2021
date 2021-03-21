@@ -31,7 +31,7 @@ Commands to install
 - Pillow: python3 -m pip install --upgrade pip
           python3 -m pip install --upgrade Pillow
  
-### Start-up Guide:
+### Start-up Guide when running locally:
 1. Clone this repo to your local machine
 2. Navigate to the downloaded folder.
 3. CD into the git directory containing the project and navigate to the folder containing manage.py
