@@ -580,16 +580,6 @@ const questions = [
     },
     {
         question: 'Where is this?',
-        image: '/media/easy/McCroom_Castle.jpg',
-        answers: [
-            { text: 'Mallow', notcorrect: false },
-            { text: 'Kilmichael', notcorrect: false },
-            { text: 'Macroom', correct: true },
-            { text: 'Blarney', notcorrect: false }
-        ]
-    },
-    {
-        question: 'Where is this?',
         image: '/media/easy/midleton.jpg',
         answers: [
             { text: 'Carrigtwohill', notcorrect: false },
