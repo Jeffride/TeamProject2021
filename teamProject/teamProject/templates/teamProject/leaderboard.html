@@ -9,29 +9,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
+    <!-- End of Google fonts links -->
     <meta name="viewport" content="width=device-width, initial-scale=1,0">
     <script src="https://kit.fontawesome.com/d6a2ba58f6.js" crossorigin="anonymous"></script>
-    <!--<div id="database_swtiches">
-        <button class="btn active" onclick=showAllTime()>All time</button>
-        <button class="btn" onclick=showEasy()>Easy Mode</button>
-        <button class="btn" onclick=showHard()>Hard Mode</button>
-        <button class="btn" onclick=showRetro()>Retro Mode</button>
-    </div>
-    <script>
-        var header = document.getElementById("database_swtiches");
-        var btns = header.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", " ");
-            this.className += " active";
-        });
-        }
-    </script>-->
     <button id="redirect_home" onclick="document.location.href='/home'"><i class="fas fa-home"></i></button>
 </head>
 <body>
+    <!--
+        Body is split into two lists, ul and ol.
+        The ul is used for the top three users of the leaderboard.
+        The ol is used for the rest of the users in the database.
+        These are seperate lists to make it easier in the css to differenciate the two.
+        If no users are present in the database a small message is shown tho represent the empty database.
+        The embedded Python code is contained within {% <python code> %}.
+            I use this Python code to loop through the dictionaries passed by the Django view.
+            - number_of_users = count functioned called on the Profile model.
+            - 1rst = dictionary containing the name and score of the user in first place of the database.
+            - 2nd/3rd = are the same as '1rst' but represents the second and third user.
+            - rest_of_users = a dictionary containing users in the database from the 4th placed user to the end.
+    -->
     <div class="container">
         {% if number_of_users > 0 %}
         <ul class="container" id="top_three">
@@ -54,8 +51,6 @@
                 {% endfor %}
             </li>
         </ul>
-        <!--<p>{{ rest_of_users }}</p>
-        <p>{{ indexs }}</p>-->
         <ol id="leaderboard1">
             {% for user,score in rest_of_users %}
                 <li>
@@ -63,15 +58,6 @@
                 </li>
             {% endfor %}
         </ol>
-        <!--<ol id="easyLeaderboard">
-            <p>Easy leaderboard goes here</p>
-        </ol>
-        <ol id="HardLeaderboard">
-            <p>Hard leaderboard goes here</p>
-        </ol>
-        <ol id="RetroLeaderboard">
-            <p>Retro leaderboard goes here</p>
-        </ol>-->
         {% else %}
             <p>No users available.</p>
         {% endif %}
