@@ -87,19 +87,11 @@ ol li #hardscore{
 .container{
     grid-template-columns: 30% 40% 30%;
 }
-/*#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
-    display: none;
-}*/
 #leaderboard1,#easyLeaderboard, #HardLeaderboard, #RetroLeaderboard{
     position: relative;
     top:20%;
     left: 0;
 }
-/*#database_swtiches{
-    position: absolute;
-    top:1%;
-    left: 70%;
-}*/
 .btn{
     border:none;
     outline:none;
@@ -159,12 +151,12 @@ ol li #hardscore{
         width: 200px;
     }
 }
-@media screen and (max-width:400px){
+@media screen and (max-width:450px){
     li{
         width: 85%;
     }
     #leaderboard1{
-        top:15%;
+        top:20%;
     }
     #second, #third{
         top:100%;
@@ -185,7 +177,7 @@ ol li #hardscore{
         width: 300px;
         position: absolute;
         left: 10%;
-        top: 200%;
+        top: 210%;
         background-color: red;
     }
     #king{
