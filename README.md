@@ -24,9 +24,9 @@
 - Pillow
 
 Commands to install
-*using pip*
-Django: - python3 -m pip install Django
-Pillow: - python3 -m pip install --upgrade pip
+- *using pip*
+- Django: - python3 -m pip install Django
+- Pillow: - python3 -m pip install --upgrade pip
         - python3 -m pip install --upgrade Pillow
  
 ### Start-up Guide:
